@@ -1,0 +1,31 @@
+@import url("variables.css");
+@import url("header.css");
+@import url("main.css");
+
+* {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  color: #555;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cb612f;
+  text-decoration: none;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-dark {
+  color: var(--primary-color);
+}

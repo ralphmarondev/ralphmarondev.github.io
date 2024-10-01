@@ -13,6 +13,7 @@
     "bootstrap": "^5.3.3",
     "boxicons": "^2.1.4",
     "core-js": "^3.8.3",
+    "emailjs-com": "^3.2.0",
     "gh-pages": "^6.1.1",
     "jquery": "^3.7.1",
     "owl.carousel": "^2.3.4",

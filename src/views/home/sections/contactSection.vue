@@ -1,3 +1,44 @@
+<script>
+  import emailjs from 'emailjs-com';
+
+  export default {
+    data() {
+      return {
+        formData: {
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        },
+      };
+    },
+    methods: {
+      sendEmail() {
+        // please dont use these credentials begg😭😭😭
+        const serviceID = 'service_7lbki4v';
+        const templateID = 'template_dv7iwda';
+        const publicKey = 'QPvFC3rDdmplO1Ib9';
+
+        emailjs.init(publicKey);
+
+        emailjs
+          .send(serviceID, templateID, this.formData)
+          .then(() => {
+            alert('Message send successfully! 😍');
+
+            this.formData.name = '';
+            this.formData.email = '';
+            this.formData.subject = '';
+            this.formData.message = '';
+          })
+          .catch(() => {
+            alert('Failed to send message. 😭');
+          });
+      },
+    },
+  };
+</script>
+
 <template>
   <section id="contact" class="section bg-dark">
     <div class="container">
@@ -6,34 +47,54 @@
           <div class="contact-form">
             <h2 class="text-dark">Get in touch</h2>
             <p class="lead">I'll be happy to hear from you.</p>
-            <form action="#">
+            <form @submit.prevent="sendEmail">
               <div class="row gy-4 gx-3">
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" />
+                    <input
+                      type="text"
+                      v-model="formData.name"
+                      class="form-control"
+                      name="name"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" />
+                    <input
+                      type="email"
+                      v-model="formData.email"
+                      class="form-control"
+                      name="email"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-label">Subject</label>
-                    <input type="text" class="form-control" name="subject" />
+                    <input
+                      type="text"
+                      v-model="formData.subject"
+                      class="form-control"
+                      name="subject"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-label">Message</label>
                     <textarea
+                      v-model="formData.message"
                       name="message"
                       cols="3"
                       rows="5"
                       class="form-control"
+                      required
                     ></textarea>
                   </div>
                 </div>

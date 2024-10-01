@@ -6,6 +6,30 @@
   background: var(--dark-color) !important;
 }
 
+.bg-1 {
+  background: #9bd3d0;
+}
+
+.bg-2 {
+  background: #f3c447;
+}
+
+.bg-3 {
+  background: #feccb5;
+}
+
+.bg-4 {
+  background: #92b5ff;
+}
+
+.bg-5 {
+  background: #c4d38b;
+}
+
+.bg-6 {
+  background: #d2ceff;
+}
+
 main {
   position: relative;
   z-index: 1;

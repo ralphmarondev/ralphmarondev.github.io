@@ -1,19 +1,21 @@
 <script>
   import Header from './components/homeHeader.vue';
   import Main from './components/homeMain.vue';
+  import Footer from './components/homeFooter.vue';
   export default {
     components: {
       Header,
       Main,
+      Footer,
     },
     methods: {
       windowScroll() {
         this.$(window).on('scroll', function () {
           var scrollTop = this.$(window).scrollTop();
           if (scrollTop >= 80) {
-            this.$('header').addClass('fixed-header');
+            this.$jq('header').addClass('fixed-header');
           } else {
-            this.$('header').removeClass('fixed-header');
+            this.$jq('header').removeClass('fixed-header');
           }
         });
       },
@@ -28,5 +30,6 @@
   <div>
     <Header />
     <Main />
+    <Footer />
   </div>
 </template>

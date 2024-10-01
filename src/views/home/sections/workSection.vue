@@ -1,0 +1,116 @@
+<template>
+  <section id="portfolio" class="section bg-gray">
+    <div class="container">
+      <div class="section-heading">
+        <h3>Latest Projects</h3>
+      </div>
+      <div class="portfolio-box">
+        <div
+          class="row gx-3 gy-4 pb-3 mb-5 pg-lg-3 mb-lg-3 justify-content-around align-items-center flex-row-reverse"
+        >
+          <div class="col-md-6 col-lg-5">
+            <div class="portfolio-img">
+              <img
+                src="@/assets/img/familysprout.jpg"
+                alt="Family Sprout"
+                height="400"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="portfolio-text">
+              <span>Desktop Development</span>
+              <h4>Family Sprout</h4>
+              <p>
+                A desktop application for church administrators to efficiently
+                manage family and children's information, replacing traditional
+                paper-based cards. It includes authentication and role-based
+                access control for secure data handling.
+              </p>
+              <a
+                href="https://github.com/ralphmarondev/family-sprout/releases/tag/v1.2"
+                class="colored-btn mt-1"
+                >Download Exe</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <div
+          class="row gx-3 gy-4 pb-3 mb-5 pg-lg-3 mb-lg-3 justify-content-around align-items-center"
+        >
+          <div class="col-md-6 col-lg-5">
+            <div class="portfolio-img">
+              <img
+                src="@/assets/img/quote-generator.jpg"
+                alt="Quote Generator"
+                height="400"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="portfolio-text">
+              <span>Web Development</span>
+              <h4>Quote Generator</h4>
+              <p>Quote Generator written in Vue Js.</p>
+              <a
+                href="https://ralphmarondev.github.io/quote-generator/"
+                class="colored-btn mt-1"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <div
+          class="row gx-3 gy-4 pb-3 mb-5 pg-lg-3 mb-lg-3 justify-content-around align-items-center flex-row-reverse"
+        >
+          <div class="col-md-6 col-lg-5">
+            <div
+              class="portfolio-img two-img"
+              style="display: flex; width: 100%; align-items: space-around"
+            >
+              <img
+                src="@/assets/img/taskify1.png"
+                alt="Taskify"
+                height="400"
+                style="margin-right: 16px"
+              />
+              <img src="@/assets/img/taskify2.png" alt="Taskify" height="400" />
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="portfolio-text">
+              <span>Mobile App Development</span>
+              <h4>Taskify app to manage tasks.</h4>
+              <p>
+                Taskify is a sleek and efficient task management app built using
+                Jetpack Compose Material 3. Whether you're planning your day or
+                managing a complex project, Taskify offers a simple and
+                intuitive interface to help you stay organized.
+              </p>
+              <a
+                href="https://github.com/ralphmarondev/taskify/releases/tag/v0.1"
+                class="colored-btn mt-1"
+                >Download Apk</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+  .portfolio-img img {
+    object-fit: fill;
+  }
+
+  .two-img {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>

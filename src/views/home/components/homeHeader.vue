@@ -27,7 +27,7 @@
               <a href="#skill" class="nav-link">Skills</a>
             </li>
             <li>
-              <a href="#portfolio" class="nav-link">Portfolio</a>
+              <a href="#portfolio" class="nav-link">Projects</a>
             </li>
           </ul>
         </div>

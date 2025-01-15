@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-6 py-2 text-center text-md-end">
           <p class="m-0">
-            2024 Copyright all rights reserved | Developed by
+            2025 Copyright all rights reserved | Developed by
             <a href="https://github.com/ralphmarondev" target="_blank"
               >Ralph Maron Eda</a
             >

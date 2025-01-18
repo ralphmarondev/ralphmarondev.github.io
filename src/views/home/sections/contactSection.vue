@@ -1,42 +1,41 @@
 <script>
-  import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com'
 
-  export default {
-    data() {
-      return {
-        formData: {
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        },
-      };
-    },
-    methods: {
-      sendEmail() {
-        // please dont use these credentials begg😭😭😭
-        const serviceID = 'service_7lbki4v';
-        const templateID = 'template_dv7iwda';
-        const publicKey = 'QPvFC3rDdmplO1Ib9';
+export default {
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    sendEmail() {
+      const serviceID = import.meta.env.VITE_SERVICE_ID
+      const templateID = import.meta.env.VITE_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_PUBLIC_KEY
 
-        emailjs.init(publicKey);
+      emailjs.init(publicKey)
 
-        emailjs
+      emailjs
           .send(serviceID, templateID, this.formData)
           .then(() => {
-            alert('Message send successfully! 😍');
+            alert('Message send successfully! 😍')
 
-            this.formData.name = '';
-            this.formData.email = '';
-            this.formData.subject = '';
-            this.formData.message = '';
+            this.formData.name = ''
+            this.formData.email = ''
+            this.formData.subject = ''
+            this.formData.message = ''
           })
           .catch(() => {
-            alert('Failed to send message. 😭');
-          });
-      },
-    },
-  };
+            alert('Failed to send message. 😭')
+          })
+    }
+  }
+}
 </script>
 
 <template>
@@ -53,11 +52,11 @@
                   <div class="form-group">
                     <label class="form-label">Name</label>
                     <input
-                      type="text"
-                      v-model="formData.name"
-                      class="form-control"
-                      name="name"
-                      required
+                        type="text"
+                        v-model="formData.name"
+                        class="form-control"
+                        name="name"
+                        required
                     />
                   </div>
                 </div>
@@ -65,11 +64,11 @@
                   <div class="form-group">
                     <label class="form-label">Email</label>
                     <input
-                      type="email"
-                      v-model="formData.email"
-                      class="form-control"
-                      name="email"
-                      required
+                        type="email"
+                        v-model="formData.email"
+                        class="form-control"
+                        name="email"
+                        required
                     />
                   </div>
                 </div>
@@ -77,11 +76,11 @@
                   <div class="form-group">
                     <label class="form-label">Subject</label>
                     <input
-                      type="text"
-                      v-model="formData.subject"
-                      class="form-control"
-                      name="subject"
-                      required
+                        type="text"
+                        v-model="formData.subject"
+                        class="form-control"
+                        name="subject"
+                        required
                     />
                   </div>
                 </div>
@@ -89,12 +88,12 @@
                   <div class="form-group">
                     <label class="form-label">Message</label>
                     <textarea
-                      v-model="formData.message"
-                      name="message"
-                      cols="3"
-                      rows="5"
-                      class="form-control"
-                      required
+                        v-model="formData.message"
+                        name="message"
+                        cols="3"
+                        rows="5"
+                        class="form-control"
+                        required
                     ></textarea>
                   </div>
                 </div>

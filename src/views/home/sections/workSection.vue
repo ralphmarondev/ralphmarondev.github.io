@@ -28,7 +28,7 @@
                 access control for secure data handling.
               </p>
               <a
-                  href="https://github.com/ralphmarondev/family-sprout/releases/tag/v1.2"
+                  href="https://github.com/ralphmarondev/family-sprout/releases/"
                   class="colored-btn mt-1"
                   target="_blank"
               >Download Exe</a
@@ -61,7 +61,7 @@
                 design and functionality in a virtual space. Stay tuned as I continue to expand and refine this unique
                 experience!</p>
               <a
-                  href="https://github.com/ralphmarondev/compose-world/releases"
+                  href="https://github.com/ralphmarondev/compose-world/releases/"
                   class="colored-btn mt-1"
                   target="_blank"
               >Download APK</a

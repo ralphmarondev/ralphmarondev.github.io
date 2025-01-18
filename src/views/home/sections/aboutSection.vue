@@ -12,16 +12,21 @@
               Mobile Developer for more than 2 years.
             </h3>
             <p>
-              I specialize in Mobile Development with <a href="https://developer.android.com/compose/" target="_blank">Jetpack Compose</a> and Web Development using Vue and Django Rest
-              Framework. I also have experience with databases such as MySQL, Microsoft SQL Server, PostgreSQL, and
-              Firebase. In addition, I’ve worked with various REST APIs, including Django Rest Framework and Ktor.
+              I specialize in Mobile Development with
+              <a href="https://developer.android.com/compose/" target="_blank">Jetpack Compose</a>
+              and Web Development using Vue and Django Rest Framework.
+              I also have experience with databases such as MySQL, Microsoft SQL Server, PostgreSQL, and Firebase.
+              In addition, I’ve worked with various REST APIs, including Django Rest Framework and Ktor.
             </p>
             <p>
-              Over the past two years, I’ve honed my Android development skills through hands-on experience and
-              self-study. I started with Java and XML, then moved to Kotlin with Jetpack Compose and Material 3. I’ve
-              built apps like <a href="https://github.com/ralphmarondev/compose-world/" target="_blank">Compose World</a> and am currently exploring <a href="https://www.jetbrains.com/compose-multiplatform/" target="_blank">Compose Multiplatform</a> to expand my cross-platform
-              development skills. I’m passionate about creating intuitive user interfaces and staying updated with the
-              latest development trends.</p>
+              Over the past two years, I’ve honed my Android development skills through hands on experience and
+              self study. I started with Java and XML, then moved to Kotlin with Jetpack Compose and Material 3. I’ve
+              built apps like <a href="https://github.com/ralphmarondev/compose-world/" target="_blank">Compose
+              World</a> and am currently exploring
+              <a href="https://www.jetbrains.com/compose-multiplatform/" target="_blank">Compose Multiplatform</a>
+              to expand my cross platform development skills. I’m passionate about creating intuitive user interfaces
+              and staying updated with the latest development trends.
+            </p>
             <p>
               When I'm not coding or working on personal projects, I enjoy spending time with my family, watching movies
               like Hacker (2016) and The Social Network, or playing games like Clash of Clans.

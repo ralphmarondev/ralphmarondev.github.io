@@ -12,21 +12,19 @@
               Mobile Developer for more than 2 years.
             </h3>
             <p>
-              I am specialize in Mobile Development, Web Development using Vue
-              and Django, and Desktop Applications with C# WinForms.
+              I specialize in Mobile Development with <a href="https://developer.android.com/compose/" target="_blank">Jetpack Compose</a> and Web Development using Vue and Django Rest
+              Framework. I also have experience with databases such as MySQL, Microsoft SQL Server, PostgreSQL, and
+              Firebase. In addition, I’ve worked with various REST APIs, including Django Rest Framework and Ktor.
             </p>
             <p>
-              I've spent over two years working on Android application with
-              Jetpack Compose Material 3, building projects like 'Taskify', and
-              'Family Sprout', a desktop app designed to help our local church
-              manage family and children's information. I started with Java and
-              XML, then moved to Kotlin and XML, and now, I'm only writing on
-              Kotlin with Jetpack Compose Framework and Material 3 UI.
-            </p>
+              Over the past two years, I’ve honed my Android development skills through hands-on experience and
+              self-study. I started with Java and XML, then moved to Kotlin with Jetpack Compose and Material 3. I’ve
+              built apps like <a href="https://github.com/ralphmarondev/compose-world/" target="_blank">Compose World</a> and am currently exploring <a href="https://www.jetbrains.com/compose-multiplatform/" target="_blank">Compose Multiplatform</a> to expand my cross-platform
+              development skills. I’m passionate about creating intuitive user interfaces and staying updated with the
+              latest development trends.</p>
             <p>
-              When I'm not coding, I enjoy working on personal projects
-              involving automation with Raspberry Pi. I'm also a fan of Linux
-              and have been using Ubuntu for over two years.
+              When I'm not coding or working on personal projects, I enjoy spending time with my family, watching movies
+              like Hacker (2016) and The Social Network, or playing games like Clash of Clans.
             </p>
             <p>
               Feel free to checkout out my projects or connect with me on

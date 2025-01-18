@@ -1,12 +1,7 @@
 <template>
   <section
-    id="services"
-    class="section bg-gray"
-    style="
-      background-image: url('../../../assets/img/my_cute_image.jpg;');
-      background-repeat: no-repeat;
-      background-size: cover;
-    "
+      id="services"
+      class="section bg-gray"
   >
     <div class="container">
       <div class="section-heading">
@@ -20,7 +15,7 @@
               <h5>Mobile Developer</h5>
               <p>
                 Develop application for android devices with Jetpack Compose
-                Framework Material 3.
+                Framework and Material 3 UI.
               </p>
             </div>
           </div>
@@ -42,7 +37,7 @@
             <div class="icon"><i class="bx bx-desktop"></i></div>
             <div class="content">
               <h5>Web Developer</h5>
-              <p>Crafts scalable web application with Vue JS and Bootstrap.</p>
+              <p>Crafts scalable web application with Vue | React and Bootstrap.</p>
             </div>
           </div>
         </div>

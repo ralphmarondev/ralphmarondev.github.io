@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row gy-5 align-items-center">
         <div class="col-lg-6 text-center">
-          <img src="@/assets/img/about.jpg" alt="My Cute Image" />
+          <img src="../../../assets/img/about.jpg" alt="My Cute Image"/>
         </div>
 
         <div class="col-lg-6 ps-lg-5">
@@ -32,7 +32,7 @@
               Feel free to checkout out my projects or connect with me on
               <a href="https://github.com/ralphmarondev">Github</a> or
               <a href="https://www.linkedin.com/in/ralph-maron-eda-95a014250/"
-                >LinkedIn</a
+              >LinkedIn</a
               >!
             </p>
 

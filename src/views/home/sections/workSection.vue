@@ -11,7 +11,7 @@
           <div class="col-md-6 col-lg-5">
             <div class="portfolio-img">
               <img
-                src="@/assets/img/familysprout.jpg"
+                src="../../../assets/img/familysprout.jpg"
                 alt="Family Sprout"
                 height="400"
               />
@@ -43,7 +43,7 @@
           <div class="col-md-6 col-lg-5">
             <div class="portfolio-img">
               <img
-                src="@/assets/img/quote-generator.jpg"
+                src="../../../assets/img/quote-generator.jpg"
                 alt="Quote Generator"
                 height="400"
               />
@@ -73,12 +73,11 @@
               style="display: flex; width: 100%; align-items: space-around"
             >
               <img
-                src="@/assets/img/taskify1.png"
+                src="../../../assets/img/taskify2.png"
                 alt="Taskify"
                 height="400"
                 style="margin-right: 16px"
               />
-              <img src="@/assets/img/taskify2.png" alt="Taskify" height="400" />
             </div>
           </div>
           <div class="col-md-6 col-lg-5">

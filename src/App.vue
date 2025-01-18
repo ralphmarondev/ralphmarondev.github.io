@@ -1,15 +1,7 @@
-<script>
-  import Home from './views/home/homeIndex.vue';
-
-  export default {
-    components: {
-      Home,
-    },
-  };
+<script setup>
+  import Home from './views/home/homeIndex.vue'
 </script>
 
 <template>
-  <div>
-    <Home />
-  </div>
+  <Home />
 </template>

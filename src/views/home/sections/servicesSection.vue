@@ -3,7 +3,7 @@
     id="services"
     class="section bg-gray"
     style="
-      background-image: url('@/assets/img/my_cute_image: .jpg;');
+      background-image: url('../../../assets/img/my_cute_image.jpg;');
       background-repeat: no-repeat;
       background-size: cover;
     "

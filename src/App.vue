@@ -1,7 +1,7 @@
 <script setup>
-  import Home from './views/home/homeIndex.vue'
+import Home from './views/home/homeIndex.vue'
 </script>
 
 <template>
-  <Home />
+  <Home/>
 </template>

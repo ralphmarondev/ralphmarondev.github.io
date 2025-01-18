@@ -1,30 +1,30 @@
 <script>
-  export default {
-    mounted() {
-      const options = {
-        strings: [
-          'Computer Engineering',
-          'Mobile Developer',
-          'Desktop Developer',
-          'Web Developer',
-          'Programmer',
-          'Cutie',
-        ],
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true,
-      }
+export default {
+  mounted() {
+    const options = {
+      strings: [
+        'Computer Engineering',
+        'Mobile Developer',
+        'Desktop Developer',
+        'Web Developer',
+        'Programmer',
+        'Cutie'
+      ],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true
+    }
 
-      // Initialize Typed.js on the span element
-      this.typedInstance = new this.$typed(this.$refs.typedElement, options)
-    },
-    beforeUnmount() {
-      // Destroy the Typed.js instance to avoid memory leaks
-      if (this.typedInstance) {
-        this.typedInstance.destroy()
-      }
-    },
+    // Initialize Typed.js on the span element
+    this.typedInstance = new this.$typed(this.$refs.typedElement, options)
+  },
+  beforeUnmount() {
+    // Destroy the Typed.js instance to avoid memory leaks
+    if (this.typedInstance) {
+      this.typedInstance.destroy()
+    }
   }
+}
 </script>
 
 <template>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">
           <div class="home-image text-center">
-            <img src="../../../assets/img/my_cute_image.jpg" alt="My Cute Image" />
+            <img src="../../../assets/img/my_cute_image.jpg" alt="My Cute Image"/>
           </div>
         </div>
       </div>

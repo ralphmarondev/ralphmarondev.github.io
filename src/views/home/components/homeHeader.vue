@@ -10,8 +10,8 @@
 
         <!-- menu -->
         <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbar-collapse-toggle"
+            class="collapse navbar-collapse justify-content-end"
+            id="navbar-collapse-toggle"
         >
           <ul class="navbar-nav mx-auto">
             <li>
@@ -38,10 +38,10 @@
         </div>
 
         <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-collapse-toggle"
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-collapse-toggle"
         >
           <span></span>
           <span></span>

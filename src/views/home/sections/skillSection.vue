@@ -17,7 +17,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-4">
+                <div class="feature-box feature-box-small bg-2">
                   <div class="icon">
                     <img src="/images/kotlin.png" alt="Kotlin">
                   </div>
@@ -25,7 +25,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-5">
+                <div class="feature-box feature-box-small bg-3">
                   <div class="icon">
                     <img src="/images/jetpack_compose.png" alt="Jetpack Compose">
                   </div>
@@ -33,7 +33,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-2">
+                <div class="feature-box feature-box-small bg-4">
                   <div class="icon">
                     <i class="bx bxl-python"></i>
                   </div>
@@ -41,7 +41,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-3">
+                <div class="feature-box feature-box-small bg-5">
                   <div class="icon">
                     <i class="bx bxl-vuejs"></i>
                   </div>
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-2">
+                <div class="feature-box feature-box-small bg-6">
                   <div class="icon">
                     <i class="bx bxl-react"></i>
                   </div>
@@ -57,7 +57,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-4">
+                <div class="feature-box feature-box-small bg-1">
                   <div class="icon">
                     <i class="bx bxl-html5"></i>
                   </div>
@@ -65,7 +65,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-1">
+                <div class="feature-box feature-box-small bg-2">
                   <div class="icon">
                     <i class="bx bxl-sass"></i>
                   </div>
@@ -73,7 +73,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-1">
+                <div class="feature-box feature-box-small bg-3">
                   <div class="icon">
                     <i class="bx bxl-bootstrap"></i>
                   </div>
@@ -81,7 +81,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-1">
+                <div class="feature-box feature-box-small bg-4">
                   <div class="icon">
                     <i class="bx bxl-flutter"></i>
                   </div>
@@ -89,7 +89,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-1">
+                <div class="feature-box feature-box-small bg-5">
                   <div class="icon">
                     <i class="bx bxl-firebase"></i>
                   </div>
@@ -97,7 +97,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-1">
+                <div class="feature-box feature-box-small bg-6">
                   <div class="icon">
                     <i class="bx bxl-javascript"></i>
                   </div>
@@ -113,7 +113,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-1">
+                <div class="feature-box feature-box-small bg-2">
                   <div class="icon">
                     <i class="bx bxl-django"></i>
                   </div>
@@ -121,7 +121,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-5">
+                <div class="feature-box feature-box-small bg-3">
                   <div class="icon">
                     <i class="bx bxl-git"></i>
                   </div>
@@ -129,7 +129,7 @@
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-3">
-                <div class="feature-box feature-box-small bg-5">
+                <div class="feature-box feature-box-small bg-4">
                   <div class="icon">
                     <i class="bx bxl-github"></i>
                   </div>

@@ -28,8 +28,8 @@
             </p>
             <p>
               Feel free to checkout out my projects or connect with me on
-              <a href="https://github.com/ralphmarondev">Github</a> or
-              <a href="https://www.linkedin.com/in/ralph-maron-eda-95a014250/"
+              <a href="https://github.com/ralphmarondev" target="_blank">Github</a> or
+              <a href="https://www.linkedin.com/in/ralph-maron-eda-95a014250/" target="_blank"
               >LinkedIn</a
               >!
             </p>

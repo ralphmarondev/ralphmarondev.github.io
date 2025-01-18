@@ -7,7 +7,7 @@
       <div>
         <div class="feature-box mb-4">
           <div class="img">
-            <img src="../../../assets/img/my_cute_image.jpg" alt="" />
+            <img src="../../../assets/img/my_cute_image.jpg" alt=""/>
           </div>
           <div class="content">
             <p class="mb-3">
@@ -20,7 +20,7 @@
         </div>
         <div class="feature-box mb-4">
           <div class="img">
-            <img src="../../../assets/img/my_cute_image.jpg" alt="" />
+            <img src="../../../assets/img/my_cute_image.jpg" alt=""/>
           </div>
           <div class="content">
             <p class="mb-3">

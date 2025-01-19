@@ -81,75 +81,6 @@
                 style="display: flex; width: 100%; align-items: space-around;"
             >
               <img
-                  src="../../../assets/img/taskify2.png"
-                  alt="Taskify"
-                  height="400"
-                  style="margin-right: 16px"
-              />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5">
-            <div class="portfolio-text">
-              <span>Mobile App Development</span>
-              <h4>Taskify app to manage tasks.</h4>
-              <p>
-                Taskify is a sleek and efficient task management app built using
-                Jetpack Compose Material 3. Whether you're planning your day or
-                managing a complex project, Taskify offers a simple and
-                intuitive interface to help you stay organized.
-              </p>
-              <a
-                  href="https://github.com/ralphmarondev/taskify/releases/"
-                  class="colored-btn mt-1"
-                  target="_blank"
-              >Download Apk</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-box">
-        <div
-            class="row gx-3 gy-4 pb-3 mb-5 pg-lg-3 mb-lg-3 justify-content-around align-items-center"
-        >
-          <div class="col-md-6 col-lg-5">
-            <div class="portfolio-img">
-              <img
-                  src="../../../assets/img/quote-generator.jpg"
-                  alt="Quote Generator"
-                  height="400"
-              />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5">
-            <div class="portfolio-text">
-              <span>Web Development</span>
-              <h4>Quote Generator</h4>
-              <p>Looking for some inspiration or a little motivation? My Quote Generator has got you covered! With just
-                a click, it delivers random, uplifting quotes to brighten your day. Whether you're feeling down or just
-                need a pick-me up, you can always count on a little wisdom. Go ahead, refresh and let the good vibes
-                roll in!</p>
-              <a
-                  href="https://ralphmarondev.github.io/quote-generator/"
-                  class="colored-btn mt-1"
-                  target="_blank"
-              >Live Demo</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-box">
-        <div
-            class="row gx-3 gy-4 pb-3 mb-5 pg-lg-3 mb-lg-3 justify-content-around align-items-center flex-row-reverse"
-        >
-          <div class="col-md-6 col-lg-5">
-            <div
-                class="portfolio-img two-img"
-                style="display: flex; width: 100%; align-items: space-around;"
-            >
-              <img
                   src="/images/say_it_here.png"
                   alt="Say It Here"
                   height="400"
@@ -171,7 +102,7 @@
                   href="https://ralphmarondev.github.io/say-it-here/"
                   class="colored-btn mt-1"
                   target="_blank"
-              >Live Demo</a
+              >Try It Here</a
               >
             </div>
           </div>

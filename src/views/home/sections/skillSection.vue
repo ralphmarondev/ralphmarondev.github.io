@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row gy-5">
         <div class="col">
-          <div class="section-heading text-start">
+          <div class="section-heading">
             <h3>My Skills</h3>
           </div>
           <div class="skill-box">

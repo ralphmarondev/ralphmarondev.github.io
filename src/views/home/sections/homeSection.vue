@@ -8,7 +8,7 @@ export default {
         'Desktop Developer',
         'Web Developer',
         'Programmer',
-        'Cutie'
+        // 'Cutie'
       ],
       typeSpeed: 50,
       backSpeed: 50,

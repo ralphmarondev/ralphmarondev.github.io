@@ -1,10 +1,12 @@
 <template>
-  <header class="main-header" style="background: #fff">
+<!--  rgba(119,60,191,0.03)-->
+  <header class="main-header" style="background: #ffffff">
     <nav class="navbar header-nav navbar-expand-lg">
       <div class="container">
         <a href="#" class="navbar-brand">
           <h4 class="mb-0">
-            Ralph Maron Eda <span class="text-primary">is Cute</span>
+            <span class="text-primary">Ralph Maron Eda</span>
+<!--            <span class="text-primary">is Cute</span>-->
           </h4>
         </a>
 

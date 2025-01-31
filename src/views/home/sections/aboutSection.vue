@@ -123,7 +123,7 @@
   bottom: 0;
   left: 15px;
   width: 2px;
-  background-color: #ff6f00;
+  background-color: var(--primary-color);
 }
 
 .timeline-item {
@@ -139,7 +139,7 @@
   top: 0.5rem;
   width: 10px;
   height: 10px;
-  background-color: #ff6f00;
+  background-color: var(--primary-color);
   border-radius: 50%;
 }
 

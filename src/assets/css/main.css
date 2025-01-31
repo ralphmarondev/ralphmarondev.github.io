@@ -1,5 +1,6 @@
 .bg-gray {
-  background: rgba(254, 196, 72, 0.1);
+  /*background: rgba(254, 196, 72, 0.1);*/
+  background-color: rgba(236, 139, 236, 0.04);
 }
 
 .bg-dark {
@@ -91,7 +92,7 @@ main {
 }
 
 .home-section .home-intro h1 span {
-  border-bottom: 2px solid #fec448;
+  border-bottom: 2px solid #773cbf;
 }
 
 .home-section .home-intro p {

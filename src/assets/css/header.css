@@ -51,7 +51,7 @@
 @media (max-width: 991px) {
   .main-header .navbar-collapse {
     border-bottom: 2px solid var(--dark-color);
-    border-top: 2px solid var (--dark-color);
+    border-top: 2px solid var(--dark-color);
     position: absolute;
     top: 100%;
     left: 0;

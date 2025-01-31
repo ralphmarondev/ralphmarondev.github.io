@@ -7,7 +7,7 @@ export default {
         'Mobile Developer',
         'Desktop Developer',
         'Web Developer',
-        'Programmer',
+        'Programmer'
         // 'Cutie'
       ],
       typeSpeed: 50,
@@ -43,7 +43,16 @@ export default {
             <h6>Hi, My name is Ralph Maron Eda.</h6>
             <h1>I'm a <span ref="typedElement"></span></h1>
             <p>Based in Flora, Apayao, Philippines.</p>
-            <a href="#about" class="colored-btn mt-1">About Me</a>
+            <div class="d-flex gap-3 mt-1 justify-content-center justify-content-lg-start">
+              <a href="#about" class="colored-btn mt-1">About Me</a>
+              <a
+                  href="/Ralph_Maron_Eda_CV.pdf"
+                  class="outlined-colored-btn mt-1"
+                  download="Ralph_Maron_Eda_CV.pdf"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">

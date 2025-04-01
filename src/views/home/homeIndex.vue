@@ -1,36 +1,8 @@
-<script>
-import Header from './components/homeHeader.vue'
-import Main from './components/homeMain.vue'
-import Footer from './components/homeFooter.vue'
-
-export default {
-  components: {
-    Header,
-    Main,
-    Footer
-  },
-  methods: {
-    windowScroll() {
-      this.$(window).on('scroll', function () {
-        var scrollTop = this.$(window).scrollTop()
-        if (scrollTop >= 80) {
-          this.$jq('header').addClass('fixed-header')
-        } else {
-          this.$jq('header').removeClass('fixed-header')
-        }
-      })
-    }
-  },
-  mounted() {
-    this.windowScroll()
-  }
-}
-</script>
-
 <template>
-  <div>
-    <Header/>
-    <Main/>
-    <Footer/>
+  <div class="container mt-3">
+    <h3 class="text-primary">Hello there, Ralph Maron Eda is here!</h3>
+    <h5 class="text-secondary">
+      A 4th year Computer Engineering studying at Cagayan State University.
+    </h5>
   </div>
 </template>

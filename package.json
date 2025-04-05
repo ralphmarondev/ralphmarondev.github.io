@@ -5,27 +5,29 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
-    "emailjs-com": "^3.2.0",
-    "gh-pages": "^6.3.0",
-    "sass": "^1.83.4",
-    "sass-loader": "^16.0.4",
-    "vue": "^3.5.13",
-    "vue-owl-carousel": "^2.0.3",
-    "jquery": "^3.7.1",
-    "owl.carousel": "^2.3.4",
-    "typed.js": "^2.1.0",
+    "bootstrap-icons": "^1.11.3",
     "boxicons": "^2.1.4",
-    "core-js": "^3.8.3"
+    "gh-pages": "^6.3.0",
+    "path": "^0.12.7",
+    "pinia": "^3.0.1",
+    "sass": "^1.85.1",
+    "sass-loader": "^16.0.5",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@types/node": "^22.13.10",
     "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.0.5"
+    "@vue/tsconfig": "^0.7.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vue-tsc": "^2.2.4"
   }
 }

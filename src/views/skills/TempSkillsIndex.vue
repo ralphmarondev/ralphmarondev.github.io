@@ -5,6 +5,15 @@
         <div class="col">
           <div class="section-heading">
             <h3>My Skills</h3>
+            <p>
+              My journey into tech started with curiosity and self learning.
+              Over time, I've gained experience through online courses, school
+              projects, and competitions.
+            </p>
+          </div>
+
+          <div class="section-heading">
+            <h3>Tech Stack</h3>
           </div>
           <div class="skill-box">
             <div class="row g-3">
@@ -19,7 +28,7 @@
               <div class="col-6 col-md-4 col-lg-3">
                 <div class="feature-box feature-box-small bg-2">
                   <div class="icon">
-                    <img src="/images/kotlin.png" alt="Kotlin">
+                    <img src="/images/kotlin.png" alt="Kotlin" />
                   </div>
                   <h6>KOTLIN</h6>
                 </div>
@@ -27,7 +36,10 @@
               <div class="col-6 col-md-4 col-lg-3">
                 <div class="feature-box feature-box-small bg-3">
                   <div class="icon">
-                    <img src="/images/jetpack_compose.png" alt="Jetpack Compose">
+                    <img
+                      src="/images/jetpack_compose.png"
+                      alt="Jetpack Compose"
+                    />
                   </div>
                   <h6>JETPACK COMPOSE</h6>
                 </div>
@@ -139,12 +151,7 @@
             </div>
           </div>
         </div>
-        <!--        <div class="col-lg-6 text-center">-->
-        <!--          <img src="../../../assets/img/skills.jpg" alt="Skills Image" />-->
-        <!--        </div>-->
       </div>
     </div>
   </section>
 </template>
-<script setup lang="ts">
-</script>

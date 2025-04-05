@@ -1,62 +1,21 @@
-<script>
-import emailjs from 'emailjs-com'
-
-export default {
-  data() {
-    return {
-      formData: {
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      }
-    }
-  },
-  methods: {
-    sendEmail() {
-      const serviceID = import.meta.env.VITE_SERVICE_ID
-      const templateID = import.meta.env.VITE_TEMPLATE_ID
-      const publicKey = import.meta.env.VITE_PUBLIC_KEY
-
-      emailjs.init(publicKey)
-
-      emailjs
-          .send(serviceID, templateID, this.formData)
-          .then(() => {
-            alert('Message send successfully! 😍')
-
-            this.formData.name = ''
-            this.formData.email = ''
-            this.formData.subject = ''
-            this.formData.message = ''
-          })
-          .catch(() => {
-            alert('Failed to send message. 😭')
-          })
-    }
-  }
-}
-</script>
-
 <template>
-  <section id="contact" class="section bg-dark">
+  <section id="contact" class="section bg-gray">
     <div class="container">
       <div class="row gy-5">
         <div class="col-lg-6">
           <div class="contact-form">
             <h2 class="text-dark">Get in touch</h2>
             <p class="lead">I'll be happy to hear from you.</p>
-            <form @submit.prevent="sendEmail">
+            <form @submit.prevent="">
               <div class="row gy-4 gx-3">
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-label">Name</label>
                     <input
-                        type="text"
-                        v-model="formData.name"
-                        class="form-control"
-                        name="name"
-                        required
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      required
                     />
                   </div>
                 </div>
@@ -64,11 +23,10 @@ export default {
                   <div class="form-group">
                     <label class="form-label">Email</label>
                     <input
-                        type="email"
-                        v-model="formData.email"
-                        class="form-control"
-                        name="email"
-                        required
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      required
                     />
                   </div>
                 </div>
@@ -76,11 +34,10 @@ export default {
                   <div class="form-group">
                     <label class="form-label">Subject</label>
                     <input
-                        type="text"
-                        v-model="formData.subject"
-                        class="form-control"
-                        name="subject"
-                        required
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      required
                     />
                   </div>
                 </div>
@@ -88,12 +45,11 @@ export default {
                   <div class="form-group">
                     <label class="form-label">Message</label>
                     <textarea
-                        v-model="formData.message"
-                        name="message"
-                        cols="3"
-                        rows="5"
-                        class="form-control"
-                        required
+                      name="message"
+                      cols="3"
+                      rows="5"
+                      class="form-control"
+                      required
                     ></textarea>
                   </div>
                 </div>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
 import { ref, onMounted } from 'vue'
 
 const texts = [
@@ -39,6 +41,7 @@ onMounted(typeText)
 
 <template>
   <div>
+    <Header />
     <section id="#home" class="home-section bg-gray">
       <div class="container">
         <div class="anim-elements">
@@ -137,5 +140,6 @@ onMounted(typeText)
         </div>
       </div>
     </section>
+    <Footer />
   </div>
 </template>

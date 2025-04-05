@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
 
 interface Certificate {
   img: string
@@ -77,163 +79,166 @@ const closeModal = () => (selectedCert.value = null)
 </script>
 
 <template>
-  <section id="skill" class="section bg-gray">
-    <div class="container">
-      <div class="row gy-5">
-        <div class="col">
-          <div class="section-heading">
-            <h3 class="mb-3">Certifications and Achievements</h3>
-            <!-- <p>
+  <div>
+    <Header />
+    <section id="skill" class="section bg-gray">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col">
+            <div class="section-heading">
+              <h3 class="mb-3">Certifications and Achievements</h3>
+              <!-- <p>
               Here are some of the certificates I've earned from online
               platforms, competitions, and events.
             </p> -->
-            <div class="row g-3">
-              <div
-                class="col-6 col-md-4 col-lg-3"
-                v-for="(cert, index) in certificates"
-                :key="index"
-              >
-                <div
-                  class="certificate-box shadow-sm p-2 rounded position-relative"
-                  @click="openModal(cert)"
-                >
-                  <img
-                    :src="cert.img"
-                    :alt="cert.title"
-                    class="img-fluid rounded"
-                  />
-                  <p class="text-muted text-center small mt-3">
-                    {{ cert.short }}
-                  </p>
-
-                  <div class="overlay">
-                    <div class="overlay-text">
-                      {{ cert.long }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tech Stack -->
-          <div class="section-heading mt-5">
-            <h3 class="mb-3">Tech Stack</h3>
-            <div class="skill-box">
               <div class="row g-3">
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-1">
-                    <div class="icon">
-                      <i class="bx bxl-android"></i>
+                <div
+                  class="col-6 col-md-4 col-lg-3"
+                  v-for="(cert, index) in certificates"
+                  :key="index"
+                >
+                  <div
+                    class="certificate-box shadow-sm p-2 rounded position-relative"
+                    @click="openModal(cert)"
+                  >
+                    <img
+                      :src="cert.img"
+                      :alt="cert.title"
+                      class="img-fluid rounded"
+                    />
+                    <p class="text-muted text-center small mt-3">
+                      {{ cert.short }}
+                    </p>
+
+                    <div class="overlay">
+                      <div class="overlay-text">
+                        {{ cert.long }}
+                      </div>
                     </div>
-                    <h6>ANDROID</h6>
                   </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-2">
-                    <div class="icon">
-                      <img src="/images/kotlin.png" alt="Kotlin" />
+              </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="section-heading mt-5">
+              <h3 class="mb-3">Tech Stack</h3>
+              <div class="skill-box">
+                <div class="row g-3">
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-1">
+                      <div class="icon">
+                        <i class="bx bxl-android"></i>
+                      </div>
+                      <h6>ANDROID</h6>
                     </div>
-                    <h6>KOTLIN</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-3">
-                    <div class="icon">
-                      <img
-                        src="/images/jetpack_compose.png"
-                        alt="Jetpack Compose"
-                      />
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-2">
+                      <div class="icon">
+                        <img src="/images/kotlin.png" alt="Kotlin" />
+                      </div>
+                      <h6>KOTLIN</h6>
                     </div>
-                    <h6>JETPACK COMPOSE</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-4">
-                    <div class="icon">
-                      <i class="bx bxl-python"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-3">
+                      <div class="icon">
+                        <img
+                          src="/images/jetpack_compose.png"
+                          alt="Jetpack Compose"
+                        />
+                      </div>
+                      <h6>JETPACK COMPOSE</h6>
                     </div>
-                    <h6>PYTHON</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-5">
-                    <div class="icon">
-                      <i class="bx bxl-vuejs"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-4">
+                      <div class="icon">
+                        <i class="bx bxl-python"></i>
+                      </div>
+                      <h6>PYTHON</h6>
                     </div>
-                    <h6>VUE</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-6">
-                    <div class="icon">
-                      <i class="bx bxl-react"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-5">
+                      <div class="icon">
+                        <i class="bx bxl-vuejs"></i>
+                      </div>
+                      <h6>VUE</h6>
                     </div>
-                    <h6>REACT</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-1">
-                    <div class="icon">
-                      <i class="bx bxl-sass"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-6">
+                      <div class="icon">
+                        <i class="bx bxl-react"></i>
+                      </div>
+                      <h6>REACT</h6>
                     </div>
-                    <h6>SASS</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-2">
-                    <div class="icon">
-                      <i class="bx bxl-bootstrap"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-1">
+                      <div class="icon">
+                        <i class="bx bxl-sass"></i>
+                      </div>
+                      <h6>SASS</h6>
                     </div>
-                    <h6>BOOTSTRAP</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-3">
-                    <div class="icon">
-                      <i class="bx bxl-firebase"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-2">
+                      <div class="icon">
+                        <i class="bx bxl-bootstrap"></i>
+                      </div>
+                      <h6>BOOTSTRAP</h6>
                     </div>
-                    <h6>FIREBASE</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-4">
-                    <div class="icon">
-                      <i class="bx bxl-javascript"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-3">
+                      <div class="icon">
+                        <i class="bx bxl-firebase"></i>
+                      </div>
+                      <h6>FIREBASE</h6>
                     </div>
-                    <h6>JAVASCRIPT</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-5">
-                    <div class="icon">
-                      <i class="bx bxl-typescript"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-4">
+                      <div class="icon">
+                        <i class="bx bxl-javascript"></i>
+                      </div>
+                      <h6>JAVASCRIPT</h6>
                     </div>
-                    <h6>TYPESCRIPT</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-6">
-                    <div class="icon">
-                      <i class="bx bxl-django"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-5">
+                      <div class="icon">
+                        <i class="bx bxl-typescript"></i>
+                      </div>
+                      <h6>TYPESCRIPT</h6>
                     </div>
-                    <h6>DJANGO REST</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-1">
-                    <div class="icon">
-                      <i class="bx bxl-git"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-6">
+                      <div class="icon">
+                        <i class="bx bxl-django"></i>
+                      </div>
+                      <h6>DJANGO REST</h6>
                     </div>
-                    <h6>GIT</h6>
                   </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="feature-box feature-box-small bg-2">
-                    <div class="icon">
-                      <i class="bx bxl-github"></i>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-1">
+                      <div class="icon">
+                        <i class="bx bxl-git"></i>
+                      </div>
+                      <h6>GIT</h6>
                     </div>
-                    <h6>GITHUB</h6>
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="feature-box feature-box-small bg-2">
+                      <div class="icon">
+                        <i class="bx bxl-github"></i>
+                      </div>
+                      <h6>GITHUB</h6>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -241,39 +246,40 @@ const closeModal = () => (selectedCert.value = null)
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div
-      v-if="selectedCert"
-      class="modal fade show d-block"
-      tabindex="-1"
-      style="background-color: rgba(0, 0, 0, 0.6)"
-      @click.self="closeModal"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content p-4">
-          <div class="modal-header border-0">
-            <h5 class="modal-title">{{ selectedCert.title }}</h5>
-            <button
-              type="button"
-              class="btn-close"
-              @click="closeModal"
-            ></button>
-          </div>
-          <div class="modal-body text-center">
-            <img
-              :src="selectedCert.img"
-              :alt="selectedCert.title"
-              class="img-fluid mb-3"
-              style="max-height: 300px; object-fit: contain"
-            />
-            <p>{{ selectedCert.long }}</p>
+      <!-- Modal -->
+      <div
+        v-if="selectedCert"
+        class="modal fade show d-block"
+        tabindex="-1"
+        style="background-color: rgba(0, 0, 0, 0.6)"
+        @click.self="closeModal"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content p-4">
+            <div class="modal-header border-0">
+              <h5 class="modal-title">{{ selectedCert.title }}</h5>
+              <button
+                type="button"
+                class="btn-close"
+                @click="closeModal"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img
+                :src="selectedCert.img"
+                :alt="selectedCert.title"
+                class="img-fluid mb-3"
+                style="max-height: 300px; object-fit: contain"
+              />
+              <p>{{ selectedCert.long }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <Footer />
+  </div>
 </template>
 
 <style scoped lang="scss">

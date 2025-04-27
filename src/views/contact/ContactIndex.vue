@@ -165,13 +165,13 @@ const sendEmail = () => {
       style="z-index: 1055"
     >
       <div
-        class="toast show"
+        class="toast show custom-toast"
         role="alert"
         aria-live="assertive"
         aria-atomic="true"
         v-if="showToast"
       >
-        <div class="toast-header">
+        <div class="toast-header custom-toast-header">
           <strong class="me-auto">Notification</strong>
           <button
             type="button"
@@ -180,7 +180,7 @@ const sendEmail = () => {
             aria-label="Close"
           ></button>
         </div>
-        <div class="toast-body">
+        <div class="toast-body custom-toast-body">
           {{ toastMessage }}
         </div>
       </div>
@@ -188,3 +188,27 @@ const sendEmail = () => {
     <Footer />
   </div>
 </template>
+
+<style scoped>
+.custom-toast {
+  background-color: #d8b4f2;
+  color: #4a148c;
+  border: 1px solid #c084f5;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-toast-header {
+  background-color: #c084f5;
+  color: #fff;
+  border-bottom: 1px solid #b072e6;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.custom-toast-body {
+  font-size: 1.1rem;
+  padding: 1.2rem;
+  color: #4a148c;
+}
+</style>

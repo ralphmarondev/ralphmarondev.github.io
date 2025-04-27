@@ -33,10 +33,14 @@ const typeText = () => {
       currentIndex.value = (currentIndex.value + 1) % texts.length
     }
   }
-  setTimeout(typeText, isDeleting.value ? deletingSpeed : typingSpeed)
+  const delay = isDeleting.value ? deletingSpeed : typingSpeed
+  setTimeout(typeText, delay)
 }
 
-onMounted(typeText)
+onMounted(() => {
+  // Start typing effect when the component is mounted
+  typeText()
+})
 </script>
 
 <template>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
-import { ref, onMounted } from 'vue'
+import Typed from 'typed.js'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const texts = [
   'Mobile Developer',
@@ -9,37 +10,24 @@ const texts = [
   'Software Engineer',
   'Computer Engineer',
 ]
-const text = ref('')
-const currentIndex = ref(0)
-const isDeleting = ref(false)
-const typingSpeed = 50
-const deletingSpeed = 50
-const pauseTime = 1000
 
-const typeText = () => {
-  const currentText = texts[currentIndex.value]
-
-  if (!isDeleting.value) {
-    text.value = currentText.substring(0, text.value.length + 1)
-    if (text.value === currentText) {
-      setTimeout(() => {
-        isDeleting.value = true
-      }, pauseTime)
-    }
-  } else {
-    text.value = currentText.substring(0, text.value.length - 1)
-    if (text.value === '') {
-      isDeleting.value = false
-      currentIndex.value = (currentIndex.value + 1) % texts.length
-    }
-  }
-  const delay = isDeleting.value ? deletingSpeed : typingSpeed
-  setTimeout(typeText, delay)
-}
+const typedElement = ref(null)
+let typedInstance: Typed | null = null
 
 onMounted(() => {
-  // Start typing effect when the component is mounted
-  typeText()
+  typedInstance = new Typed(typedElement.value, {
+    strings: texts,
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 1000,
+    loop: true,
+  })
+})
+
+onUnmounted(() => {
+  if (typedInstance) {
+    typedInstance.destroy()
+  }
 })
 </script>
 
@@ -59,9 +47,7 @@ onMounted(() => {
           <div class="col-lg-6">
             <div class="home-intro text-center text-lg-start">
               <h6>Hi, My name is Ralph Maron Eda.</h6>
-              <h1>
-                I'm a <span ref="typedElement">{{ text }}</span>
-              </h1>
+              <h1>I'm a <span ref="typedElement"></span></h1>
               <p>Based in Philippines.</p>
               <div
                 class="d-flex gap-3 mt-1 justify-content-center justify-content-lg-start"

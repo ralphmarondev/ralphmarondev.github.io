@@ -4,7 +4,7 @@ import routes from './routes'
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_to, _from, _savedPosition) {
     // Scroll to the top of the page on navigation
     return { top: 0 }
   },

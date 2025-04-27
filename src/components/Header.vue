@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const isSmallScreen = ref(false)
+
+const updateScreenSize = () => {
+  isSmallScreen.value = window.innerWidth < 992 // Bootstrap's lg breakpoint
+}
+
+onMounted(() => {
+  updateScreenSize()
+  window.addEventListener('resize', updateScreenSize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScreenSize)
+})
+</script>
+
 <template>
   <header class="main-header bg-gray" style="background: #ffffff">
     <nav class="navbar header-nav navbar-expand-lg">
@@ -51,8 +70,13 @@
             </li>
           </ul>
 
-          <div class="ms-auto m-3 ps-3">
-            <a href="#contact" class="colored-btn">Contact Me</a>
+          <div class="ms-auto">
+            <a
+              href="#contact"
+              class="colored-btn"
+              :class="{ 'my-3 ms-3': isSmallScreen }"
+              >Contact Me</a
+            >
           </div>
         </div>
 

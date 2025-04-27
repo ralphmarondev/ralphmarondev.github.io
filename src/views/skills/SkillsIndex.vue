@@ -107,7 +107,7 @@ onUnmounted(() => {
               </component>
               <div class="row g-3">
                 <div
-                  class="col-6 col-md-4 col-lg-3"
+                  class="col-12 col-sm-6 col-md-4 col-lg-3"
                   v-for="(cert, index) in certificates"
                   :key="index"
                 >
@@ -342,19 +342,31 @@ onUnmounted(() => {
     opacity: 1;
   }
 }
+@media (max-width: 425px) {
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%; /* 1 column per row */
+  }
+}
 
-@media (max-width: 576px) {
-  .certificate-box {
-    min-height: 220px;
-    max-height: 220px;
+@media (min-width: 426px) and (max-width: 768px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%; /* 2 columns per row */
+  }
+}
 
-    img {
-      height: 140px;
-    }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%; /* 3 columns per row */
+  }
+}
 
-    p {
-      font-size: 0.75rem;
-    }
+@media (min-width: 1025px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%; /* 4 columns per row */
   }
 }
 </style>

@@ -12,27 +12,41 @@ const formData = ref({
   message: '',
 })
 
+const isSubmitting = ref(false)
+const toastMessage = ref('')
+const showToast = ref(false)
+
 const sendEmail = () => {
+  if (isSubmitting.value) return
+  isSubmitting.value = true
+
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-  emailjs.send(serviceId, templateId, formData.value, publicKey).then(
-    (response) => {
-      alert('Email sent successfully!')
-      console.log('Email sent successfully!', response.status, response.text)
-      formData.value = {
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+  emailjs
+    .send(serviceId, templateId, formData.value, publicKey)
+    .then(
+      (response) => {
+        toastMessage.value = 'Email sent successfully!'
+        showToast.value = true
+        console.log('Email sent successfully!', response.status, response.text)
+        formData.value = {
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        }
+      },
+      (error) => {
+        toastMessage.value = 'Failed to send email. Please try again later.'
+        showToast.value = true
+        console.error('Failed to send email:', error)
       }
-    },
-    (error) => {
-      alert('Failed to send email. Please try again later.')
-      console.error('Failed to send email:', error)
-    }
-  )
+    )
+    .finally(() => {
+      isSubmitting.value = false
+    })
 }
 </script>
 
@@ -98,8 +112,12 @@ const sendEmail = () => {
                     </div>
                   </div>
                   <div class="col-12">
-                    <button class="colored-btn" type="submit">
-                      Send Message
+                    <button
+                      class="colored-btn"
+                      type="submit"
+                      :disabled="isSubmitting"
+                    >
+                      {{ isSubmitting ? 'Sending...' : 'Send Message' }}
                     </button>
                   </div>
                 </div>
@@ -107,9 +125,6 @@ const sendEmail = () => {
             </div>
           </div>
           <div class="col-lg-5 ms-auto col-xl-4">
-            <!-- <div class="pb-5 d-none d-md-block">
-            <img src="@/assets/img/my_cute_image.jpg" alt="" class="w-100" />
-          </div> -->
             <ul class="contact-infos">
               <li>
                 <div class="icon bg-1">
@@ -143,6 +158,33 @@ const sendEmail = () => {
         </div>
       </div>
     </section>
+
+    <!-- Toast -->
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 1055"
+    >
+      <div
+        class="toast show"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        v-if="showToast"
+      >
+        <div class="toast-header">
+          <strong class="me-auto">Notification</strong>
+          <button
+            type="button"
+            class="btn-close"
+            @click="showToast = false"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">
+          {{ toastMessage }}
+        </div>
+      </div>
+    </div>
     <Footer />
   </div>
 </template>

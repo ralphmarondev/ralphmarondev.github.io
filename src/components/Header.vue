@@ -50,10 +50,10 @@
               </router-link>
             </li>
           </ul>
-        </div>
 
-        <div class="ms-auto d-none d-lg-block">
-          <a href="#contact" class="colored-btn">Contact Me</a>
+          <div class="ms-auto m-3 ps-3">
+            <a href="#contact" class="colored-btn">Contact Me</a>
+          </div>
         </div>
 
         <button

@@ -39,22 +39,6 @@ const routes = [
     },
     component: () => import('@/views/contact/ContactIndex.vue'),
   },
-  {
-    path: '/apps/password-keeper',
-    name: 'password-keeper-auth',
-    meta: {
-      title: 'Auth | Password Keeper',
-    },
-    component: () => import('@/views/apps/password-keeper/auth/AuthIndex.vue'),
-  },
-  {
-    path: '/apps/password-keeper/home',
-    name: 'password-keeper-home',
-    meta: {
-      title: 'Home | Password Keeper',
-    },
-    component: () => import('@/views/apps/password-keeper/home/HomeIndex.vue'),
-  },
 ]
 
 export default routes

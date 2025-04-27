@@ -1,19 +1,52 @@
 <script setup lang="ts">
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+
+import emailjs from 'emailjs-com'
+import { ref } from 'vue'
+
+const formData = ref({
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+})
+
+const sendEmail = () => {
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+  emailjs.send(serviceId, templateId, formData.value, publicKey).then(
+    (response) => {
+      alert('Email sent successfully!')
+      console.log('Email sent successfully!', response.status, response.text)
+      formData.value = {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      }
+    },
+    (error) => {
+      alert('Failed to send email. Please try again later.')
+      console.error('Failed to send email:', error)
+    }
+  )
+}
 </script>
 
 <template>
   <div>
     <Header />
     <section id="contact" class="section bg-gray">
-      <div class="container">
+      <div class="container mt-3">
         <div class="row gy-5">
           <div class="col-lg-6">
             <div class="contact-form">
               <h2 class="text-dark">Get in touch</h2>
               <p class="lead">I'll be happy to hear from you.</p>
-              <form @submit.prevent="">
+              <form @submit.prevent="sendEmail">
                 <div class="row gy-4 gx-3">
                   <div class="col-12">
                     <div class="form-group">
@@ -22,6 +55,7 @@ import Header from '@/components/Header.vue'
                         type="text"
                         class="form-control"
                         name="name"
+                        v-model="formData.name"
                         required
                       />
                     </div>
@@ -33,6 +67,7 @@ import Header from '@/components/Header.vue'
                         type="email"
                         class="form-control"
                         name="email"
+                        v-model="formData.email"
                         required
                       />
                     </div>
@@ -44,6 +79,7 @@ import Header from '@/components/Header.vue'
                         type="text"
                         class="form-control"
                         name="subject"
+                        v-model="formData.subject"
                         required
                       />
                     </div>
@@ -56,6 +92,7 @@ import Header from '@/components/Header.vue'
                         cols="3"
                         rows="5"
                         class="form-control"
+                        v-model="formData.message"
                         required
                       ></textarea>
                     </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 
@@ -76,6 +76,22 @@ const certificates: Certificate[] = [
 const selectedCert = ref<Certificate | null>(null)
 const openModal = (cert: Certificate) => (selectedCert.value = cert)
 const closeModal = () => (selectedCert.value = null)
+
+// Reactive state for heading size
+const isSmallScreen = ref(false)
+
+const updateScreenSize = () => {
+  isSmallScreen.value = window.innerWidth < 425
+}
+
+onMounted(() => {
+  updateScreenSize()
+  window.addEventListener('resize', updateScreenSize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScreenSize)
+})
 </script>
 
 <template>
@@ -86,11 +102,9 @@ const closeModal = () => (selectedCert.value = null)
         <div class="row gy-5">
           <div class="col">
             <div class="section-heading">
-              <h3 class="mb-3">Certifications and Achievements</h3>
-              <!-- <p>
-              Here are some of the certificates I've earned from online
-              platforms, competitions, and events.
-            </p> -->
+              <component :is="isSmallScreen ? 'h4' : 'h3'" class="mb-3">
+                Certificates and Achievements
+              </component>
               <div class="row g-3">
                 <div
                   class="col-6 col-md-4 col-lg-3"
@@ -115,6 +129,36 @@ const closeModal = () => (selectedCert.value = null)
                         {{ cert.long }}
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              v-if="selectedCert"
+              class="modal fade show d-block"
+              tabindex="-1"
+              style="background-color: rgba(0, 0, 0, 0.6)"
+              @click.self="closeModal"
+            >
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content p-4">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title">{{ selectedCert.title }}</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      @click="closeModal"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img
+                      :src="selectedCert.img"
+                      :alt="selectedCert.title"
+                      class="img-fluid mb-3"
+                      style="max-height: 300px; object-fit: contain"
+                    />
+                    <p>{{ selectedCert.long }}</p>
                   </div>
                 </div>
               </div>
@@ -246,37 +290,6 @@ const closeModal = () => (selectedCert.value = null)
           </div>
         </div>
       </div>
-
-      <!-- Modal -->
-      <div
-        v-if="selectedCert"
-        class="modal fade show d-block"
-        tabindex="-1"
-        style="background-color: rgba(0, 0, 0, 0.6)"
-        @click.self="closeModal"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content p-4">
-            <div class="modal-header border-0">
-              <h5 class="modal-title">{{ selectedCert.title }}</h5>
-              <button
-                type="button"
-                class="btn-close"
-                @click="closeModal"
-              ></button>
-            </div>
-            <div class="modal-body text-center">
-              <img
-                :src="selectedCert.img"
-                :alt="selectedCert.title"
-                class="img-fluid mb-3"
-                style="max-height: 300px; object-fit: contain"
-              />
-              <p>{{ selectedCert.long }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
     <Footer />
   </div>
@@ -287,11 +300,29 @@ const closeModal = () => (selectedCert.value = null)
   position: relative;
   cursor: pointer;
   min-height: 280px;
+  max-height: 280px; /* Ensure consistent height */
+  overflow: hidden; /* Prevent content overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    height: 180px; /* Static height for images */
+    object-fit: cover; /* Ensure images fit nicely */
+    border-radius: 0.5rem;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+  }
 
   .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(250, 248, 253, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     opacity: 0;
     display: flex;
@@ -308,7 +339,22 @@ const closeModal = () => (selectedCert.value = null)
   }
 
   &:hover .overlay {
-    opacity: 100;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .certificate-box {
+    min-height: 220px;
+    max-height: 220px;
+
+    img {
+      height: 140px;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
   }
 }
 </style>

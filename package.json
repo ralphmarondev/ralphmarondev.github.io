@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@tailwindcss/vite": "^4.1.10",
     "gh-pages": "^6.3.0",
     "path": "^0.12.7",
     "pinia": "^3.0.1",
+    "tailwindcss": "^4.1.10",
     "typed.js": "^2.1.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"

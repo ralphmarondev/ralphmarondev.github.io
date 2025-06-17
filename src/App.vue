@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import HomeIndex from './views/home/HomeIndex.vue'
+</script>
+
 <template>
-  <router-view />
+  <div>
+    <HomeIndex />
+  </div>
 </template>

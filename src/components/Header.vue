@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation';
+import { useThemeStore } from '@/stores/theme';
 
 const nav = useNavigationStore()
+const theme = useThemeStore()
 </script>
 
 <template>
@@ -57,15 +59,9 @@ const nav = useNavigationStore()
 							Contact
 						</a>
 						<button
-							class='p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200'
-							aria-label='Switch to dark mode'>
-							<i class='bx bx-moon text-xl'></i>
-						</button>
-					</div>
-					<div class='md:hidden flex items-center'>
-						<button
-							class='inline-flex items-center justify-center text-3xl p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
-							<i class='bx bx-menu'></i>
+							class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+							@click="theme.toggleTheme" aria-label="Toggle Theme">
+							<i class="bx" :class="theme.dark ? 'bx-sun' : 'bx-moon'"></i>
 						</button>
 					</div>
 				</div>

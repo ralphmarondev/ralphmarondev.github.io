@@ -10,10 +10,13 @@ import Skills from './components/Skills.vue'
 
 import { useNavigationStore } from '@/stores/navigation'
 import { onMounted } from 'vue'
+import { useThemeStore } from './stores/theme'
 
 const nav = useNavigationStore()
+const theme = useThemeStore()
 
 onMounted(() => {
+  theme.initTheme()
   const sections = document.querySelectorAll('section[id]')
 
   const observer = new IntersectionObserver(

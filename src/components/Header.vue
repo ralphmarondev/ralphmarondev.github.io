@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { useNavigationStore } from '@/stores/navigation';
+
+const nav = useNavigationStore()
+</script>
+
 <template>
 	<nav class='bg-white dark:bg-gray-900 overflow-hidden shadow-lg fixed py-1.5 w-full z-50 aos-init aos-animate'
 		data-aos='fade-down'>
@@ -11,34 +17,43 @@
 						</span>
 					</div>
 					<div class='hidden md:flex items-center space-x-4'>
-						<a href='#home'
-							class='flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 bg-gray-800 text-white shadow-1g'>
-							<i class='bx bx-home mr-2'></i>
+						<a href="#home"
+							class="flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg text-gray-700 dark:text-gray-300"
+							:class="{ 'bg-gray-800 text-white shadow-lg': nav.activeSection === 'home' }">
+							<i class="bx bx-home mr-2"></i>
 							Home
 						</a>
-						<a href='#about'
-							class='flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg'>
-							<i class='bx bx-id-card mr-2'></i>
+						<a href="#about"
+							class="flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg text-gray-700 dark:text-gray-300"
+							:class="{ 'bg-gray-800 text-white shadow-lg': nav.activeSection === 'about' }">
+							<i class="bx bx-id-card mr-2"></i>
 							About
 						</a>
-						<a href='#education'
-							class='flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg'>
-							<i class='bx bx-book mr-2'></i>
+
+						<a href="#education"
+							class="flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg text-gray-700 dark:text-gray-300"
+							:class="{ 'bg-gray-800 text-white shadow-lg': nav.activeSection === 'education' }">
+							<i class="bx bx-book mr-2"></i>
 							Education
 						</a>
-						<a href='#skills'
-							class='flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg'>
-							<i class='bx bx-code-alt mr-2'></i>
+
+						<a href="#skills"
+							class="flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg text-gray-700 dark:text-gray-300"
+							:class="{ 'bg-gray-800 text-white shadow-lg': nav.activeSection === 'skills' }">
+							<i class="bx bx-code-alt mr-2"></i>
 							Skills
 						</a>
-						<a href='#projects'
-							class='flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg'>
-							<i class='bx bx-code mr-2'></i>
+						<a href="#projects"
+							class="flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg text-gray-700 dark:text-gray-300"
+							:class="{ 'bg-gray-800 text-white shadow-lg': nav.activeSection === 'projects' }">
+							<i class="bx bx-code mr-2"></i>
 							Projects
 						</a>
-						<a href='#contact'
-							class='flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg'>
-							<i class='bx bx-envelope mr-2'></i>
+
+						<a href="#contact"
+							class="flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white hover:shadow-lg text-gray-700 dark:text-gray-300"
+							:class="{ 'bg-gray-800 text-white shadow-lg': nav.activeSection === 'contact' }">
+							<i class="bx bx-envelope mr-2"></i>
 							Contact
 						</a>
 						<button

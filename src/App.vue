@@ -1,12 +1,37 @@
 <script setup lang="ts">
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import Home from './components/Home.vue'
 import About from './components/About.vue'
-import Education from './components/Education.vue'
-import Skills from './components/Skills.vue'
-import Projects from './components/Projects.vue'
 import Contact from './components/Contact.vue'
+import Education from './components/Education.vue'
+import Footer from './components/Footer.vue'
+import Header from './components/Header.vue'
+import Home from './components/Home.vue'
+import Projects from './components/Projects.vue'
+import Skills from './components/Skills.vue'
+
+import { useNavigationStore } from '@/stores/navigation'
+import { onMounted } from 'vue'
+
+const nav = useNavigationStore()
+
+onMounted(() => {
+  const sections = document.querySelectorAll('section[id]')
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id')
+          if (id) nav.setActiveSection(id)
+        }
+      })
+    },
+    {
+      threshold: 0.5, // adjust to trigger when section is ~50% visible
+    }
+  )
+
+  sections.forEach((section) => observer.observe(section))
+})
 </script>
 
 <template>

@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import Typed from 'typed.js';
+import { onMounted, ref } from 'vue';
+
+const typingRef = ref<HTMLSpanElement | null>(null)
+
+onMounted(() => {
+	if (typingRef.value) {
+		new Typed(typingRef.value, {
+			strings: ['Mobile Developer', 'Computer Engineer', 'Fullstack Developer'],
+			typeSpeed: 60,
+			backSpeed: 40,
+			backDelay: 2000,
+			loop: true
+		})
+	}
+})
+
+</script>
+
 <template>
 	<section id="home"
 		class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-20 overflow-hidden">
@@ -10,7 +30,7 @@
 								Hi, I'm Ralph Maron Eda
 							</h1>
 							<h2 class="text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300 flex items-center">
-								<span class="typing-text">Mobile Developer</span>
+								<span ref="typingRef"></span>
 							</h2>
 						</div>
 						<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">Crafting sleek and reliable

@@ -20,19 +20,19 @@
 								Follow me on:
 							</span>
 							<div class="flex space-x-3">
-								<a href="https://github.com/ralphmarondev" target="_blank" rel="noopener noreferrer"
+								<a href="https://github.com/ralphmarondev/" target="_blank" rel="noopener noreferrer"
 									class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
 									<i class="bx bxl-github text-lg"></i>
 								</a>
-								<a href="https://github.com/ralphmarondev" target="_blank" rel="noopener noreferrer"
+								<a href="https://www.linkedin.com/in/ralph-maron-eda/" target="_blank" rel="noopener noreferrer"
 									class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
 									<i class="bx bxl-linkedin text-lg"></i>
 								</a>
-								<a href="https://github.com/ralphmarondev" target="_blank" rel="noopener noreferrer"
+								<a href="https://www.instagram.com/ralphmaron/" target="_blank" rel="noopener noreferrer"
 									class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
 									<i class="bx bxl-instagram text-lg"></i>
 								</a>
-								<a href="https://github.com/ralphmarondev" target="_blank" rel="noopener noreferrer"
+								<a href="https://www.tiktok.com/@ralphmaron/" target="_blank" rel="noopener noreferrer"
 									class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
 									<i class="bx bxl-tiktok text-lg"></i>
 								</a>

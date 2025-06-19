@@ -2,7 +2,7 @@
   <div>
     <div class="fixed bottom-8 right-8 z-50">
       <a href="#"
-        class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:translate-y-1"
+        class="w-14 h-14 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-all duration-300 transform hover:translate-y-1"
         aria-label="Scroll to top">
         <i class="bx bx-chevron-up text-2xl"></i>
       </a>

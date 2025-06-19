@@ -6,7 +6,7 @@
         <div class='text-center mb-16 aos-init aos-animate' data-aos='fade-up'>
           <h2 class='text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white'>
             About
-            <span class='text-blue-600 dark:text-blue-400'>Me</span>
+            <span class='text-purple-600 dark:text-purple-400'>Me</span>
           </h2>
           <p class='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed'>Get to know the story
             behind my code, where I started, what drives me, and why I love building mobile apps. </p>
@@ -21,7 +21,7 @@
               <div class="flex flex-col aos-init aos-animate" data-aos="fade-right" data-aos-delay="0">
                 <div class="flex items-center space-x-3 mb-2">
                   <div
-                    class="p-4 bg-blue-500 rounded-rull shadow-lg flex items-center justify-center text-white shirnk-0">
+                    class="p-4 bg-purple-500 rounded-rull shadow-lg flex items-center justify-center text-white shirnk-0">
                     <i class="bx bx bx-id-card text-lg"></i>
                   </div>
                   <h4 class="text-lg font-medium text-gray-900 dark:text-white">Bio</h4>
@@ -33,7 +33,7 @@
               <div class="flex flex-col aos-init aos-animate" data-aos="fade-right" data-aos-delay="0">
                 <div class="flex items-center space-x-3 mb-2">
                   <div
-                    class="p-4 bg-green-500 rounded-rull shadow-lg flex items-center justify-center text-white shirnk-0">
+                    class="p-4 bg-pink-500 rounded-rull shadow-lg flex items-center justify-center text-white shirnk-0">
                     <i class="bx bx bx-heart text-lg"></i>
                   </div>
                   <h4 class="text-lg font-medium text-gray-900 dark:text-white">Hobbies</h4>
@@ -57,7 +57,7 @@
               <div class="flex flex-col aos-init aos-animate" data-aos="fade-right" data-aos-delay="0">
                 <div class="flex items-center space-x-3 mb-2">
                   <div
-                    class="p-4 bg-purple-500 rounded-rull shadow-lg flex items-center justify-center text-white shirnk-0">
+                    class="p-4 bg-blue-500 rounded-rull shadow-lg flex items-center justify-center text-white shirnk-0">
                     <i class="bx bx bx-envelope text-lg"></i>
                   </div>
                   <h4 class="text-lg font-medium text-gray-900 dark:text-white">Contact</h4>
@@ -96,15 +96,15 @@
               <div class="flex items-center space-x-4">
                 <span class="text-gray-700 dark:text-gray-300 font-medium">Follow me on:</span>
                 <div class="flex space-x-3">
-                  <a href="#"
+                  <a href="https://www.linkedin.com/in/ralph-maron-eda/"
                     class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
                     <i class="bx bxl-linkedin text-lg"></i>
                   </a>
-                  <a href="#"
+                  <a href="https://github.com/ralphmarondev/"
                     class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
                     <i class="bx bxl-github text-lg"></i>
                   </a>
-                  <a href="#"
+                  <a href="https://www.tiktok.com/@ralphmaron/"
                     class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
                     <i class="bx bxl-tiktok text-lg"></i>
                   </a>

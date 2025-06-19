@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
-    "aos": "^2.3.4",
     "boxicons": "^2.1.4",
     "pinia": "^3.0.1",
     "tailwindcss": "^4.1.10",

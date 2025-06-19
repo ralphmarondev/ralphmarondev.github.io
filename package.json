@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
+    "aos": "^2.3.4",
+    "boxicons": "^2.1.4",
     "pinia": "^3.0.1",
     "tailwindcss": "^4.1.10",
     "vue": "^3.5.13",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
+    "@types/aos": "^3.0.7",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",

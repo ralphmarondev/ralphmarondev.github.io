@@ -153,7 +153,7 @@ const onClick = (value: string) => {
 							<div class="flex flex-wrap justify-center gap-2 mb-4">
 								<span class="text-xs font-semibold bg-blue-50 text-blue-500 px-2 py-1 rounded-full">Jetpack
 									Compose</span>
-								<span class="text-xs font-semibold bg-blue-50 text-blu-500 px-2 py-1 rounded-full">Django Rest</span>
+								<span class="text-xs font-semibold bg-blue-50 text-blue-500 px-2 py-1 rounded-full">Django Rest</span>
 								<span class="text-xs font-semibold bg-blue-50 text-blue-500 px-2 py-1 rounded-full">Koin</span>
 							</div>
 							<div class="flex justify-center space-x-4">

@@ -111,7 +111,7 @@
                 </div>
               </div>
               <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#"
+                <a href="/Ralph-Maron-Eda-Resume.pdf" target="_blank"
                   class="inline-flex items-center justify-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                   <i class="bx bx-download mr-2"></i>
                   Download CV

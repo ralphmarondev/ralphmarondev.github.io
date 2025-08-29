@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useThemeStore = defineStore('theme', {
   state: () => ({
-    dark: false
+    dark: true
   }),
   actions: {
     toggleTheme () {

@@ -129,50 +129,61 @@ onMounted(() => {
 							</div>
 						</div>
 					</div>
-					<div class="relative flex justify-center items-center aos-init aos-animate" data-aos="fade-right">
+					<div
+							class="relative flex justify-center items-center aos-init aos-animate" data-aos="fade-left">
 						<div class="relative z-10">
-							<img src="/ralphmaron.png" alt="My picture"
-							     class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-900/50 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"/>
+							<img
+									src="/ralphmaron.png"
+									alt="My picture"
+									class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-900/50 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"/>
 						</div>
 						<div
-								class="absolute top-0 left-10 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
+								class="absolute top-6 left-8 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float cursor-pointer">
 							<i class="bx bxl-android text-2xl text-gray-700 dark:text-gray-300"></i>
 						</div>
 						<div
-								class="absolute top-0 right-12 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
-							<i class="bx bxl-spring-boot text-2xl text-gray-700 dark:text-gray-300"></i>
+								class="absolute bottom-10 right-8 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float-slow cursor-pointer">
+							<i class="bx bxl-react text-2xl text-gray-700 dark:text-gray-300"></i>
 						</div>
 						<div
-								class="absolute bottom-0 left-10 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
-							<i class="bx bxl-django text-2xl text-gray-700 dark:text-gray-300"></i>
-						</div>
-						<div
-								class="absolute bottom-10 right-12 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
-							<i class="bx bxl-firebase text-2xl text-gray-700 dark:text-gray-300"></i>
-						</div>
-						<div
-								class="absolute top-26 left-0 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
-							<i class="bx bxl-tailwind-css text-2xl text-gray-700 dark:text-gray-300"></i>
-						</div>
-						<div
-								class="absolute top-30 right-5 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
+								class="absolute top-24 right-0 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float-fast cursor-pointer">
 							<i class="bx bxl-vuejs text-2xl text-gray-700 dark:text-gray-300"></i>
 						</div>
 						<div
-								class="absolute top-55 left-0 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-gray-900/30 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer"
-								data-aos-delay="0s">
-							<i class="bx bxl-react text-2xl text-gray-700 dark:text-gray-300"></i>
+								class="absolute bottom-6 left-12 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float cursor-pointer">
+							<i class="bx bxl-firebase text-2xl text-gray-700 dark:text-gray-300"></i>
+						</div>
+						<div
+								class="absolute top-36 left-0 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float-slow cursor-pointer">
+							<i class="bx bxl-spring-boot text-2xl text-gray-700 dark:text-gray-300"></i>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 </template>
+
+<style scoped>
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-12px);
+	}
+}
+
+.animate-float {
+	animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+	animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+	animation: float 3s ease-in-out infinite;
+}
+</style>

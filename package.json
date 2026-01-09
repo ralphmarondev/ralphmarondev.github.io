@@ -20,6 +20,7 @@
     "aos": "^2.3.4",
     "boxicons": "^2.1.4",
     "emailjs": "^4.0.3",
+    "firebase": "^12.7.0",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.14",
     "typed.js": "^2.1.0",

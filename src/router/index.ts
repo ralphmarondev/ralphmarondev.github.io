@@ -21,6 +21,12 @@ const router = createRouter({
       name: 'dashboard',
       component: () => import('@/views/dashboard/DashboardIndex.vue'),
       meta: {requiresAuth: true, title: 'Dashboard', icon: '/favicon.jpg'}
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@/component/NotFound.vue'),
+      meta: {title: 'Page Not Found', icon: '/favicon.jpg'}
     }
   ],
   scrollBehavior(to) {

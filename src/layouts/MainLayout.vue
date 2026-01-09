@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from '@/layout/Header.vue'
-import Sidebar from '@/layout/Sidebar.vue'
+import Header from '@/layouts/Header.vue'
+import Sidebar from '@/layouts/Sidebar.vue'
 import {onMounted} from 'vue'
 import {useThemeStore} from '@/store/useThemeStore.ts'
 

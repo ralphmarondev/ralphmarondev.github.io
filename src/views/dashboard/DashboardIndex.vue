@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import MainLayout from '@/layout/MainLayout.vue'
+</script>
+
 <template>
-	<section class="h-screen w-screen flex items-center justify-center bg-pink-50">
+	<MainLayout>
 		<h3 class="text-2xl text-pink-600">Hello there! Ralph Maron Eda is here!</h3>
-	</section>
+	</MainLayout>
 </template>

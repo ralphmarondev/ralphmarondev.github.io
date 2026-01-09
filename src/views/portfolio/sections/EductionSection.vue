@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue'
 
 const isFormalEducation = ref(true)
 </script>
@@ -14,20 +14,20 @@ const isFormalEducation = ref(true)
 						<span class="text-purple-600 dark:text-purple-400">Background</span>
 					</h2>
 					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-						My academic journey and continous learning path in computer engineering and mobile development.
+						My academic journey and continuous learning path in computer engineering and mobile development.
 					</p>
 				</div>
 				<div class="flex justify-center mb-12 aos-init aos-animate" data-aos="fade-up">
 					<div class="bg-gray-100 dark:bg-gray-800 p-1 flex rounded-full shadow-lg">
 						<button @click="isFormalEducation = true"
-							class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-							:class="isFormalEducation ? 'bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
-							<i class="bx bx-graduation text-xl"></i>
+						        class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
+						        :class="isFormalEducation ? 'bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
+							<i class="bx bxs-school text-xl"></i>
 							<span>Formal Education</span>
 						</button>
 						<button @click="isFormalEducation = false"
-							class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-							:class="!isFormalEducation ? 'bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
+						        class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
+						        :class="!isFormalEducation ? 'bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
 							<i class="bx bx-badge-check text-xl"></i>
 							<span>Self Learning</span>
 						</button>
@@ -36,10 +36,10 @@ const isFormalEducation = ref(true)
 				<div class="grid lg:grid-cols-2 gap-8" v-if="isFormalEducation">
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:border-purple-500 hover:-translate-y-2">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:border-purple-500 hover:-translate-y-2">
 							<div class="flex items-start mb-4 relative z-10">
 								<div
-									class="w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg transition-all duration-300 ">
+										class="w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx-book-open text-2xl"></i>
 								</div>
 							</div>
@@ -54,7 +54,7 @@ const isFormalEducation = ref(true)
 									</span>
 									<span class="flex items-center">
 										<i class="bx bx-map mr-1"></i>
-										Tuguegarao, Philippines
+										Cagayan, Philippines
 									</span>
 								</div>
 								<div class="flex gap-2">
@@ -68,14 +68,14 @@ const isFormalEducation = ref(true)
 							</div>
 							<p class="text-gray-600 dark:text-gray-400 my-4 leading-relaxed">
 								Focused on software development, data structures, algorithms, networking, embedded systems, and modern
-								programming paradigms.
-								Completed thesis with integration of Mobile app, Desktop app, API, and Raspberry Pi 5.
+								programming paradigms. Completed thesis with integration of Mobile app, Desktop app, API, and Raspberry
+								Pi 5.
 							</p>
 							<div class="mb-4">
 								<p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Key Course:</p>
 								<div class="flex flex-wrap gap-2">
 									<span
-										class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
+											class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
 										Data Structures
 									</span><span
 										class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
@@ -120,10 +120,10 @@ const isFormalEducation = ref(true)
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:border-pink-500 hover:-translate-y-2">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:border-pink-500 hover:-translate-y-2">
 							<div class="flex items-start mb-4 relative z-10">
 								<div
-									class="w-14 h-14 bg-pink-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg transition-all duration-300 ">
+										class="w-14 h-14 bg-pink-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx-book-open text-2xl"></i>
 								</div>
 							</div>
@@ -152,16 +152,17 @@ const isFormalEducation = ref(true)
 							</div>
 							<p class="text-gray-600 dark:text-gray-400 my-4 leading-relaxed">
 								Strong foundation in mathematics, chemistry, physics and circuits. Active in math club and graduated
-								with honors.</p>
+								with honors.
+							</p>
 							<div class="mb-4">
 								<p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Key Course:</p>
 								<div class="flex flex-wrap gap-2">
 									<span
-										class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
+											class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
 										Advance Mathematics
 									</span>
 									<span
-										class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
+											class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
 										Calculus
 									</span><span
 										class="px-3 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
@@ -193,93 +194,100 @@ const isFormalEducation = ref(true)
 				<div class="grid grid-cols-1 mb:grid-cols-2 lg:grid-cols-4 gap-6" v-else>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-purple-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-purple-500">
 							<div
-								class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-android text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Jetpack Compose</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Docs, Youtube</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2023 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2023 -Present
+							</span>
 						</div>
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-pink-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-pink-500">
 							<div
-								class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-java text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Kotlin</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">YouTube</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2023 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2023 -Present
+							</span>
 						</div>
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-orange-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-orange-500">
 							<div
-								class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-spring-boot text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Spring Boot</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Docs, YouTube, Projects</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2025 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2025 - Present
+							</span>
 						</div>
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-blue-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-blue-500">
 							<div
-								class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-firebase text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Firebase</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Docs, YouTube, Projects</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2025 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2025 - Present
+							</span>
 						</div>
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-green-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-green-500">
 							<div
-								class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-python text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Python</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Solo Learn, Projects</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2023 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2023 - Present
+							</span>
 						</div>
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-teal-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-teal-500">
 							<div
-								class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-django text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Django</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Docs, OJT</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2024 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2024 - Present
+							</span>
 						</div>
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-purple-500">
+								class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 relative overflow-hidden cursor-pointer border-transparent hover:-translate-y-2 hover:border-purple-500">
 							<div
-								class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
+									class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 rotate-360 scale-110">
 								<i class="bx bxl-vuejs text-2xl"></i>
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Vue 3</h4>
 							<p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Docs, OJT</p>
-							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2024 -
-								Present</span>
+							<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+								2024 - Present
+							</span>
 						</div>
 					</div>
 				</div>

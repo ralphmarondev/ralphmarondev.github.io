@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import Typed from 'typed.js';
-import {onMounted, ref} from 'vue';
+import Typed from 'typed.js'
+import {onMounted, ref} from 'vue'
 
 const typingRef = ref<HTMLSpanElement | null>(null)
+const START_YEAR = 2023
+const currentYear = new Date().getFullYear()
+const yearsOfExperience = currentYear - START_YEAR
 
 onMounted(() => {
 	if (typingRef.value) {
@@ -15,7 +18,6 @@ onMounted(() => {
 		})
 	}
 })
-
 </script>
 
 <template>
@@ -33,8 +35,9 @@ onMounted(() => {
 								<span ref="typingRef"></span>
 							</h2>
 						</div>
-						<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">Crafting sleek and reliable
-							mobile apps since 2023.</p>
+						<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
+							Crafting sleek and reliable mobile apps since 2023.
+						</p>
 						<div class="flex items-center space-x-4">
 							<span class="text-gray-700 dark:text-gray-300 font-medium">
 								Follow me on:
@@ -63,11 +66,12 @@ onMounted(() => {
 							   class="inline-flex items-center justify-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
 								<i class="bx bx-download mr-2"></i> Download CV
 							</a>
-							<a href="#contact"
-							   class="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white font-semibold rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+							<router-link
+									:to="{path: '/', hash: '#contact'}"
+									class="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white font-semibold rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
 								<i class="bx bx-envelope mr-2"></i>
 								Contact Me
-							</a>
+							</router-link>
 						</div>
 						<div class="mt-6 aos-init aos-animate" data-aos="fade-up">
 							<h4 class="text-left text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
@@ -75,12 +79,11 @@ onMounted(() => {
 							</h4>
 							<div class="flex flex-wrap gap-3 justify-start">
 								<div
-										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700
-        hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
+										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
 									<i class="bx bx-briefcase text-gray-900 dark:text-white text-lg"></i>
 									<div class="flex flex-col leading-tight">
 										<span class="text-xs font-semibold text-gray-900 dark:text-white">
-											2+
+											{{ yearsOfExperience }}
 										</span>
 										<span class="text-[10px] text-gray-600 dark:text-gray-400">
 											Years of Experience
@@ -88,8 +91,7 @@ onMounted(() => {
 									</div>
 								</div>
 								<div
-										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700
-        hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
+										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
 									<i class="bx bx-task text-gray-900 dark:text-white text-lg"></i>
 									<div class="flex flex-col leading-tight">
 										<span class="text-xs font-semibold text-gray-900 dark:text-white">
@@ -101,8 +103,7 @@ onMounted(() => {
 									</div>
 								</div>
 								<div
-										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700
-        hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
+										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
 									<i class="bx bx-smile text-gray-900 dark:text-white text-lg"></i>
 									<div class="flex flex-col leading-tight">
 										<span class="text-xs font-semibold text-gray-900 dark:text-white">
@@ -114,8 +115,7 @@ onMounted(() => {
 									</div>
 								</div>
 								<div
-										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700
-        hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
+										class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-900/30 border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300">
 									<i class="bx bx-code text-gray-900 dark:text-white text-lg"></i>
 									<div class="flex flex-col leading-tight">
 										<span class="text-xs font-semibold text-gray-900 dark:text-white">
@@ -134,8 +134,9 @@ onMounted(() => {
 						<div class="relative z-10">
 							<img
 									src="/ralphmaron.png"
-									alt="My picture"
-									class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-900/50 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"/>
+									alt="Ralph Maron Eda"
+									class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-900/50 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"
+							/>
 						</div>
 						<div
 								class="absolute top-6 left-8 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float cursor-pointer">

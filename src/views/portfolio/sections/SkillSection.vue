@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 const isTechnical = ref(true)
 const isSoftSkills = ref(false)
@@ -14,7 +14,7 @@ const onClick = (value: string) => {
 		isTechnical.value = false
 		isSoftSkills.value = true
 		isTools.value = false
-	} else {
+	} else if (value === 'tools') {
 		isTechnical.value = false
 		isSoftSkills.value = false
 		isTools.value = true
@@ -37,41 +37,42 @@ const onClick = (value: string) => {
 				</div>
 				<div class="flex justify-center mb-12 aos-init aos-animate" data-aos="fade-up">
 					<div
-						class="bg-white dark:bg-gray-900 p-1 flex rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
+							class="flex flex-wrap justify-center gap-2 sm:gap-4 bg-white dark:bg-gray-900 p-2 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 overflow-x-auto sm:flex-nowrap">
 						<button @click="onClick('technical')"
-							class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-							:class="isTechnical ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
-							<i class="bx bx-code-curly text-xl"></i>
+						        class="px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base"
+						        :class="isTechnical ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
+							<i class="bx bx-code-curly text-lg sm:text-xl"></i>
 							<span>Technical</span>
 						</button>
 						<button @click="onClick('soft-skills')"
-							class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-							:class="isSoftSkills ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
-							<i class="bx bx-chat text-xl"></i>
+						        class="px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base"
+						        :class="isSoftSkills ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
+							<i class="bx bx-chat text-lg sm:text-xl"></i>
 							<span>Soft Skills</span>
 						</button>
 						<button @click="onClick('tools')"
-							class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-							:class="isTools ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
-							<i class="bx bx-wrench text-xl"></i>
+						        class="px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base"
+						        :class="isTools ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
+							<i class="bx bx-wrench text-lg sm:text-xl"></i>
 							<span>Tools</span>
 						</button>
 					</div>
 				</div>
-				<div class="grid lg:grid-cols-3 gap-8" v-if="isTechnical">
+				
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" v-if="isTechnical">
 					<div class="group-aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hoever:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
+										class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
 									<i class="bx bx-mobile text-xl"></i>
 								</div>
 								<h3 class="text-xl font-bold text-gray-900 dark:text-white">Mobile Development</h3>
 							</div>
 							<div class="space-y-4">
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-android text-lg mr-2 text-purple-500"></i>
@@ -81,11 +82,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 95%;;"></div>
+										     style="width: 95%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-android text-lg mr-2 text-purple-500"></i>
@@ -95,11 +96,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 90%;;"></div>
+										     style="width: 90%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bx-intersect text-lg mr-2 text-purple-500"></i>
@@ -109,11 +110,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 92%;;"></div>
+										     style="width: 92%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bx-data text-lg mr-2 text-purple-500"></i>
@@ -123,11 +124,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 92%;;"></div>
+										     style="width: 92%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-android text-lg mr-2 text-purple-500"></i>
@@ -137,11 +138,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 95%;;"></div>
+										     style="width: 95%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bx-file text-lg mr-2 text-purple-500"></i>
@@ -151,7 +152,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 94%;;"></div>
+										     style="width: 94%;"></div>
 									</div>
 								</div>
 							</div>
@@ -159,17 +160,17 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group-aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hoever:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
+										class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
 									<i class="bx bx-server text-xl"></i>
 								</div>
 								<h3 class="text-xl font-bold text-gray-900 dark:text-white">Frontend Development</h3>
 							</div>
 							<div class="space-y-4">
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-vuejs text-lg mr-2 text-pink-500"></i>
@@ -179,11 +180,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 85%;;"></div>
+										     style="width: 85%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-typescript text-lg mr-2 text-pink-500"></i>
@@ -193,11 +194,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 86%;;"></div>
+										     style="width: 86%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-tailwind-css text-lg mr-2 text-pink-500"></i>
@@ -207,11 +208,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 80%;;"></div>
+										     style="width: 80%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-vuejs text-lg mr-2 text-pink-500"></i>
@@ -221,11 +222,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 95%;;"></div>
+										     style="width: 95%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-vuejs text-lg mr-2 text-pink-500"></i>
@@ -235,11 +236,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 83%;;"></div>
+										     style="width: 83%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bx-network-chart text-lg mr-2 text-pink-500"></i>
@@ -249,7 +250,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 84%;;"></div>
+										     style="width: 84%;"></div>
 									</div>
 								</div>
 							</div>
@@ -257,17 +258,17 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group-aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hoever:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
+										class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
 									<i class="bx bx-cloud text-xl"></i>
 								</div>
 								<h3 class="text-xl font-bold text-gray-900 dark:text-white">Backend and Cloud</h3>
 							</div>
 							<div class="space-y-4">
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-spring-boot text-lg mr-2 text-orange-500"></i>
@@ -277,11 +278,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 90%;"></div>
+										     style="width: 90%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-django text-lg mr-2 text-orange-500"></i>
@@ -291,11 +292,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 91%;"></div>
+										     style="width: 91%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bx-code-block text-lg mr-2 text-orange-500"></i>
@@ -305,11 +306,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 89%;;"></div>
+										     style="width: 89%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-postgresql text-lg mr-2 text-orange-500"></i>
@@ -319,11 +320,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 92%;;"></div>
+										     style="width: 92%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-firebase text-lg mr-2 text-orange-500"></i>
@@ -333,11 +334,11 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 92%;"></div>
+										     style="width: 92%;"></div>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center justify-between mb-2">
 										<div class="flex items-center">
 											<i class="bx bxl-docker text-lg mr-2 text-orange-500"></i>
@@ -347,7 +348,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 85%;"></div>
+										     style="width: 85%;"></div>
 									</div>
 								</div>
 							</div>
@@ -357,10 +358,10 @@ const onClick = (value: string) => {
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" v-if="isSoftSkills">
 					<div class="group aos-init" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-purple-500">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-purple-500">
 							<div class="text-center">
 								<div
-									class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
+										class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx bx-book-open text-2xl"></i>
 								</div>
 								<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
@@ -375,7 +376,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-ful bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-purple-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 92%;"></div>
+										     style="width: 92%;"></div>
 									</div>
 								</div>
 							</div>
@@ -383,10 +384,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-pink-500">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-pink-500">
 							<div class="text-center">
 								<div
-									class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
+										class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx bx-book-open text-2xl"></i>
 								</div>
 								<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
@@ -401,7 +402,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-ful bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-pink-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 93%;"></div>
+										     style="width: 93%;"></div>
 									</div>
 								</div>
 							</div>
@@ -409,10 +410,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-orange-500">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-orange-500">
 							<div class="text-center">
 								<div
-									class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
+										class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx bx-book-open text-2xl"></i>
 								</div>
 								<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
@@ -427,7 +428,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-ful bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 90%;"></div>
+										     style="width: 90%;"></div>
 									</div>
 								</div>
 							</div>
@@ -435,10 +436,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-blue-500">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-blue-500">
 							<div class="text-center">
 								<div
-									class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
+										class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx bx-book-open text-2xl"></i>
 								</div>
 								<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
@@ -453,7 +454,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-ful bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-blue-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 94%;"></div>
+										     style="width: 94%;"></div>
 									</div>
 								</div>
 							</div>
@@ -461,10 +462,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-green-500">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-green-500">
 							<div class="text-center">
 								<div
-									class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
+										class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx bx-book-open text-2xl"></i>
 								</div>
 								<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
@@ -479,7 +480,7 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-ful bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-green-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 91%;"></div>
+										     style="width: 91%;"></div>
 									</div>
 								</div>
 							</div>
@@ -487,10 +488,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-teal-500">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 cursor-pointer border-transparent hover:-translate-y-2 hover:border-teal-500">
 							<div class="text-center">
 								<div
-									class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
+										class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg transition-all duration-300 ">
 									<i class="bx bx bx-book-open text-2xl"></i>
 								</div>
 								<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
@@ -505,20 +506,20 @@ const onClick = (value: string) => {
 									</div>
 									<div class="w-ful bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
 										<div class="h-full bg-orange-500 transition-all duration-1000 ease-out rounded-full"
-											style="width: 93%;"></div>
+										     style="width: 93%;"></div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="grid lg:grid-cols-3 gap-8" v-if="isTools">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" v-if="isTools">
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white mr-2 shadow-lg">
+										class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white mr-2 shadow-lg">
 									<i class="bx bx-wrench text-xl"></i>
 								</div>
 								<h3 class="text-xl font-bold text-gray-900 dark:text-white">
@@ -527,42 +528,42 @@ const onClick = (value: string) => {
 							</div>
 							<div class="grid grid-cols-2 gap-3">
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bxl-android text-2xl text-green-500"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Android Studio</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bxl-java text-2xl text-pink-500"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">IntelliJ</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bx-code-alt text-2xl text-orange-500"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">VS Code</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bxl-git text-2xl" style="color: rgb(240, 80, 50)"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Git</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bx-paper-plane text-2xl" style="color: rgb(255, 108, 55)"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Postman</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bxl-docker text-2xl" style="color: rgb(36, 150, 237)"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Docker</span>
@@ -573,10 +574,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white mr-2 shadow-lg">
+										class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white mr-2 shadow-lg">
 									<i class="bx bx-paint text-xl"></i>
 								</div>
 								<h3 class="text-xl font-bold text-gray-900 dark:text-white">
@@ -585,14 +586,14 @@ const onClick = (value: string) => {
 							</div>
 							<div class="grid grid-cols-2 gap-3">
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bxl-figma text-2xl" style="color: rgb(242, 78, 30)"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Figma</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bx-palette text-2xl" style="color: rgb(0, 196, 204)"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Canva</span>
@@ -603,10 +604,10 @@ const onClick = (value: string) => {
 					</div>
 					<div class="group aos-init aos-animate" data-aos="fade-up">
 						<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-2 shadow-lg">
+										class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-2 shadow-lg">
 									<i class="bx bx-cog text-xl"></i>
 								</div>
 								<h3 class="text-xl font-bold text-gray-900 dark:text-white">
@@ -615,14 +616,14 @@ const onClick = (value: string) => {
 							</div>
 							<div class="grid grid-cols-2 gap-3">
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bx-rocket text-2xl text-orange-500"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Github Pages</span>
 									</div>
 								</div>
 								<div
-									class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
+										class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 cursor-pointer text-center hover:bg-gray-50 dark:hover:bg-gray-800">
 									<div class="flex items-center space-x-2">
 										<i class="bx bx-server text-2xl" style="color: rgb(67, 0, 152)"></i>
 										<span class="text-sm font-semibold text-gray-900 dark:text-white">Firebase</span>

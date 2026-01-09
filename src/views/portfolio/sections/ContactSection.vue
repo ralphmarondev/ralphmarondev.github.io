@@ -1,31 +1,30 @@
 <script setup lang="ts">
-import {ref} from 'vue';
-import {emailClient} from "@/lib/emailjs.ts";
+import {ref} from 'vue'
+import {emailClient} from '@/emailjs.ts'
 
 const isContactForm = ref(true)
-const formRef = ref<HTMLFormElement | null>(null);
-const status = ref('');
-const isSuccess = ref(false);
+const formRef = ref<HTMLFormElement | null>(null)
+const status = ref('')
+const isSuccess = ref(false)
 
 const handleSubmit = async () => {
-	if (!formRef.value) return;
-	
+	if (!formRef.value) return
+
 	try {
 		await emailClient.sendForm(formRef.value)
-		isSuccess.value = true;
-		status.value = "Message sent successfully"
+		isSuccess.value = true
+		status.value = 'Message sent successfully'
 		formRef.value.reset()
 	} catch (error) {
-		isSuccess.value = true;
+		isSuccess.value = true
 		console.error(error)
-		status.value = "Failed to send message."
+		status.value = 'Failed to send message.'
 	} finally {
 		setTimeout(() => {
-			status.value = "";
+			status.value = ''
 		}, 4000)
 	}
 }
-
 </script>
 
 <template>
@@ -87,7 +86,7 @@ const handleSubmit = async () => {
 								<span>Send Message</span>
 							</button>
 						</form>
-						
+
 						<p class="mt-4 text-center text-sm"
 						   :class="isSuccess ? 'text-green-600': 'text-red-600'">
 							{{ status }}

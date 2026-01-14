@@ -95,6 +95,13 @@ function toggleMobileMenu() {
 		<div v-show="mobileMenuOpen"
 		     class="md:hidden fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg z-50 transition-transform duration-300 transform"
 		     :class="mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
+
+			<button
+					@click="mobileMenuOpen = false"
+					class="absolute top-4 left-5 p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+				<i class="bx bx-x text-2xl"></i>
+			</button>
+
 			<div class="flex flex-col mt-16 space-y-4 px-6">
 				<router-link
 						:to="{path: '/', hash: '#home'}"

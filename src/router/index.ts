@@ -23,6 +23,24 @@ const router = createRouter({
       meta: {requiresAuth: true, title: 'Dashboard', icon: '/favicon.jpg'}
     },
     {
+      path: '/memories',
+      name: 'memories',
+      component: () => import('@/views/memories/memory-list/MemoryListIndex.vue'),
+      meta: {requiresAuth: true, title: 'Memories', icon: '/favicon.jpg'}
+    },
+    {
+      path: '/details/:id',
+      name: 'details',
+      component: () => import('@/views/memories/memory-details/DetailsIndex.vue'),
+      meta: {requiresAuth: true, title: 'Details', icon: '/favicon.jpg'}
+    },
+    {
+      path: '/new-memory',
+      name: 'new-memory',
+      component: () => import('@/views/memories/new-memory/NewMemoryIndex.vue'),
+      meta: {requiresAuth: true, title: 'New Memory', icon: '/favicon.jpg'}
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('@/components/NotFound.vue'),

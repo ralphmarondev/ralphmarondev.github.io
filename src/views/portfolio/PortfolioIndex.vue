@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import Header from '@/views/portfolio/sections/Header.vue'
-import Footer from '@/views/portfolio/sections/Footer.vue'
 import AboutSection from '@/views/portfolio/sections/AboutSection.vue'
 import EductionSection from '@/views/portfolio/sections/EductionSection.vue'
 import SkillSection from '@/views/portfolio/sections/SkillSection.vue'
 import ProjectSection from '@/views/portfolio/sections/ProjectSection.vue'
 import ContactSection from '@/views/portfolio/sections/ContactSection.vue'
 import HomeSection from '@/views/portfolio/sections/HomeSection.vue'
-
+import MainLayout from '@/views/portfolio/layouts/MainLayout.vue'
 import {useNavigationStore} from '@/store/useNavigationStore.ts'
 import {onMounted} from 'vue'
 import {useThemeStore} from '@/store/useThemeStore.ts'
@@ -45,14 +43,12 @@ onMounted(() => {
 </script>
 
 <template>
-	<div>
-		<Header/>
-		<HomeSection/>
-		<AboutSection/>
-		<EductionSection/>
-		<SkillSection/>
-		<ProjectSection/>
-		<ContactSection/>
-		<Footer/>
-	</div>
+	<MainLayout>
+		<HomeSection />
+		<AboutSection />
+		<EductionSection />
+		<SkillSection />
+		<ProjectSection />
+		<ContactSection />
+	</MainLayout>
 </template>

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Typed from 'typed.js'
 import {onMounted, ref} from 'vue'
+import {useRouter} from 'vue-router'
+
+const router = useRouter()
 
 const typingRef = ref<HTMLSpanElement | null>(null)
 const START_YEAR = 2023
@@ -18,6 +21,22 @@ onMounted(() => {
 		})
 	}
 })
+
+const clickCount = ref(0)
+let clickTimeOut: number | undefined
+
+const handleImageClick = () => {
+	clickCount.value += 1
+
+	if (clickTimeOut) clearTimeout(clickTimeOut)
+	clickTimeOut = window.setTimeout(() => clickCount.value = 0, 2000)
+
+	if (clickCount.value >= 3) {
+		clickCount.value = 0
+		router.push({name: 'login'})
+	}
+}
+
 </script>
 
 <template>
@@ -131,7 +150,7 @@ onMounted(() => {
 					</div>
 					<div
 							class="relative flex justify-center items-center aos-init aos-animate" data-aos="fade-left">
-						<div class="relative z-10">
+						<div class="relative z-10" @click="handleImageClick">
 							<img
 									src="/ralphmaron.png"
 									alt="Ralph Maron Eda"

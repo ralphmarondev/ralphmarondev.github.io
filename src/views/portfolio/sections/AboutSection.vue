@@ -1,3 +1,5 @@
+<script setup lang="ts">
+</script>
 <template>
 	<section class='py-20 bg-gradient-to-b from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden'
 	         id='about'>

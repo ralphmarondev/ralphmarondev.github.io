@@ -23,7 +23,7 @@ const onClick = (value: string) => {
 </script>
 
 <template>
-	<section class="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden" id="projects">
+	<section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden" id="projects">
 		<div class="container">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 aos-init aos-animate" data-aos="fade-up">
@@ -340,7 +340,7 @@ const onClick = (value: string) => {
 							</div>
 							<h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Mewzi</h4>
 							<p class="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-								Full stack Socail Media app with integrated JWT authentication.
+								Full stack Social Media app with integrated JWT authentication.
 							</p>
 							<div class="flex flex-wrap justify-center gap-2 mb-4">
 								<span class="text-xs font-semibold bg-blue-50 text-blue-500 px-2 py-1 rounded-full">Jetpack

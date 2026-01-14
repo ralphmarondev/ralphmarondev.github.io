@@ -5,7 +5,7 @@ const isFormalEducation = ref(true)
 </script>
 
 <template>
-	<section class="py-20 bg-white dark:bg-gray-900 overflow-hidden" id="education">
+	<section class="py-20 bg-gray-100 dark:bg-gray-900 overflow-hidden" id="education">
 		<div class="container">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 aos-init aos-animate" data-aos="fade-up">

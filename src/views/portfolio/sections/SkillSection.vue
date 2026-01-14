@@ -23,7 +23,7 @@ const onClick = (value: string) => {
 </script>
 
 <template>
-	<section class="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden" id="skills">
+	<section class="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden" id="skills">
 		<div class="container">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 aos-init aos-animate" data-aos="fade-up">

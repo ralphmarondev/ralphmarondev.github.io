@@ -5,6 +5,7 @@ import {computed, onMounted, ref, watch} from 'vue'
 import {useMemoriesStore} from '@/store/useMemoriesStore.ts'
 import MemoryListItem from '@/views/memories/memory-list/MemoryListItem.vue'
 import type {Memory} from '@/types/memory'
+import {useAuthStore} from '@/store/useAuthStore.ts'
 
 const store = useMemoriesStore()
 const filteredMemories = ref<Memory[]>([])
@@ -13,12 +14,15 @@ const selectedYear = ref('All')
 const showYearDropdown = ref(false)
 const viewMode = ref<'grid' | 'list'>('grid')
 
+const userStore = useAuthStore()
+const userEmail = ref('')
+
 const currentYear = new Date().getFullYear()
 const startYear = 2023
-const years = ref(['All', ...Array.from(
-		{length: currentYear - startYear + 1},
-		(_, i) => (startYear + i).toString()
-).reverse()])
+const years = ref([
+	'All',
+	...Array.from({length: currentYear - startYear + 1}, (_, i) => (startYear + i).toString()).reverse()
+])
 
 const recentCount = computed(() => {
 	const oneMonthAgo = new Date()
@@ -36,7 +40,7 @@ const favoriteCount = computed(() => {
 const getYearCount = (year: string) => {
 	if (year === 'All') return store.memories.length
 	return store.memories.filter(memory =>
-			memory.date.includes(year) || memory.year === year
+			memory.date.startsWith(year)
 	).length
 }
 
@@ -50,7 +54,7 @@ const applyFilters = () => {
 
 	if (selectedYear.value !== 'All') {
 		results = results.filter((memory) => {
-			return memory.date.includes(selectedYear.value) || memory.year === selectedYear.value
+			return memory.date.startsWith(selectedYear.value)
 		})
 	}
 
@@ -69,8 +73,17 @@ const applyFilters = () => {
 watch([searchQuery, selectedYear, () => store.memories], applyFilters)
 
 onMounted(async () => {
-	await store.fetchMemories()
-	applyFilters()
+	if (!userStore.user) {
+		await userStore.fetchUser()
+	}
+
+	if (userStore.user?.email) {
+		userEmail.value = userStore.user.email
+		await store.fetchMemories(userEmail.value)
+		applyFilters()
+	} else {
+		filteredMemories.value = []
+	}
 })
 </script>
 
@@ -324,14 +337,9 @@ onMounted(async () => {
 			<div v-if="viewMode === 'grid'"
 			     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 				<ImageCard
-						v-for="(memory, index) in filteredMemories"
-						:key="index"
-						:title="memory.title"
-						:image="memory.image"
-						:date="memory.date"
-						:id="memory.id"
-						:description="memory.description"
-						:is-favorite="memory.isFavorite"
+						v-for="memory in filteredMemories"
+						:key="memory.id"
+						:memory="memory"
 						class="hover:scale-[1.02] transition-transform duration-300"
 				/>
 			</div>

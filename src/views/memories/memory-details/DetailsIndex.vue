@@ -2,16 +2,18 @@
 import MainLayout from '@/layouts/MainLayout.vue'
 import {useRoute} from 'vue-router'
 import {onMounted, onUnmounted, ref} from 'vue'
-import {db} from '@/firebase.ts'
-import {doc, getDoc, updateDoc} from 'firebase/firestore'
-import {getFileUrl} from '@/utils/storageUtils.ts'
+import {useMemoriesStore} from '@/store/useMemoriesStore.ts'
+import type {Memory} from '@/types/memory.ts'
 import router from '@/router'
+import {getFileUrl} from '@/utils/storageUtils.ts'
+import {useAuthStore} from '@/store/useAuthStore.ts'
 
 const route = useRoute()
-const id = route.params.id as string
-const year = id.slice(0, 4)
+const memoryStore = useMemoriesStore()
+const authStore = useAuthStore()
 
-const item = ref<any>(null)
+const id = route.params.id as string
+const memory = ref<Memory | null>(null)
 const loading = ref(true)
 
 const imageUrls = ref<string[]>([])
@@ -51,21 +53,6 @@ const formatCompactDate = (dateString: string) => {
 		})
 	} catch {
 		return dateString
-	}
-}
-
-const toggleFavorite = async () => {
-	if (!item.value) return
-
-	try {
-		const docRef = doc(db, `memories_${year}`, id)
-		await updateDoc(docRef, {
-			isFavorite: !item.value.isFavorite
-		})
-
-		item.value.isFavorite = !item.value.isFavorite
-	} catch (error) {
-		console.error('Error updating favorite status:', error)
 	}
 }
 
@@ -178,53 +165,57 @@ const handleVideoLoaded = (index: number) => {
 	}
 }
 
+const toggleFavorite = async () => {
+	if (!memory.value) return
+	const userEmail = authStore.user?.email
+	if (!userEmail) return
+
+	await memoryStore.updateMemory(memory.value.id, {isFavorite: !memory.value.isFavorite}, userEmail)
+	memory.value.isFavorite = !memory.value.isFavorite
+}
+
 onMounted(async () => {
 	try {
-		const docRef = doc(db, `memories_${year}`, id)
-		const docSnap = await getDoc(docRef)
+		const userEmail = authStore.user?.email
+		if (!userEmail) return
 
-		if (docSnap.exists()) {
-			const data = docSnap.data()
-
-			if (data.isDeleted === true) {
-				await router.push({name: 'not-found'})
-				return
-			}
-
-			if (data.images && Array.isArray(data.images)) {
-				imageUrls.value = await Promise.all(
-						data.images.map(async (path: string) => {
-							try {
-								return await getFileUrl(path)
-							} catch {
-								return '/favicon.jpg'
-							}
-						})
-				)
-			}
-
-			if (data.videos && Array.isArray(data.videos) && data.videos.length > 0) {
-				videoUrls.value = await Promise.all(
-						data.videos.map(async (path: string) => {
-							try {
-								return await getFileUrl(path)
-							} catch {
-								return ''
-							}
-						})
-				)
-
-				setTimeout(() => {
-					initializeVideoStates()
-				}, 100)
-			}
-
-			item.value = {id: docSnap.id, ...data}
-		} else {
-			console.error('No such document found!')
+		if (!memoryStore.loaded) {
+			await memoryStore.fetchMemories(userEmail)
 		}
-	} catch (err) {
-		console.error('Error fetching details:', err)
+
+		const mem = memoryStore.getMemoryById(id)
+		if (!mem || mem.isDeleted) {
+			await router.push({name: 'not-found'})
+			return
+		}
+		memory.value = mem
+
+		if (memory.value.images?.length) {
+			imageUrls.value = await Promise.all(
+					memory.value.images.map(async path => {
+						try {
+							return await getFileUrl(path)
+						} catch {
+							return '/favicon.jpg'
+						}
+					})
+			)
+		}
+
+		if (memory.value.images?.length) {
+			videoUrls.value = await Promise.all(
+					memory.value.videos.map(async path => {
+						try {
+							return await getFileUrl(path)
+						} catch {
+							return ''
+						}
+					})
+			)
+			setTimeout(() => initializeVideoStates(), 100)
+		}
+	} catch (error) {
+		console.error('Error loading memory:', error)
 	} finally {
 		loading.value = false
 	}
@@ -268,45 +259,41 @@ onUnmounted(() => {
 			</div>
 		</div>
 
-		<div v-else-if="item" class="max-w-5xl mx-auto">
+		<div v-else-if="memory" class="max-w-5xl mx-auto">
 			<div class="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-xl md:rounded-2xl overflow-hidden
                   shadow-lg md:shadow-xl mb-4 md:mb-6 group">
 				<img
 						:src="imageUrls[0] || '/favicon.jpg'"
-						:alt="item.title"
+						:alt="memory.title"
 						class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
 				/>
-
-				<!-- Overlay Gradient -->
-				<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-				<!-- Content on Image -->
+				<span class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></span>
 				<div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
 					<div class="flex items-center gap-1.5 md:gap-2 mb-2 flex-wrap">
 						<div class="px-2 md:px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs md:text-sm">
-							{{ year }}
+							{{ memory.year }}
 						</div>
-						<div v-if="item.isFavorite" class="px-2 md:px-3 py-1 rounded-full bg-pink-500/80 text-xs md:text-sm
-                                               backdrop-blur-sm flex items-center gap-1">
+						<div v-if="memory.isFavorite"
+						     class="px-2 md:px-3 py-1 rounded-full bg-pink-500/80 text-xs md:text-sm backdrop-blur-sm flex items-center gap-1">
 							<i class="bx bxs-star text-xs md:text-sm"></i>
 							<span class="hidden sm:inline">Favorite</span>
 						</div>
-						<div v-if="imageUrls.length > 1" class="px-2 md:px-3 py-1 rounded-full bg-black/60 text-xs md:text-sm
-                                                    backdrop-blur-sm flex items-center gap-1">
+						<div v-if="imageUrls.length > 1"
+						     class="px-2 md:px-3 py-1 rounded-full bg-black/60 text-xs md:text-sm backdrop-blur-sm flex items-center gap-1">
 							<i class="bx bx-images text-xs md:text-sm"></i>
 							<span>{{ imageUrls.length }}</span>
 						</div>
-						<div v-if="videoUrls.length > 0" class="px-2 md:px-3 py-1 rounded-full bg-blue-500/80 text-xs md:text-sm
-                                                    backdrop-blur-sm flex items-center gap-1">
+						<div v-if="videoUrls.length > 0"
+						     class="px-2 md:px-3 py-1 rounded-full bg-blue-500/80 text-xs md:text-sm backdrop-blur-sm flex items-center gap-1">
 							<i class="bx bx-video text-xs md:text-sm"></i>
 							<span>{{ videoUrls.length }}</span>
 						</div>
 					</div>
 
-					<h1 class="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 drop-shadow">{{ item.title }}</h1>
+					<h1 class="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 drop-shadow">{{ memory.title }}</h1>
 
-					<p v-if="item.subtitle" class="text-sm md:text-base opacity-90 drop-shadow truncate">
-						{{ item.subtitle }}
+					<p v-if="memory.description" class="text-sm md:text-base opacity-90 drop-shadow truncate">
+						{{ memory.description }}
 					</p>
 				</div>
 			</div>
@@ -314,23 +301,18 @@ onUnmounted(() => {
 			<!-- Quick Stats - Compact on mobile -->
 			<div class="mb-4 md:mb-6">
 				<div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 flex-wrap">
-					<!-- Location -->
-					<div v-if="item.location" class="flex items-center gap-1.5 md:gap-2 text-sm md:text-base
+					<div v-if="memory.location" class="flex items-center gap-1.5 md:gap-2 text-sm md:text-base
                                            text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800
                                            px-3 md:px-4 py-1.5 md:py-2 rounded-lg shadow-sm">
 						<i class="bx bx-map text-pink-500"></i>
-						<span class="truncate max-w-[120px] md:max-w-none">{{ item.location }}</span>
+						<span class="truncate max-w-[120px] md:max-w-none">{{ memory.location }}</span>
 					</div>
-
-					<!-- Date -->
 					<div class="flex items-center gap-1.5 md:gap-2 text-sm md:text-base
                       text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800
                       px-3 md:px-4 py-1.5 md:py-2 rounded-lg shadow-sm">
 						<i class="bx bx-calendar text-purple-500"></i>
-						<span>{{ formatCompactDate(item.date) }}</span>
+						<span>{{ formatCompactDate(memory.date) }}</span>
 					</div>
-
-					<!-- Media Count -->
 					<div class="flex items-center gap-1.5 md:gap-2 text-sm md:text-base
                       text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800
                       px-3 md:px-4 py-1.5 md:py-2 rounded-lg shadow-sm">
@@ -338,28 +320,25 @@ onUnmounted(() => {
 						<span>{{ imageUrls.length + videoUrls.length }} media</span>
 					</div>
 				</div>
-
-				<!-- Tags (if any) -->
-				<div v-if="item.tags && item.tags.length > 0" class="flex flex-wrap gap-1.5 md:gap-2">
+				<div v-if="memory.tags && memory.tags.length > 0" class="flex flex-wrap gap-1.5 md:gap-2">
           <span
-		          v-for="tag in item.tags.slice(0, 3)"
+		          v-for="tag in memory.tags.slice(0, 3)"
 		          :key="tag"
 		          class="px-2.5 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm
                    bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
           >
             {{ tag }}
           </span>
-					<span v-if="item.tags.length > 3"
+					<span v-if="memory.tags.length > 3"
 					      class="px-2.5 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm
                        bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
-            +{{ item.tags.length - 3 }}
+            +{{ memory.tags.length - 3 }}
           </span>
 				</div>
 			</div>
 
 			<!-- Main Content -->
 			<div class="space-y-4 md:space-y-6">
-				<!-- Description Card -->
 				<div class="bg-white dark:bg-gray-800 rounded-xl md:rounded-2xl shadow-sm p-4 md:p-6
                     border border-gray-100 dark:border-gray-700">
 					<div class="flex items-center gap-2 mb-3 md:mb-4">
@@ -373,11 +352,9 @@ onUnmounted(() => {
 					</div>
 
 					<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-						{{ item.description || 'No description provided for this memory.' }}
+						{{ memory.description || 'No description provided for this memory.' }}
 					</p>
 				</div>
-
-				<!-- Gallery Section -->
 				<div v-if="imageUrls.length > 0"
 				     class="bg-white dark:bg-gray-800 rounded-xl md:rounded-2xl shadow-sm p-4 md:p-6
                     border border-gray-100 dark:border-gray-700">
@@ -399,8 +376,6 @@ onUnmounted(() => {
 							View All
 						</button>
 					</div>
-
-					<!-- Gallery Grid - Responsive -->
 					<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
 						<div
 								v-for="(url, i) in imageUrls.slice(0, 4)"
@@ -435,7 +410,7 @@ onUnmounted(() => {
 					</div>
 				</div>
 
-				<!-- Videos Section - IMPROVED -->
+				<!-- Videos Section -->
 				<div v-if="videoUrls.length > 0"
 				     class="bg-white dark:bg-gray-800 rounded-xl md:rounded-2xl shadow-sm p-4 md:p-6
                     border border-gray-100 dark:border-gray-700">
@@ -448,15 +423,11 @@ onUnmounted(() => {
 							Videos ({{ videoUrls.length }})
 						</h2>
 					</div>
-
-					<!-- Videos Grid - Responsive -->
 					<div class="space-y-4 md:space-y-6">
 						<div
 								v-for="(url, i) in videoUrls"
 								:key="i"
-								class="group"
-						>
-							<!-- Video Player Container -->
+								class="group">
 							<div class="relative rounded-xl md:rounded-2xl overflow-hidden bg-black
                                 shadow-lg transition-all duration-300 group-hover:shadow-xl">
 								<video
@@ -469,25 +440,19 @@ onUnmounted(() => {
 										@timeupdate="handleTimeUpdate($event, i)"
 										@loadedmetadata="handleVideoLoaded(i)"
 								></video>
-
-								<!-- Custom Video Controls -->
 								<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent
 										p-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-									<!-- Progress Bar -->
 									<div class="w-full h-1.5 bg-gray-600/50 rounded-full mb-3 overflow-hidden">
 										<div
 												class="h-full bg-green-500 rounded-full transition-all duration-200 progress-bar"
 												:style="{ width: `${videoProgress[i] || 0}%` }"
 										></div>
 									</div>
-
-									<!-- Control Buttons -->
 									<div class="flex items-center justify-between">
 										<div class="flex items-center gap-3">
 											<button
 													@click="togglePlay($event, i)"
-													class="w-8 h-8 flex items-center justify-center text-white hover:text-green-400 transition-colors"
-											>
+													class="w-8 h-8 flex items-center justify-center text-white hover:text-green-400 transition-colors">
 												<i :class="isPlaying[i] ? 'bx bx-pause text-xl' : 'bx bx-play text-xl'"></i>
 											</button>
 
@@ -499,27 +464,22 @@ onUnmounted(() => {
 										<div class="flex items-center gap-2">
 											<button
 													@click="toggleMute(i)"
-													class="w-8 h-8 flex items-center justify-center text-white hover:text-green-400 transition-colors"
-											>
+													class="w-8 h-8 flex items-center justify-center text-white hover:text-green-400 transition-colors">
 												<i :class="isMuted[i] ? 'bx bx-volume-mute' : 'bx bx-volume-full'"></i>
 											</button>
 
 											<button
 													@click="toggleFullscreen($event, i)"
-													class="w-8 h-8 flex items-center justify-center text-white hover:text-green-400 transition-colors"
-											>
+													class="w-8 h-8 flex items-center justify-center text-white hover:text-green-400 transition-colors">
 												<i class="bx bx-fullscreen"></i>
 											</button>
 										</div>
 									</div>
 								</div>
-
-								<!-- Play Button Overlay -->
 								<div
 										v-if="!isPlaying[i]"
 										@click="playVideo(i)"
-										class="absolute inset-0 flex items-center justify-center cursor-pointer"
-								>
+										class="absolute inset-0 flex items-center justify-center cursor-pointer">
 									<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-black/60 backdrop-blur-sm
 											flex items-center justify-center transition-transform duration-300
 											hover:scale-110 group-hover:opacity-100 opacity-80">
@@ -527,8 +487,6 @@ onUnmounted(() => {
 									</div>
 								</div>
 							</div>
-
-							<!-- Video Info -->
 							<div class="mt-2 px-1">
 								<div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
 									<span>Video {{ i + 1 }}</span>
@@ -540,8 +498,6 @@ onUnmounted(() => {
 						</div>
 					</div>
 				</div>
-
-				<!-- Actions Card (Mobile Bottom Sheet Style) -->
 				<div class="sticky bottom-4 md:static bg-white dark:bg-gray-800 rounded-xl md:rounded-2xl
                     shadow-lg md:shadow-sm p-4 md:p-6 border border-gray-100 dark:border-gray-700
                     md:mt-6">
@@ -551,35 +507,32 @@ onUnmounted(() => {
 								class="flex flex-col md:flex-row items-center gap-1.5 md:gap-2 px-3 py-2.5 md:px-4 md:py-3
                      rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
 						>
-							<div class="w-8 h-8 rounded-lg bg-pink-100 dark:bg-pink-900/30
+							<span class="w-8 h-8 rounded-lg bg-pink-100 dark:bg-pink-900/30
                           flex items-center justify-center group-hover:scale-110 transition-transform">
-								<i :class="item.isFavorite ? 'bx bxs-heart text-pink-600 dark:text-pink-400'
+								<i :class="memory.isFavorite ? 'bx bxs-heart text-pink-600 dark:text-pink-400'
                                            : 'bx bx-heart text-gray-400'"></i>
-							</div>
+							</span>
 							<span class="text-xs md:text-sm text-gray-700 dark:text-gray-300">
-                {{ item.isFavorite ? 'Unfavorite' : 'Favorite' }}
+                {{ memory.isFavorite ? 'Unfavorite' : 'Favorite' }}
               </span>
 						</button>
 
 						<button
 								class="flex flex-col md:flex-row items-center gap-1.5 md:gap-2 px-3 py-2.5 md:px-4 md:py-3
-                     rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
-						>
-							<div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30
+                     rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group">
+							<span class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30
                           flex items-center justify-center group-hover:scale-110 transition-transform">
 								<i class="bx bx-share text-blue-600 dark:text-blue-400"></i>
-							</div>
+							</span>
 							<span class="text-xs md:text-sm text-gray-700 dark:text-gray-300">Share</span>
 						</button>
-
 						<button
 								class="flex flex-col md:flex-row items-center gap-1.5 md:gap-2 px-3 py-2.5 md:px-4 md:py-3
-                     rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
-						>
-							<div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30
+                     rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group">
+							<span class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30
                           flex items-center justify-center group-hover:scale-110 transition-transform">
 								<i class="bx bx-edit text-green-600 dark:text-green-400"></i>
-							</div>
+							</span>
 							<span class="text-xs md:text-sm text-gray-700 dark:text-gray-300">Edit</span>
 						</button>
 					</div>
@@ -607,62 +560,44 @@ onUnmounted(() => {
 			</router-link>
 		</div>
 
-		<!-- Image Modal -->
 		<transition name="fade">
 			<div
 					v-if="showModal"
 					class="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50"
-					@click.self="closeModal"
-			>
-				<!-- Close Button -->
+					@click.self="closeModal">
 				<button
 						@click="closeModal"
 						class="absolute top-4 right-4 md:top-8 md:right-8 text-white text-3xl
-                 hover:text-pink-400 transition-colors z-10"
-				>
+                 hover:text-pink-400 transition-colors z-10">
 					<i class="bx bx-x"></i>
 				</button>
-
-				<!-- Navigation Buttons -->
 				<button
 						v-if="imageUrls.length > 1"
 						@click="prevImage"
-						class="absolute left-4 md:left-8 text-white text-4xl hover:text-pink-400
-                 transition-colors z-10 p-2"
-				>
+						class="absolute left-4 md:left-8 text-white text-4xl hover:text-pink-400 transition-colors z-10 p-2">
 					<i class="bx bx-chevron-left"></i>
 				</button>
 
 				<button
 						v-if="imageUrls.length > 1"
 						@click="nextImage"
-						class="absolute right-4 md:right-8 text-white text-4xl hover:text-pink-400
-                 transition-colors z-10 p-2"
-				>
+						class="absolute right-4 md:right-8 text-white text-4xl hover:text-pink-400 transition-colors z-10 p-2">
 					<i class="bx bx-chevron-right"></i>
 				</button>
-
-				<!-- Image Container -->
 				<div class="relative w-full h-full flex items-center justify-center p-4">
 					<img
 							:src="imageUrls[activeIndex]"
 							:alt="`Gallery image ${activeIndex + 1}`"
-							class="max-h-[85vh] max-w-full object-contain rounded-lg"
-					/>
-
-					<!-- Image Info -->
+							class="max-h-[85vh] max-w-full object-contain rounded-lg" />
 					<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2
                       bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full
                       text-sm flex items-center gap-2">
 						<span>{{ activeIndex + 1 }} / {{ imageUrls.length }}</span>
 						<span class="text-gray-300">•</span>
-						<span>{{ item?.title }}</span>
+						<span>{{ memory?.title }}</span>
 					</div>
-
-					<!-- Image Navigation Dots -->
 					<div v-if="imageUrls.length > 1"
-					     class="absolute bottom-20 left-1/2 transform -translate-x-1/2
-                      flex gap-2">
+					     class="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-2">
 						<div
 								v-for="(_, index) in imageUrls"
 								:key="index"
@@ -674,8 +609,6 @@ onUnmounted(() => {
 						></div>
 					</div>
 				</div>
-
-				<!-- Keyboard shortcuts hint -->
 				<div class="absolute bottom-4 right-4 text-white/50 text-sm hidden md:block">
 					<span>← → to navigate • Esc to close</span>
 				</div>
@@ -689,12 +622,10 @@ video {
 	cursor: pointer;
 }
 
-/* Custom video controls animation */
 .group:hover .custom-controls {
 	opacity: 1 !important;
 }
 
-/* Video progress bar */
 .progress-bar {
 	transition: width 0.2s ease;
 }

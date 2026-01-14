@@ -4,7 +4,7 @@ import {useAuthStore} from '@/store/useAuthStore.ts'
 import {useRouter} from 'vue-router'
 
 const email = ref('ralphmaron@cute.super') // for testing :)
-const password = ref('super.cute')
+const password = ref('') // guess the password :)
 const isLoading = ref(false)
 const errorMessage = ref('')
 const currentYear = ref(new Date().getFullYear())

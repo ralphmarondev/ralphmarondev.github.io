@@ -14,11 +14,7 @@ const emit = defineEmits<{
 const imageUrl = ref<string>('')
 const showActions = ref(false)
 
-const getTotalMediaCount = computed(() => {
-	const imageCount = props.memory.images?.length || 0
-	const videoCount = props.memory.videos?.length || 0
-	return imageCount + videoCount
-})
+const getTotalMediaCount = computed(() => props.memory.images.length + props.memory.videos.length)
 
 const formatDate = (dateString: string) => {
 	try {
@@ -59,10 +55,8 @@ const toggleFavorite = (e: Event) => {
 
 onMounted(async () => {
 	try {
-		if (props.memory.images && props.memory.images.length > 0 && props.memory.images?.[0]) {
+		if (props.memory.images.length > 0 && props.memory.images?.[0]) {
 			imageUrl.value = await getFileUrl(props.memory.images[0])
-		} else if (props.memory.image) {
-			imageUrl.value = await getFileUrl(props.memory.image)
 		}
 	} catch (err) {
 		console.error('Error loading image:', err)
@@ -120,14 +114,12 @@ onMounted(async () => {
 					<button
 							@click.prevent="toggleFavorite"
 							class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-							:title="memory.isFavorite ? 'Remove from favorites' : 'Add to favorites'"
-					>
+							:title="memory.isFavorite ? 'Remove from favorites' : 'Add to favorites'">
 						<i :class="memory.isFavorite ? 'bx bxs-heart text-pink-500' : 'bx bx-heart text-gray-400'"></i>
 					</button>
 					<button
 							@click.prevent="showActions = !showActions"
-							class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-					>
+							class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
 						<i class="bx bx-dots-vertical-rounded text-gray-400"></i>
 					</button>
 				</div>
@@ -139,8 +131,7 @@ onMounted(async () => {
         <span
 		        v-for="tag in memory.tags.slice(0, 3)"
 		        :key="tag"
-		        class="px-2 py-1 rounded-full text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
-        >
+		        class="px-2 py-1 rounded-full text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
           {{ tag }}
         </span>
 				<span v-if="memory.tags.length > 3"

@@ -1,18 +1,10 @@
 <script setup lang="ts">
 import {computed, onMounted, ref} from 'vue'
 import {getFileUrl} from '@/utils/storageUtils.ts'
+import type {Memory} from '@/types/memory.ts'
 
 const props = defineProps<{
-	id: string
-	image?: string | null
-	title: string
-	date: string
-	description?: string
-	tags?: string[]
-	isFavorite?: boolean
-	location?: string
-	images?: string[]
-	videos?: string[]
+	memory: Memory
 }>()
 
 const emit = defineEmits<{
@@ -20,25 +12,25 @@ const emit = defineEmits<{
 }>()
 
 const imageUrl = ref<string>('')
-const isFavorite = ref(props.isFavorite || false)
+const isFavorite = ref(props.memory.isFavorite || false)
 
 const formattedDate = computed(() => {
 	try {
-		const date = new Date(props.date)
+		const date = new Date(props.memory.date)
 		return date.toLocaleDateString('en-US', {
 			month: 'short',
 			day: 'numeric',
 			year: 'numeric'
 		})
 	} catch {
-		return props.date
+		return props.memory.date
 	}
 })
 
 const timeAgo = computed(() => {
 	try {
 		const now = new Date()
-		const postDate = new Date(props.date)
+		const postDate = new Date(props.memory.date)
 		const diffTime = Math.abs(now.getTime() - postDate.getTime())
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
 
@@ -53,16 +45,14 @@ const timeAgo = computed(() => {
 	}
 })
 
-const imagesCount = computed(() => props.images?.length || 0)
-const videosCount = computed(() => props.videos?.length || 0)
+const imagesCount = computed(() => props.memory.images?.length || 0)
+const videosCount = computed(() => props.memory.videos?.length || 0)
 const getTotalMediaCount = computed(() => imagesCount.value + videosCount.value)
 
 onMounted(async () => {
 	try {
-		if (props.images && props.images.length > 0 && props.images?.[0]) {
-			imageUrl.value = await getFileUrl(props.images[0])
-		} else if (props.image) {
-			imageUrl.value = await getFileUrl(props.image)
+		if (props.memory.images.length > 0 && props.memory.images?.[0] != null) {
+			imageUrl.value = await getFileUrl(props.memory.images[0])
 		}
 	} catch (err) {
 		console.error('Error loading image:', err)
@@ -73,19 +63,19 @@ const toggleFavorite = (e: Event) => {
 	e.preventDefault()
 	e.stopPropagation()
 	isFavorite.value = !isFavorite.value
-	emit('toggleFavorite', props.id)
+	emit('toggleFavorite', props.memory.id)
 }
 </script>
 
 <template>
 	<router-link
-			:to="`details/${id}`"
+			:to="`details/${props.memory.id}`"
 			class="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-soft hover:shadow-2xl transition-all duration-500 overflow-hidden">
 		<div class="relative w-full h-48 overflow-hidden">
 			<img
 					v-if="imageUrl"
 					:src="imageUrl"
-					:alt="title"
+					:alt="props.memory.title"
 					loading="lazy"
 					class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
 			/>
@@ -126,23 +116,23 @@ const toggleFavorite = (e: Event) => {
 
 		<div class="p-4 md:p-5">
 			<h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2 line-clamp-1 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
-				{{ title }}
+				{{ props.memory.title }}
 			</h3>
-			<p v-if="description" class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
-				{{ description }}
+			<p v-if="props.memory.description" class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
+				{{ props.memory.description }}
 			</p>
-			<div v-if="location" class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3">
+			<div v-if="props.memory.location" class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3">
 				<i class="bx bx-map mr-1"></i>
-				<span class="truncate">{{ location }}</span>
+				<span class="truncate">{{ props.memory.location }}</span>
 			</div>
-			<div v-if="tags && tags.length > 0" class="flex flex-wrap gap-1.5 mb-4">
-        <span v-for="tag in tags.slice(0, 2)" :key="tag"
+			<div v-if="props.memory.tags && props.memory.tags.length > 0" class="flex flex-wrap gap-1.5 mb-4">
+        <span v-for="tag in props.memory.tags.slice(0, 2)" :key="tag"
               class="px-2 py-1 rounded-full text-xs bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300">
           {{ tag }}
         </span>
-				<span v-if="tags.length > 2"
+				<span v-if="props.memory.tags.length > 2"
 				      class="px-2 py-1 rounded-full text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
-          +{{ tags.length - 2 }}
+          +{{ props.memory.tags.length - 2 }}
         </span>
 			</div>
 

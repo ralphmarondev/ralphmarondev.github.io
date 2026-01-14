@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import {useLayoutStore} from '@/store/useLayoutStore.ts'
-import {useRoute, useRouter} from 'vue-router'
+import {useRoute} from 'vue-router'
 import {onMounted, onUnmounted, ref, watch} from 'vue'
-import {useAuthStore} from '@/store/useAuthStore.ts'
 
 const layout = useLayoutStore()
-const router = useRouter()
 const route = useRoute()
-const auth = useAuthStore()
 
 const menuItems = [
 	{icon: 'bxs-home', label: 'Dashboard', route: '/dashboard'},
@@ -17,8 +14,6 @@ const menuItems = [
 	{icon: 'bxs-cog', label: 'Settings', route: '/settings'}
 ]
 
-const accountMenu = ref(false)
-const mobileAccountMenu = ref(false)
 const isMobile = ref(false)
 
 const checkIfMobile = () => {
@@ -33,29 +28,6 @@ onMounted(() => {
 onUnmounted(() => {
 	window.removeEventListener('resize', checkIfMobile)
 })
-
-const toggleAccount = () => {
-	accountMenu.value = !accountMenu.value
-}
-
-const toggleMobileAccount = () => {
-	mobileAccountMenu.value = !mobileAccountMenu.value
-}
-
-const goToAccount = () => {
-	accountMenu.value = false
-	mobileAccountMenu.value = false
-	layout.closeSidebar()
-	console.log('Navigate to account index.')
-}
-
-const logout = () => {
-	auth.logout()
-	accountMenu.value = false
-	mobileAccountMenu.value = false
-	layout.closeSidebar()
-	router.push({name: 'login'})
-}
 
 if (!layout.closeSidebar) {
 	layout.closeSidebar = () => {
@@ -182,49 +154,6 @@ watch(
 				<span class="text-sm font-medium">{{ item.label }}</span>
 			</router-link>
 		</nav>
-
-		<!-- Mobile account -->
-		<section class="p-4 border-t border-gray-200 dark:border-gray-700">
-			<div @click="toggleMobileAccount"
-			     class="flex items-center gap-3 cursor-pointer p-3 rounded-xl hover:bg-white/80 dark:hover:bg-gray-700/80 transition-all">
-				<div class="relative">
-					<img src="/ralphmaron.png" alt="Ralph Maron Eda"
-					     class="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-gray-800"/>
-					<div
-							class="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white dark:border-gray-800"></div>
-				</div>
-				<div class="flex-1">
-					<p class="text-gray-700 dark:text-gray-200 font-medium">My Account</p>
-					<p class="text-xs text-gray-500">View or Logout</p>
-				</div>
-				<i :class="[
-          'bx text-gray-600 dark:text-gray-300 ml-auto transition-transform duration-300',
-          mobileAccountMenu ? 'bx-chevron-up' : 'bx-chevron-down'
-        ]"></i>
-			</div>
-
-			<transition name="slide">
-				<div v-if="mobileAccountMenu"
-				     class="mt-2 bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700">
-					<button
-							@click="goToAccount"
-							class="w-full text-left px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-pink-50 dark:hover:bg-gray-700 flex items-center gap-3">
-						<span class="w-8 h-8 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center">
-							<i class="bx bx-user text-pink-600 dark:text-pink-400"></i>
-						</span>
-						<span>Profile</span>
-					</button>
-					<button
-							@click="logout"
-							class="w-full text-left px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-pink-50 dark:hover:bg-gray-700 flex items-center gap-3">
-						<span class="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-							<i class="bx bx-log-out text-red-600 dark:text-red-400"></i>
-						</span>
-						<span>Logout</span>
-					</button>
-				</div>
-			</transition>
-		</section>
 	</aside>
 </template>
 

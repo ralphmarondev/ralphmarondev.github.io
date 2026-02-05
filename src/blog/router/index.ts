@@ -14,6 +14,12 @@ export const blogRoutes: RouteRecordRaw[] = [
 		meta: {title: 'C Language Introduction', icon: '/ralphmaron.png'}
 	},
 	{
+		path: '/blog/c-identifiers',
+		name: 'c-identifiers',
+		component: () => import('../cprogramming/identifiers/IdentifiersIndex.vue'),
+		meta: {title: 'Identifiers in C', icon: '/ralphmaron.png'}
+	},
+	{
 		path: '/blog/c-variables',
 		name: 'c-variables',
 		component: () => import('../cprogramming/variables/VariablesIndex.vue'),

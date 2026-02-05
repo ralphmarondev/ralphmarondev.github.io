@@ -70,7 +70,7 @@ const sections = [
 <template>
 	<MainLayout>
 		<h1 class="text-4xl font-bold text-gray-800 mb-2">C Programming Tutorial</h1>
-		<p class="text-sm text-gray-500 mb-6">Last Updated : {{ lastUpdated }}</p>
+		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
 		<p class="text-gray-600 mb-10 text-lg">
 			C is a powerful general-purpose programming language developed in 1972 by Dennis M. Ritchie at Bell Laboratories.

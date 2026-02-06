@@ -20,10 +20,10 @@ function goToLogin() {
 	<nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 w-full z-50">
 		<div class="max-w-5xl mx-auto">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-				<div class="flex items-center space-x-2">
+				<router-link to="/blog" class="flex items-center space-x-2">
 					<i class="bx bx-code text-2xl text-gray-800 dark:text-white"></i>
 					<span class="font-bold text-xl text-gray-800 dark:text-white">Ralph's Blog</span>
-				</div>
+				</router-link>
 				<div class="hidden md:flex items-center space-x-4">
 					<button
 							@click="toggleTheme"

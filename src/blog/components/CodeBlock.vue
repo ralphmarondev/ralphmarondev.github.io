@@ -1,11 +1,3 @@
-<template>
-  <pre
-		  class="bg-gray-50 text-gray-900 p-4 rounded-lg border-2 border-pink-400 overflow-x-auto leading-snug"
-  >
-    <code v-html="highlightedCode"></code>
-  </pre>
-</template>
-
 <script setup lang="ts">
 import {computed} from 'vue'
 
@@ -22,6 +14,7 @@ const cKeywords = [
 
 const highlightedCode = computed(() => {
 	let escaped = props.code
+			.trim()
 			.replace(/&/g, '&amp;')
 			.replace(/</g, '&lt;')
 			.replace(/>/g, '&gt;')
@@ -40,3 +33,23 @@ const highlightedCode = computed(() => {
 	return escaped
 })
 </script>
+
+<template>
+	<div class="relative my-4">
+    <pre
+		    class="
+        bg-gray-50 text-gray-900
+        p-4 rounded-lg
+        border-2 border-pink-400
+        text-xs sm:text-sm
+        leading-snug
+        max-w-full
+
+        overflow-x-auto
+        whitespace-pre
+      "
+    >
+      <code v-html="highlightedCode"></code>
+    </pre>
+	</div>
+</template>

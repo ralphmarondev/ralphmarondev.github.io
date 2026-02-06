@@ -22,9 +22,6 @@ int main()
 	return 0;
 }
 `)
-
-const variableIdentifierOutput = ref('10')
-
 const functionIdentifierProgram = ref(`
 #include <stdio.h>
 
@@ -41,8 +38,6 @@ int main()
 	return 0;
 }
 `)
-const functionIdentifierOutput = ref('30')
-
 const program1 = ref(`
 #include <stdio.h>
 
@@ -52,7 +47,6 @@ int main()
 	return 0;
 }
 `)
-
 const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' before '=' token
     int const = 90;`
 )
@@ -173,33 +167,35 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			It is important to understand the difference between keywords and identifiers:
-			<table>
-				<tr>
-					<th>Feature</th>
-					<th>Keyword</th>
-					<th>Identifier</th>
-				</tr>
-				<tr>
-					<td>Definition</td>
-					<td>Reserved word in C with a predefined meaning.</td>
-					<td>User-defined name for variables, functions, etc.</td>
-				</tr>
-				<tr>
-					<td>Usage</td>
-					<td>Controls program structure and flow (int, return, if).</td>
-					<td>Refers to programmer-defined elements (age, sum, totalAmount, cutenessLevel).</td>
-				</tr>
-				<tr>
-					<td>Modifiability</td>
-					<td>Cannot be changed or reused.</td>
-					<td>Can be freely created and used.</td>
-				</tr>
-				<tr>
-					<td>Case sensitivity</td>
-					<td>Keywords are case-sensitive (int != Int)</td>
-					<td>Identifiers are also case-sensitive (age != Age)</td>
-				</tr>
-			</table>
+			<div class="table-wrapper">
+				<table>
+					<tr>
+						<th>Feature</th>
+						<th>Keyword</th>
+						<th>Identifier</th>
+					</tr>
+					<tr>
+						<td>Definition</td>
+						<td>Reserved word in C with a predefined meaning.</td>
+						<td>User-defined name for variables, functions, etc.</td>
+					</tr>
+					<tr>
+						<td>Usage</td>
+						<td>Controls program structure and flow (int, return, if).</td>
+						<td>Refers to programmer-defined elements (age, sum, totalAmount, cutenessLevel).</td>
+					</tr>
+					<tr>
+						<td>Modifiability</td>
+						<td>Cannot be changed or reused.</td>
+						<td>Can be freely created and used.</td>
+					</tr>
+					<tr>
+						<td>Case sensitivity</td>
+						<td>Keywords are case-sensitive (int != Int)</td>
+						<td>Identifiers are also case-sensitive (age != Age)</td>
+					</tr>
+				</table>
+			</div>
 		</p>
 
 		<!--!!! -->
@@ -217,10 +213,34 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 </template>
 
 <style scoped>
-table, th, td {
-	border: 1px solid black;
+.table-wrapper {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin: 12px 0;
+}
+
+table {
+	width: 100%;
+	min-width: 600px; /* forces horizontal scroll on phones */
 	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid black;
 	padding: 10px;
 	text-align: center;
+	white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+	.table-wrapper::after {
+		content: "← swipe →";
+		display: block;
+		text-align: right;
+		font-size: 12px;
+		color: #9ca3af;
+		margin-top: 4px;
+	}
 }
 </style>

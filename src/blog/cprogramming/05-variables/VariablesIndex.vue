@@ -120,16 +120,14 @@ int main() {
 				<li>Data type</li>
 				<li>Variable name</li>
 			</ul>
-			Syntax: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
+			Syntax: <br>
+			<span class="bg-pink-50 px-4 rounded-lg">
 				data_type variable_name;
-			</span> <br> <br>
-			Example: <br>
-			<span>
-				int age; <br>
-				float height; <br>
-				char grade; <br>
 			</span> <br>
+			Example: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">int age;</span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">float height;</span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">char grade;</span> <br>
 
 			Here: <br>
 			<ul class="list-disc list-inside space-y-1">
@@ -156,10 +154,10 @@ int main() {
 			Initialization means assigning an initial value to a variable.
 			<span class="text-gray-700 text-xl">Example:</span> <br>
 			<CodeBlock :code="declaringVariableExample" language="c" />
-			<span class="text-gray-700 text-xl">Output</span> <br>
-			Age: 20 <br>
-			Height: 5.7 <br>
-			Grade: A <br>
+			<span class="text-gray-700 text-xl">Output:</span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">Age: 20</span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">Height: 5.7</span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">Grade: A</span> <br>
 		</p>
 
 		<!--!!!-->
@@ -266,8 +264,7 @@ int main() {
 			Memory is allocated when the variable is defined (usually at declaration in C). <br>
 			The amount of memory depends on the data type. <br>
 			<CodeBlock :code="memoryAllocationExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-4 rounded-lg">4 bytes</span><br>
+			Output: <span class="bg-pink-50 px-4 rounded-lg">4 bytes</span><br>
 		</p>
 
 		<!--!!!-->

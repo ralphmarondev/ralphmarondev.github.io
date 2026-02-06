@@ -166,8 +166,7 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="integerExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">var = 22</span> <br>
+			Output: <span class="bg-pink-50 px-2 rounded-lg">var = 22</span> <br>
 		</p>
 
 		<!--!!!-->
@@ -191,8 +190,7 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="characterExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">ch = A</span> <br>
+			Output: <span class="bg-pink-50 px-2 rounded-lg">ch = A</span> <br>
 			<span class="text-pink-700">Note: </span> Internally, characters are stored using ASCII values.
 		</p>
 
@@ -212,8 +210,7 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="floatingPointExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">val = 12.450000</span> <br>
+			Output: <span class="bg-pink-50 px-2 rounded-lg">val = 12.450000</span> <br>
 			<span class="text-pink-700">Note: </span> Use <span class="bg-pink-50 px-2 rounded-lg">double</span> when
 			precision matters (scientific calculations, finance, physics).
 		</p>
@@ -235,8 +232,7 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="doubleExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">val = 1.452100</span> <br>
+			Output: <span class="bg-pink-50 px-2 rounded-lg">val = 1.452100</span> <br>
 		</p>
 
 		<!--!!!-->

@@ -71,13 +71,14 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 			<br>
 			For Example:
 			<br>
-			// Defining a variable <br>
-			int val = 10; <br>
+			<span class="bg-pink-50 px-2 rounded-lg">// Defining a variable </span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">int val = 10; </span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">// Defining a function </span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">void func() { }</span> <br>
 
-			// Defining a function <br>
-			void func() {} <br>
-
-			In the above snippet, val and func are identifiers - unique names chosen by the programmer to refer to a variable
+			In the above snippet, <span class="bg-pink-50 px-2 rounded-lg">val</span> and
+			<span class="bg-pink-50 px-2 rounded-lg">func</span> are identifiers - unique names chosen by the programmer to
+			refer to a variable
 			and a function, respectively.
 		</p>
 
@@ -89,7 +90,7 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 			When creating identifiers in C, there are specific rules you must follow: <br>
 			<ol class="list-decimal list-inside space-y-1 text-gray-500 mb-2">
 				<li>
-					Allowed characters: <br>
+					<span class="text-gray-600">Allowed characters: </span><br>
 					<ul class="list-disc list-inside space-y-1 text-gray-500">
 						<li>Uppercase letters: A-Z</li>
 						<li>Lowercase letters: a-z</li>
@@ -98,15 +99,19 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 					</ul>
 				</li>
 				<li>
-					Starting character: The first character of an identifier must be a letter or an underscore. It cannot be a
-					digit.
+					<span class="text-gray-600">Starting character:</span> The first character of an identifier must be a letter
+					                                                       or an underscore. It cannot be a
+					                                                       digit.
 				</li>
 				<li>
-					Case sensitivity: Identifiers are case-sensitive, meaning Value and value would be treated as two different
+					<span class="text-gray-600">Case sensitivity:</span>
+					Identifiers are case-sensitive, meaning Value and value
+					would be treated as two different
 					identifiers.
 				</li>
 				<li>
-					No keywords: Identifiers cannot be C keywords like int, return, if, while, etc.
+					<span class="text-gray-600">No keywords:</span> Identifiers cannot be C keywords like int, return, if, while,
+					                                                etc.
 				</li>
 			</ol>
 			Following these rules ensures that your identifiers are valid and won't cause compilation errors.
@@ -117,25 +122,20 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 			Variable Identifier
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
-			Variable Identifier: <br>
 			<CodeBlock :code="variableIdentifierProgram" language="c" />
-			<br>
-			Output: <br> <br>
-			<span class="bg-gray-50 text-gray-900 p-4 rounded-lg border-2 border-pink-400 overflow-x-auto leading-snug">
-				{{ variableIdentifierOutput }}
-			</span>
-			<br>
-			<br>
+			Output: <span class="bg-pink-50 px-2 rounded-lg">10</span><br>
 
 			Here, var is the identifier for the integer variable, which we can use throughout the program to store and access
 			the value 10.
 			<br>
+		</p>
 
-			Function Identifier: <br>
+		<h2 class="text-2xl font-semibold text-gray-800 mb-2">
+			Function Identifier
+		</h2>
+		<p class="text-gray-500 mb-2 text-lg">
 			<CodeBlock :code="functionIdentifierProgram" language="c" />
-			Output: <br>
-			<span>{{ functionIdentifierOutput }}</span> <br>
-
+			Output: <span class="bg-pink-50 px-2 rounded-lg">30</span> <br>
 			In this example, sum is an identifier for a user-defined function. Using meaningful names like this helps make the
 			program readable and understandable.
 		</p>
@@ -148,19 +148,19 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 			Although C doesn’t enforce strict naming conventions, following widely accepted guidelines can improve readability
 			and make your code easier to maintain. Common conventions include:
 			<br>
-			For Variables: <br>
+			<span class="text-gray-600">For Variables:</span><br>
 			<ul class="list-disc list-inside space-y-1 text-gray-500">
 				<li>Use camelCase: frequencyCount, personName, isCute</li>
 				<li>Constants are often written in UPPER_SNAKE_CASE: MAX_SIZE, PI, SUPER_CUTE</li>
 				<li>Begin variable names with a lowercase letter.</li>
 				<li>Use descriptive names that indicate the variable's purpose.</li>
 			</ul>
-			For Functions: <br>
+			<span class="text-gray-600">For Functions:</span><br>
 			<ul class="list-disc list-inside space-y-1 text-gray-500">
 				<li>Use camelcase: getName(), countFrequency(), cutenessLevel()</li>
 				<li>Function names should typically be verbs or verb phrases describing an action.</li>
 			</ul>
-			For Structures: <br>
+			<span class="text-gray-600">For Structures:</span><br>
 			<ul class="list-disc list-inside space-y-1 text-gray-500">
 				<li>Use PascalCase: Car, Person</li>
 				<li>Structure names should usually be nouns or noun phrases.</li>
@@ -210,7 +210,7 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 			Using a C keyword as an identifier will result in a compilation error. For example: <br>
 			<CodeBlock :code="program1" language="c" />
 			Output (example): <br>
-			<span>{{ outputProgram1 }}</span> <br>
+			<span class="bg-pink-50 px-2 rounded-lg">{{ outputProgram1 }}</span> <br>
 			This demonstrate why it's important to avoid keywords when naming your identifiers.
 		</p>
 	</MainLayout>

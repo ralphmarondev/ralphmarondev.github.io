@@ -9,7 +9,7 @@ const lastUpdated = 'February 5, 2026'
 		<h2 class="text-3xl font-bold text-gray-800 mb-2">C Language Introduction</h2>
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
-		<p class="text-gray-600 mb-10 text-lg">
+		<p class="text-gray-600 mb-2 text-lg">
 			C is a general-purpose procedural programming language developed by Dennis Ritchie in 1972 at Bell Laboratories,
 			part of AT&T. It was primarily designed as a system programming language for writing the UNIX operating system.
 			Over the years, C has grown beyond system programming and is now widely used in many fields of software
@@ -21,7 +21,9 @@ const lastUpdated = 'February 5, 2026'
 			Why Learn C?
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
-			C is often referred to as the “mother of all programming languages”, because many modern programming languages
+			C is often referred to as the
+			<span class="bg-pink-50 px-2 rounded-lg">“mother of all programming languages”</span>, because many modern
+			programming languages
 			such as Java, PHP, and JavaScript borrow syntax and concepts from C, either directly or indirectly. Learning C
 			first provides a strong foundation in programming fundamentals, including how memory works, working with pointers,
 			managing resources, and understanding the internal workings of a computer.
@@ -61,23 +63,28 @@ const lastUpdated = 'February 5, 2026'
 		</p>
 
 		<!--1.	Header File Inclusion-->
-		<p class="text-gray-500 mb-2 text-lg">
+		<p class="text-gray-600 mb-2 text-xl">
 			1. Header File Inclusion
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			Header files contain function declarations and macros that can be shared between multiple source files. Lines
-			starting with # are handled by the preprocessor, which runs before compilation. In our example, stdio.h provides
-			functions for input and output, like printf(). Other common header files include:
+			starting with <span class="bg-pink-50 px-2 rounded-lg">#</span> are handled by the preprocessor, which runs before
+			compilation. In our example, <span class="bg-pink-50 px-2 rounded-lg">stdio.h</span> provides
+			functions for input and output, like <span class="bg-pink-50 px-2 rounded-lg">printf()</span>. Other common header
+			files include:
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			<ul class="list-disc list-inside space-y-1 text-gray-500">
-				<li>stddef.h - defines useful types and macros</li>
-				<li>stdint.h - defines integer types with exact widths.</li>
+				<li><span class="text-gray-600 bg-pink-50 px-2 rounded-lg">stddef.h</span> - defines useful types and macros
+				</li>
+				<li><span class="text-gray-600 bg-pink-50 px-2 rounded-lg">stdint.h</span> - defines integer types with exact
+				                                                                           widths.
+				</li>
 			</ul>
 		</p>
 
 		<!--2. Main Function Declaration-->
-		<p class="text-gray-500 mb-2 text-lg">
+		<p class="text-gray-600 mb-2 text-xl">
 			2. Main Function Declaration (int main())
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
@@ -86,7 +93,7 @@ const lastUpdated = 'February 5, 2026'
 			successfully (0) or with an error.
 		</p>
 
-		<p class="text-gray-500 mb-2 text-lg">
+		<p class="text-gray-600 mb-2 text-xl">
 			3. Body of the Main Function
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
@@ -94,25 +101,27 @@ const lastUpdated = 'February 5, 2026'
 			calculations, and function calls take place.
 		</p>
 
-		<p class="text-gray-500 mb-2 text-lg">
+		<p class="text-gray-600 mb-2 text-xl">
 			4. Comments
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			Comments are ignored by the compiler and are used for documentation or notes.
 		</p>
 
-		<p class="text-gray-500 mb-2 text-lg">
+		<p class="text-gray-600 mb-2 text-xl">
 			5. Statements
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
-			Statements are instructions for the compiler. Each statement in C ends with a semicolon (;).
+			Statements are instructions for the compiler. Each statement in C ends with a semicolon
+			<span class="bg-pink-50 px-2 rounded-lg">(;)</span>.
 		</p>
 
-		<p class="text-gray-500 mb-2 text-lg">
+		<p class="text-gray-600 mb-2 text-xl">
 			6. Return Statement
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
-			This signals the end of the main function and optionally returns a value to the operating system. 0 usually
+			This signals the end of the main function and optionally returns a value to the operating system.
+			<span class="bg-pink-50 px-2 rounded-lg">0 (zero)</span> usually
 			indicates successful execution.
 		</p>
 
@@ -135,13 +144,33 @@ const lastUpdated = 'February 5, 2026'
 		<p class="text-gray-500 mb-2 text-lg">
 			C is used in a wide range of real-world applications, including:
 			<ul class="list-disc list-inside space-y-1 text-gray-500">
-				<li>Operating System: Core components of Linux, Windows, macOS</li>
-				<li>Embedded Systems: Programming devices like microwaves, printers, and washing machines.</li>
-				<li>Game Development: High-performance game engines, like the Doom engine.</li>
-				<li>Compilers and Interpreters: C is used to build compilers and interpreters, including parts of CPython.</li>
-				<li>Database Engines: Software like MySQL is implemented in C for efficiency.</li>
-				<li>IoT Devices: Sensors and home automation systems often rely on C for low-level programming.</li>
-				<li>Desktop Applications: Lightweight, high-performance applications, such as Notepad++.</li>
+				<li><span class="text-gray-600 bg-pink-50 px-2 rounded-lg">Operating System:</span> Core components of Linux,
+				                                                                                    Windows, macOS
+				</li>
+				<li>
+					<span class="text-gray-600 bg-pink-50 px-2 rounded-lg">Embedded Systems:</span>
+					Programming devices like microwaves, printers, and washing machines.
+				</li>
+				<li>
+					<span class="text-gray-600 bg-pink-50 px-2 rounded-lg">Game Development:</span>
+					High-performance game engines, like the Doom engine.
+				</li>
+				<li>
+					<span class="text-gray-600 bg-pink-50 px-2 rounded-lg">Compilers and Interpreters:</span>
+					C is used to build compilers and interpreters, including parts of CPython.
+				</li>
+				<li>
+					<span class="text-gray-600 bg-pink-50 px-2 rounded-lg">Database Engines:</span>
+					Software like MySQL is implemented in C for efficiency.
+				</li>
+				<li>
+					<span class="text-gray-600 bg-pink-50 px-2 rounded-lg">IoT Devices:</span>
+					Sensors and home automation systems often rely on C for low-level programming.
+				</li>
+				<li>
+					<span class="text-gray-600 bg-pink-50 px-2 rounded-lg">Desktop Applications:</span>
+					Lightweight, high-performance applications, such as Notepad++.
+				</li>
 			</ul>
 		</p>
 

@@ -138,10 +138,17 @@ int main() {
 		<p class="text-gray-500 mb-2 text-lg">
 			<span class="text-gray-700 text-xl">1. Data Type Keywords</span> <br>
 			These keywords define what kind of data a variable can store. <br>
-			Keywords: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-			char, int, float, double, void, short, long, signed, unsigned. <br>
-			</span> <br>
+			Keywords: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">char</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">int</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">float</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">double</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">void</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">short</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">long</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">signed</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">unsigned</span>
+			<br>
 
 			Explanation: <br>
 			<ul class="list-disc list-inside space-y-1">
@@ -158,10 +165,18 @@ int main() {
 
 			<span class="text-gray-700 text-xl">2. Control Flow Keywords</span> <br>
 			These keywords control how the program executes and which code runs.<br>
-			Keywords: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				if, else, switch, case, default, for, while, do, break, continue
-			</span> <br> <br>
+			Keywords: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">if</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">else</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">switch</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">case</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">default</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">for</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">while</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">do</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">break</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">continue</span>
+			<br>
 			Explanation: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li><span class="bg-pink-50 px-2 rounded-lg">if / else</span>: decision making</li>
@@ -175,10 +190,12 @@ int main() {
 
 			<span class="text-gray-700 text-xl">3. Storage Class keywords</span> <br>
 			These keywords control scope, lifetime, and memory behavior of variables.<br>
-			Keywords: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				auto, register, static, extern
-			</span> <br> <br>
+			Keywords: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">auto</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">register</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">static</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">extern</span>
+			<br>
 			Explanation: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li><span class="bg-pink-50 px-2 rounded-lg">auto</span>: default storage (rarely used explicitly)</li>
@@ -190,10 +207,12 @@ int main() {
 
 			<span class="text-gray-700 text-xl">4. Operator and Utility Keywords</span> <br>
 			These keywords help with memory size, jumps, and type definitions.<br>
-			Keywords: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				sizeof, return, goto, typedef
-			</span> <br> <br>
+			Keywords: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">sizeof</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">return</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">goto</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">typedef</span>
+			<br>
 			Explanation: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li><span class="bg-pink-50 px-2 rounded-lg">sizeof</span>: finds memory size of a variable</li>
@@ -201,34 +220,35 @@ int main() {
 				<li><span class="bg-pink-50 px-2 rounded-lg">typedef</span>: creates custom type names</li>
 				<li><span class="bg-pink-50 px-2 rounded-lg">goto</span>: jumps to a labeled statement (rarely recommended)</li>
 			</ul>
-			Example: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
+			Example:
+			<span class="bg-pink-50 px-4 rounded-lg">
 				return 0;
-			</span> <br> <br>
+			</span> <br>
 
 			<span class="text-gray-700 text-xl">5. Type Qualifier Keywords</span> <br>
 			These keywords modify how variables behave, not what they store.<br>
-			Keywords: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				const, volatile
-			</span> <br> <br>
+			Keywords: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">const</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">volatile</span>
+			<br>
 			Explanation: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li><span class="bg-pink-50 px-2 rounded-lg">const</span>: value cannot be changed</li>
 				<li><span class="bg-pink-50 px-2 rounded-lg">volatile</span>: value may change unexpectedly (hardware-related)
 				</li>
 			</ul>
-			Example: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
+			Example: <br>
+			<span class="bg-pink-50 px-4 rounded-lg">
 				const int max = 100;
-			</span> <br> <br>
+			</span> <br>
 
 			<span class="text-gray-700 text-xl">6. User-Defined Type Keywords</span> <br>
 			These keywords allow programmers to create custom data structures.<br>
-			Keywords: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				struct, union, enum
-			</span> <br> <br>
+			Keywords: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">struct</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">union</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">enum</span>
+			<br>
 			Explanation: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li><span class="bg-pink-50 px-2 rounded-lg">struct</span>: groups different data types</li>
@@ -252,10 +272,12 @@ int main() {
 				<li>Cannot be used as names</li>
 				<li>Part of the C language syntax</li>
 			</ul>
-			Examples: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				int, return, if, while
-			</span> <br> <br>
+			Examples: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">int</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">return</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">if</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">while</span>
+			<br>
 
 			<span class="text-gray-700 text-xl">Identifiers</span> <br>
 			<ul class="list-disc list-inside space-y-1">
@@ -264,10 +286,12 @@ int main() {
 				<li>Must follow naming rules</li>
 				<li>Cannot be keywords</li>
 			</ul>
-			Examples: <br> <br>
-			<span class="bg-pink-50 py-2 px-4 rounded-lg">
-				total, count, sum, calculate
-			</span> <br> <br>
+			Examples: <br>
+			<span class="bg-pink-50 px-2 rounded-lg">total</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">count</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">sum</span>,
+			<span class="bg-pink-50 px-2 rounded-lg">calculate</span>
+			<br>
 		</p>
 
 		<!--!!!-->

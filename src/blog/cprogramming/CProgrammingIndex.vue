@@ -75,8 +75,10 @@ const sections = [
 		<p class="text-gray-600 mb-10 text-lg">
 			C is a powerful general-purpose programming language developed in 1972 by Dennis M. Ritchie at Bell Laboratories.
 			It serves as the foundation for many modern programming languages like C++ and Java.
-			This tutorial provides a structured learning path for beginners to understand C from the basics up to memory management and complex data handling.
-			By the end of this tutorial, you should be able to write well-structured C programs, understand program flow, use functions effectively, and maange memory safely.
+			This tutorial provides a structured learning path for beginners to understand C from the basics up to memory
+			management and complex data handling. <br>
+			By the end of this tutorial, you should be able to write well-structured C programs, understand program flow, use
+			functions effectively, and maange memory safely.
 		</p>
 
 		<div class="space-y-12">

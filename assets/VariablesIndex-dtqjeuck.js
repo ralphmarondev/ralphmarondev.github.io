@@ -1,4 +1,4 @@
-import{_ as b}from"./MainLayout.vue_vue_type_style_index_0_lang-cwHp5-TW.js";import{_ as n}from"./CodeBlock.vue_vue_type_script_setup_true_lang-DhnjcwiA.js";import{d as g,r as a,x as m,j as x,b as l,t as y,e as s,i as e,o as f}from"./index-ClW5Susk.js";const v={class:"text-gray-500 mb-2 text-lg"},k={class:"text-gray-500 mb-2 text-lg"},V={class:"text-gray-500 mb-2 text-lg"},w={class:"text-gray-500 mb-2 text-lg"},I={class:"text-gray-500 mb-2 text-lg"},A={class:"text-gray-500 mb-2 text-lg"},T="February 6, 2026",D=g({__name:"VariablesIndex",setup(E){const i=a(`
+import{_ as b}from"./MainLayout.vue_vue_type_style_index_0_lang-CSSDpK-H.js";import{_ as n}from"./CodeBlock.vue_vue_type_script_setup_true_lang-BWVkeT2n.js";import{d as g,r as a,x as m,j as x,b as l,t as y,e as s,i as e,o as f}from"./index-BRvjeYh0.js";const v={class:"text-gray-500 mb-2 text-lg"},k={class:"text-gray-500 mb-2 text-lg"},V={class:"text-gray-500 mb-2 text-lg"},w={class:"text-gray-500 mb-2 text-lg"},I={class:"text-gray-500 mb-2 text-lg"},A={class:"text-gray-500 mb-2 text-lg"},T="February 6, 2026",D=g({__name:"VariablesIndex",setup(E){const i=a(`
 #include <stdio.h>
 
 int main() {

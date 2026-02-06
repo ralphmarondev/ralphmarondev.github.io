@@ -1,4 +1,4 @@
-import{_ as u}from"./MainLayout.vue_vue_type_style_index_0_lang-cwHp5-TW.js";import{_ as t}from"./CodeBlock.vue_vue_type_script_setup_true_lang-DhnjcwiA.js";import{d as p,r,x as g,j as a,b as n,t as b,e as s,i,o as x,_ as m}from"./index-ClW5Susk.js";const y={class:"text-gray-500 mb-2 text-lg"},f={class:"text-gray-500 mb-2 text-lg"},k="February 6, 2026",w=p({__name:"KeywordsIndex",setup(v){const d=r(`
+import{_ as u}from"./MainLayout.vue_vue_type_style_index_0_lang-CSSDpK-H.js";import{_ as t}from"./CodeBlock.vue_vue_type_script_setup_true_lang-BWVkeT2n.js";import{d as p,r,x as g,j as a,b as n,t as b,e as s,i,o as x,_ as m}from"./index-BRvjeYh0.js";const y={class:"text-gray-500 mb-2 text-lg"},f={class:"text-gray-500 mb-2 text-lg"},k="February 6, 2026",w=p({__name:"KeywordsIndex",setup(v){const d=r(`
 if (age >= 18) {
 	printf("Adult");
 } else {

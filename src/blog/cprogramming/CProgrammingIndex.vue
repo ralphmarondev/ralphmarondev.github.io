@@ -14,12 +14,12 @@ const sections = [
 			{title: 'Identifiers', route: '/blog/c-identifiers'},
 			{title: 'C Keywords', route: '/blog/c-keywords'},
 			{title: 'C Variables', route: '/blog/c-variables'},
-			{title: 'Data Type in C', route: '/blog/c-data-type'},
+			{title: 'Data Type in C', route: '/blog/c-data-types'},
 			{title: 'Quiz: C Basics | Variables | Data Types', route: '/blog/c-quiz-basics'},
 			{title: 'Input and Output in C', route: '/blog/c-input-output'},
 			{title: 'Operators', route: '/blog/c-operators'},
 			{title: 'Quiz: Input and Output | Operators', route: '/blog/c-quiz-io-operators'},
-			{title: 'Conditional Statements', route: '/blog/c-conditional'},
+			{title: 'Conditional Statements', route: '/blog/c-conditional-statements'},
 			{title: 'Loops', route: '/blog/c-loops'},
 			{title: 'Quiz: Conditional Statements and Loops', route: '/blog/c-quiz-conditional-loops'}
 		]

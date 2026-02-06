@@ -11,6 +11,12 @@ const router = createRouter({
 			component: () => import('@/views/portfolio/PortfolioIndex.vue'),
 			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
 		},
+		{
+			path: '/blog',
+			name: 'blog',
+			component: () => import('@/blog/BlogIndex.vue'),
+			meta: {title: 'Blogs', icon: '/ralphmaron.png'}
+		},
 		...blogRoutes,
 		// private
 		{

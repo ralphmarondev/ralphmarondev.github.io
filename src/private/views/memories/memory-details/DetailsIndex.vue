@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import MainLayout from '@/layouts/MainLayout.vue'
+import MainLayout from '@/private/layouts/MainLayout.vue'
 import {useRoute} from 'vue-router'
 import {onMounted, onUnmounted, ref} from 'vue'
-import {useMemoriesStore} from '@/store/useMemoriesStore.ts'
-import type {Memory} from '@/types/memory.ts'
+import {useMemoriesStore} from '@/private/store/useMemoriesStore.ts'
+import type {Memory} from '@/private/types/memory.ts'
 import router from '@/router'
-import {getFileUrl} from '@/utils/storageUtils.ts'
-import {useAuthStore} from '@/store/useAuthStore.ts'
+import {getFileUrl} from '@/private/utils/storageUtils.ts'
+import {useAuthStore} from '@/private/store/useAuthStore.ts'
 
 const route = useRoute()
 const memoryStore = useMemoriesStore()

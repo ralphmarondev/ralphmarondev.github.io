@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useLayoutStore} from '@/store/useLayoutStore.ts'
+import {useLayoutStore} from '@/private/store/useLayoutStore.ts'
 import {useRoute} from 'vue-router'
 import {onMounted, onUnmounted, ref, watch} from 'vue'
 

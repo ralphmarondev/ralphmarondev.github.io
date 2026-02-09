@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import MainLayout from '@/layouts/MainLayout.vue'
+import MainLayout from '@/private/layouts/MainLayout.vue'
 import {onMounted, onUnmounted, ref} from 'vue'
 import {useRouter} from 'vue-router'
-import {useMemoriesStore} from '@/store/useMemoriesStore.ts'
+import {useMemoriesStore} from '@/private/store/useMemoriesStore.ts'
 
 const router = useRouter()
 const memoriesStore = useMemoriesStore()

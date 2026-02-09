@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {useThemeStore} from '@/store/useThemeStore.ts'
-import {useLayoutStore} from '@/store/useLayoutStore.ts'
+import {useLayoutStore} from '@/private/store/useLayoutStore.ts'
 import {computed, onMounted, ref} from 'vue'
 import {useRouter} from 'vue-router'
-import {useAuthStore} from '@/store/useAuthStore.ts'
+import {useAuthStore} from '@/private/store/useAuthStore.ts'
 
 const auth = useAuthStore()
 const layout = useLayoutStore()

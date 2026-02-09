@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import MainLayout from '@/layouts/MainLayout.vue'
-import ImageCard from '@/views/memories/memory-list/ImageCard.vue'
+import MainLayout from '@/private/layouts/MainLayout.vue'
+import ImageCard from '@/private/views/memories/memory-list/ImageCard.vue'
 import {computed, onMounted, ref, watch} from 'vue'
-import {useMemoriesStore} from '@/store/useMemoriesStore.ts'
-import MemoryListItem from '@/views/memories/memory-list/MemoryListItem.vue'
-import type {Memory} from '@/types/memory'
-import {useAuthStore} from '@/store/useAuthStore.ts'
+import {useMemoriesStore} from '@/private/store/useMemoriesStore.ts'
+import MemoryListItem from '@/private/views/memories/memory-list/MemoryListItem.vue'
+import type {Memory} from '@/private/types/memory'
+import {useAuthStore} from '@/private/store/useAuthStore.ts'
 
 const store = useMemoriesStore()
 const filteredMemories = ref<Memory[]>([])

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import {useAuthStore} from '@/store/useAuthStore.ts'
+import {useAuthStore} from '@/private/store/useAuthStore.ts'
 import {useRouter} from 'vue-router'
 
 const email = ref('ralphmaron@cute.super') // for testing :)

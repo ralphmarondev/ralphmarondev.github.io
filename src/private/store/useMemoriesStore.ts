@@ -1,9 +1,9 @@
 import {defineStore} from 'pinia'
 import {ref} from 'vue'
-import type {Memory} from '@/types/memory.ts'
+import type {Memory} from '@/private/types/memory.ts'
 import {collection, doc, getDocs, orderBy, query, setDoc, updateDoc} from 'firebase/firestore'
 import {db} from '@/firebase.ts'
-import {useAuthStore} from '@/store/useAuthStore.ts'
+import {useAuthStore} from '@/private/store/useAuthStore.ts'
 import {getDownloadURL, getStorage, ref as storageRef, uploadBytes} from 'firebase/storage'
 
 export const useMemoriesStore = defineStore('memories', () => {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed, onMounted, ref} from 'vue'
-import {getFileUrl} from '@/utils/storageUtils.ts'
-import type {Memory} from '@/types/memory.ts'
+import {getFileUrl} from '@/private/utils/storageUtils.ts'
+import type {Memory} from '@/private/types/memory.ts'
 
 const props = defineProps<{
 	memory: Memory

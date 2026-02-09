@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {onMounted, ref, watch} from 'vue'
-import {useNavigationStore} from '@/store/useNavigationStore.ts'
+import {useNavigationStore} from '@/private/store/useNavigationStore.ts'
 import {useThemeStore} from '@/store/useThemeStore.ts'
 import AOS from 'aos'
 

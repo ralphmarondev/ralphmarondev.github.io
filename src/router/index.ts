@@ -1,6 +1,7 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
-import {useAuthStore} from '@/store/useAuthStore'
+import {useAuthStore} from '@/private/store/useAuthStore.ts'
 import {blogRoutes} from '@/blog/router'
+import {privateRoutes} from '@/private/router'
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -8,7 +9,7 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'portfolio',
-			component: () => import('@/views/portfolio/PortfolioIndex.vue'),
+			component: () => import('@/portfolio/PortfolioIndex.vue'),
 			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
 		},
 		{
@@ -18,42 +19,12 @@ const router = createRouter({
 			meta: {title: 'Blogs', icon: '/ralphmaron.png'}
 		},
 		...blogRoutes,
-		// private
-		{
-			path: '/login',
-			name: 'login',
-			component: () => import('@/views/login/LoginIndex.vue'),
-			meta: {title: 'Login', icon: '/favicon.jpg'}
-		},
-		{
-			path: '/dashboard',
-			name: 'dashboard',
-			component: () => import('@/views/dashboard/DashboardIndex.vue'),
-			meta: {requiresAuth: true, title: 'Dashboard', icon: '/favicon.jpg'}
-		},
-		{
-			path: '/memories',
-			name: 'memories',
-			component: () => import('@/views/memories/memory-list/MemoryListIndex.vue'),
-			meta: {requiresAuth: true, title: 'Memories', icon: '/favicon.jpg'}
-		},
-		{
-			path: '/details/:id',
-			name: 'details',
-			component: () => import('@/views/memories/memory-details/DetailsIndex.vue'),
-			meta: {requiresAuth: true, title: 'Details', icon: '/favicon.jpg'}
-		},
-		{
-			path: '/new-memory',
-			name: 'new-memory',
-			component: () => import('@/views/memories/new-memory/NewMemoryIndex.vue'),
-			meta: {requiresAuth: true, title: 'New Memory', icon: '/favicon.jpg'}
-		},
+		...privateRoutes,
 		{
 			path: '/:pathMatch(.*)*',
 			name: 'not-found',
 			component: () => import('@/components/NotFound.vue'),
-			meta: {title: 'Page Not Found', icon: '/favicon.jpg'}
+			meta: {title: 'Page Not Found', icon: '/ralphmaron.png'}
 		}
 	],
 	scrollBehavior(to) {

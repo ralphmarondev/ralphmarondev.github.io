@@ -2,6 +2,7 @@
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import {ref} from 'vue'
 import CodeBlock from '@/blog/components/CodeBlock.vue'
+import OutputBlock from '@/blog/components/OutputBlock.vue'
 
 const lastUpdated = 'February 5, 2026'
 
@@ -9,6 +10,7 @@ const firstProgram = ref(`
 #include <stdio.h>
 
 int main() {
+	// This prints Hello there, Ralph is here!
 	printf("Hello there, Ralph is here!");
 	return 0;
 }
@@ -54,7 +56,8 @@ int main() {
 		</p>
 		<CodeBlock :code="firstProgram" language="c" />
 		<p class="text-gray-500 mb-2 text-lg">
-			Output: <span class="bg-pink-50 px-2 rounded-lg">Hello there, Ralph is here!</span><br>
+			Output:
+			<OutputBlock output="Hello there, Ralph is here!" />
 		</p>
 
 		<h2 class="text-2xl font-semibold text-gray-800 mb-2">
@@ -67,7 +70,7 @@ int main() {
 
 		<!--1.	Header File Inclusion-->
 		<p class="text-gray-600 mb-2 text-xl">
-			1. Header File Inclusion
+			1. Header File Inclusion <span class="bg-pink-50 px-2 rounded-lg">#include &lt;stdio.h&gt;</span>
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			Header files contain function declarations and macros that can be shared between multiple source files. Lines
@@ -88,7 +91,7 @@ int main() {
 
 		<!--2. Main Function Declaration-->
 		<p class="text-gray-600 mb-2 text-xl">
-			2. Main Function Declaration (int main())
+			2. Main Function Declaration <span class="bg-pink-50 px-2 rounded-lg">(int main())</span>
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			The main() function is the entry point of a C program. Execution starts here. The int indicates that the function
@@ -97,7 +100,7 @@ int main() {
 		</p>
 
 		<p class="text-gray-600 mb-2 text-xl">
-			3. Body of the Main Function
+			3. Body of the Main Function <span class="bg-pink-50 px-2 rounded-lg">int main() { /*inside this*/ }</span>
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			Everything inside the curly braces {} is the body of the main function. This is where all statements,
@@ -105,7 +108,7 @@ int main() {
 		</p>
 
 		<p class="text-gray-600 mb-2 text-xl">
-			4. Comments
+			4. Comments <span class="bg-pink-50 px-2 rounded-lg">// This prints ...</span>
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			Comments are ignored by the compiler and are used for documentation or notes.
@@ -120,7 +123,7 @@ int main() {
 		</p>
 
 		<p class="text-gray-600 mb-2 text-xl">
-			6. Return Statement
+			6. Return Statement <span class="bg-pink-50 px-2 rounded-lg">(return 0;)</span>
 		</p>
 		<p class="text-gray-500 mb-2 text-lg">
 			This signals the end of the main function and optionally returns a value to the operating system.

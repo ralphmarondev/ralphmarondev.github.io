@@ -47,7 +47,7 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-quiz-basics',
 		name: 'c-quiz-basics',
 		component: () => import('@/blog/cprogramming/basic/07-quiz/QuizOneIndex.vue'),
-		meta: {title: 'C - Quiz One', icon: '/ralphmaron.png'}
+		meta: {title: 'Quiz Variables and Data Types in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-input-output',

@@ -2,6 +2,7 @@
 import {ref} from 'vue'
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import CodeBlock from '@/blog/components/CodeBlock.vue'
+import OutputBlock from '@/blog/components/OutputBlock.vue'
 
 const lastUpdated = 'February 5, 2026'
 
@@ -55,8 +56,9 @@ int main()
 	return 0;
 }
 `)
-const outputProgram1 = ref(`./main.c: 5:14: error: expected identifier or '(' before '=' token
-    int const = 90;`
+const outputProgram1 = ref(`
+./main.c: 5:14: error: expected identifier or '(' before '=' token
+int const = 90;`
 )
 </script>
 
@@ -119,8 +121,8 @@ const outputProgram1 = ref(`./main.c: 5:14: error: expected identifier or '(' be
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			<CodeBlock :code="variableIdentifierProgram" language="c" />
-			Output: <span class="bg-pink-50 px-2 rounded-lg">10</span><br>
-
+			Output:
+			<OutputBlock output="10" />
 			Here, var is the identifier for the integer variable, which we can use throughout the program to store and access
 			the value 10.
 			<br>
@@ -131,7 +133,8 @@ const outputProgram1 = ref(`./main.c: 5:14: error: expected identifier or '(' be
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			<CodeBlock :code="functionIdentifierProgram" language="c" />
-			Output: <span class="bg-pink-50 px-2 rounded-lg">30</span> <br>
+			Output:
+			<OutputBlock output="30" />
 			In this example, sum is an identifier for a user-defined function. Using meaningful names like this helps make the
 			program readable and understandable.
 		</p>
@@ -205,8 +208,8 @@ const outputProgram1 = ref(`./main.c: 5:14: error: expected identifier or '(' be
 		<p class="text-gray-500 mb-2 text-lg">
 			Using a C keyword as an identifier will result in a compilation error. For example: <br>
 			<CodeBlock :code="program1" language="c" />
-			Output (example): <br>
-			<span class="bg-pink-50 px-2 rounded-lg">{{ outputProgram1 }}</span> <br>
+			Output: <br>
+			<OutputBlock :output="outputProgram1" />
 			This demonstrate why it's important to avoid keywords when naming your identifiers.
 		</p>
 	</MainLayout>

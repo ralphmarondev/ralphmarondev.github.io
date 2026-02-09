@@ -299,7 +299,7 @@ int main() {
 			What Happens If We Use a Keyword as an Identifier?
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
-			The compiler will throw an error, because it gets confused between language rules and user-defined names.
+			The compiler will throw an error, because it gets confused between language rules and user-defined names. <br>
 
 			<span class="text-gray-700 text-xl">Invalid Example</span> <br>
 			<CodeBlock :code="invalidProgramExample" language="c" />

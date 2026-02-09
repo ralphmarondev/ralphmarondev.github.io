@@ -35,11 +35,11 @@ onMounted(highlight)
 </script>
 
 <template>
-	<div class="my-4 w-[80%]">
+	<div class="my-2 w-[80%]">
     <pre
 		    class="
         rounded-lg border-2 border-pink-400
-        bg-gray-50 p-4
+        bg-white px-4
         text-xs sm:text-sm
         leading-snug
         whitespace-pre-wrap break-words
@@ -54,13 +54,13 @@ onMounted(highlight)
 
 <style scoped>
 pre {
-	background-color: #fdf6f0;
+	//background-color: #fdf6f0;
 	box-sizing: border-box;
 }
 
 code {
 	font-family: 'Courier New', monospace;
-	font-size: 0.875rem;
+	font-size: 1rem;
 	white-space: pre-wrap;
 	word-break: break-word;
 }

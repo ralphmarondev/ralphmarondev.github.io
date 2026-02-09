@@ -5,6 +5,25 @@ import CodeBlock from '@/blog/components/CodeBlock.vue'
 
 const lastUpdated = 'February 6, 2026'
 
+const example1 = ref(`
+int x = 10;   // valid
+int x = 5;    // valid
+int x = 3.14; // not recommended (data loss)
+`)
+const dataTypeExample = ref(`
+unsigned int count;
+long double value;
+`)
+const literalExample = ref(`
+int x = 10;     // integer literal
+float y = 3.14; // floating-point literal
+char c = 'A';   // character literal
+`)
+const typeConversionExample = ref(`
+int a = 5;
+float b = a;  // implicit conversion
+`)
+
 const multipleDataTypesExample = ref(`
 #include <stdio.h>
 
@@ -44,7 +63,7 @@ const floatingPointExample = ref(`
 #include <stdio.h>
 
 int main() {
-	float al = 12.45;
+	float val = 12.45;
 	printf("val = %f", val);
 	return 0;
 }
@@ -116,9 +135,7 @@ int main() {
 				<li>The data type of a variable must be specified at declaration.</li>
 				<li>Once declared, the type cannot be changed.</li>
 			</ul>
-			<span class="bg-pink-50 px-2 rounded-lg">int x = 10; // valid</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">int x = 5; // valid</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">int x = 3.14; // not recommended (data loss)</span> <br>
+			<CodeBlock :code="example1" language="c" />
 			The compiler strictly enforces data types to ensure correctness and efficiency.
 		</p>
 
@@ -285,9 +302,8 @@ int main() {
 				<li>signed</li>
 				<li>unsigned</li>
 			</ul>
-			Example: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">unsigned int count;</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">long double value;</span> <br>
+			Example:
+			<CodeBlock :code="dataTypeExample" language="c" />
 			These modifiers help optimize memory and control ranges.
 		</p>
 
@@ -298,11 +314,8 @@ int main() {
 		<p class="text-gray-500 mb-2 text-lg">
 			Literals are fixed constant values assigned directly to variables. <br>
 
-			Example: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">int x = 10; // integer literal</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">float y = 3.14; // floating-point literal</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">char c = 'A'; // character literal</span> <br>
-
+			Example:
+			<CodeBlock :code="literalExample" language="c" />
 			Literals: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li>Occupy memory</li>
@@ -321,9 +334,8 @@ int main() {
 				<li><span class="bg-pink-50 px-2 rounded-lg">Implicit (Automatic)</span>: done by compiler.</li>
 				<li><span class="bg-pink-50 px-2 rounded-lg">Explicit (Type Casting)</span>: done by programmer.</li>
 			</ol>
-			Example: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">int a = 5;</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">float b = a; // implicit conversion</span> <br>
+			Example:
+			<CodeBlock :code="typeConversionExample" language="c" />
 			More advanced type conversion will be discussed later with operators.
 		</p>
 

@@ -2,8 +2,15 @@
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import CodeBlock from '@/blog/components/CodeBlock.vue'
 import {ref} from 'vue'
+import OutputBlock from '@/blog/components/OutputBlock.vue'
 
 const lastUpdated = 'February 6, 2026'
+
+const example1 = ref(`
+int age;
+float height;
+char grade;
+`)
 
 const declaringVariableExample = ref(`
 #include <stdio.h>
@@ -20,11 +27,38 @@ int main() {
 	return 0;
 }
 `)
+const declaringVariableOutput = ref(`
+Age: 20
+Height: 5.7
+Grade: A
+`)
+
 const declaringMultipleVariableExample = ref(`
 	int a, b, c;
 	float x, y;
 	int cutenessLevel, stressLevel;
 `)
+
+const validVariableExample = ref(`
+int total;
+float average_score;
+char _grade;
+`)
+const invalidVariableExample = ref(`
+int 1number;        // starts with digit
+float total marks;  // space not allowed
+char return;        // keyword
+`)
+
+const initializationAtDeclaration = ref(`
+int age = 20;
+float height = 5.7;
+`)
+const initializationAfterDeclaration = ref(`
+char grade;
+grade = 'A';
+`)
+
 const accessingVariableExample = ref(`
 #include <stdio.h>
 int main() {
@@ -49,6 +83,11 @@ int main() {
 	return 0;
 }
 `)
+const changingStoredValueOutput = ref(`
+Initial value: 10
+Updated value: 25
+After adding 5: 30
+`)
 
 const variablesInExpressionsExample = ref(`
 #include <stdio.h>
@@ -63,6 +102,11 @@ int main() {
 	return 0;
 }
 `)
+const variablesInExpressionsOutput = ref(`
+60
+60
+`)
+
 const memoryAllocationExample = ref(`
 #include <stdio.h>
 
@@ -80,7 +124,8 @@ int main() {
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
 		<p class="text-gray-600 mb-4 text-lg">
-			A variable in C is a <i class="bg-pink-50 px-2 rounded-lg">named memory location</i> used to store data that can change while the program is running.
+			A variable in C is a <i class="bg-pink-50 px-2 rounded-lg">named memory location</i> used to store data that can
+			change while the program is running.
 			Instead of remembering complex memory addresses, we use meaningful names to access and manipulate data easily.
 			<br>
 			Think of a variable as a container: <br>
@@ -124,11 +169,8 @@ int main() {
 			<span class="bg-pink-50 px-4 rounded-lg">
 				data_type variable_name;
 			</span> <br>
-			Example: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">int age;</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">float height;</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">char grade;</span> <br>
-
+			Example:
+			<CodeBlock :code="example1" language="c" />
 			Here: <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li>
@@ -151,13 +193,11 @@ int main() {
 			Declaring and Initializing Variables
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
-			Initialization means assigning an initial value to a variable.
+			Initialization means assigning an initial value to a variable. <br>
 			<span class="text-gray-700 text-xl">Example:</span> <br>
 			<CodeBlock :code="declaringVariableExample" language="c" />
-			<span class="text-gray-700 text-xl">Output:</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Age: 20</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Height: 5.7</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Grade: A</span> <br>
+			<span class="text-gray-700 text-xl">Output:</span>
+			<OutputBlock :output="declaringVariableOutput" />
 		</p>
 
 		<!--!!!-->
@@ -183,15 +223,11 @@ int main() {
 				<li>It must not be a C keyword.</li>
 				<li>It must be unique within its scope.</li>
 			</ol>
-			<span class="text-gray-700 text-xl">Valid Variable Names</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">int total;</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">float average_score;</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">char _grade;</span> <br>
+			<span class="text-gray-700 text-xl">Valid Variable Names</span>
+			<CodeBlock :code="validVariableExample" language="c" />
 
-			<span class="text-gray-700 text-xl">Invalid Variable Names</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">int 1number; // starts with digit</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">float total marks; // space not allowed</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">char return; // keyword</span> <br>
+			<span class="text-gray-700 text-xl">Invalid Variable Names</span>
+			<CodeBlock :code="invalidVariableExample" language="c" />
 		</p>
 
 		<!--!!!-->
@@ -202,13 +238,12 @@ int main() {
 			When a variable is declared without initialization, it contains a garbage value. <br>
 			That is why initialization is important. <br>
 
-			<span class="text-gray-700 text-xl">Initialization at Declaration</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">int age = 20;</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">float height = 5.7;</span> <br>
+			<span class="text-gray-700 text-xl">Initialization at Declaration</span>
+			<CodeBlock :code="initializationAtDeclaration" language="c" />
 
 			<span class="text-gray-700 text-xl">Initialization After Declaration</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">char grade;</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">grade = 'A';</span> <br>
+			<CodeBlock :code="initializationAfterDeclaration" language="c" />
+
 			Both approaches are valid. <br>
 
 			<span class="text-pink-700">Note:</span>
@@ -222,7 +257,8 @@ int main() {
 		<p class="text-gray-500 mb-2 text-lg">
 			To access the value stored in a variable, we simply use its name.
 			<CodeBlock :code="accessingVariableExample" language="c" />
-			Output: <span class="bg-pink-50 px-4 rounded-lg">3</span> <br>
+			Output:
+			<OutputBlock output="3" />
 		</p>
 
 		<!--!!!-->
@@ -232,10 +268,8 @@ int main() {
 		<p class="text-gray-500 mb-2 text-lg">
 			The value of a variable can be updated anytime using the assignment operator (=).
 			<CodeBlock :code="changingStoredValueExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-4 rounded-lg">Initial value: 10</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">Update value: 25</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">After adding 5: 30</span> <br>
+			Output:
+			<OutputBlock :output="changingStoredValueOutput" />
 		</p>
 
 		<!--!!!-->
@@ -245,9 +279,8 @@ int main() {
 		<p class="text-gray-500 mb-2 text-lg">
 			Variables can be used anywhere a value is expected.<br>
 			<CodeBlock :code="variablesInExpressionsExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-4 rounded-lg">60</span> <br>
-			<span class="bg-pink-50 px-4 rounded-lg">60</span> <br>
+			Output:
+			<OutputBlock :output="variablesInExpressionsOutput" />
 			This shows that variables act as substitutes for values.
 		</p>
 
@@ -264,7 +297,8 @@ int main() {
 			Memory is allocated when the variable is defined (usually at declaration in C). <br>
 			The amount of memory depends on the data type. <br>
 			<CodeBlock :code="memoryAllocationExample" language="c" />
-			Output: <span class="bg-pink-50 px-4 rounded-lg">4 bytes</span><br>
+			Output:
+			<OutputBlock output="4 bytes" />
 		</p>
 
 		<!--!!!-->

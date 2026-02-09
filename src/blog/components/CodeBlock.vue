@@ -1,55 +1,67 @@
 <script setup lang="ts">
-import {computed} from 'vue'
+import {onMounted, ref, watch} from 'vue'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-c.js'
 
 const props = defineProps<{
 	code: string
 	language: string
 }>()
 
-// C keywords for highlighting
-const cKeywords = [
-	'int', 'return', 'if', 'else', 'while', 'for', 'void', 'char', 'float', 'double',
-	'struct', 'union', 'const', 'sizeof', 'switch', 'case', 'break', 'continue'
-]
+const normalizedCode = () => {
+	const lines = props.code.split('\n')
+	const trimmedLines = lines.filter((line, i) => i === 0 || line.trim() !== '')
 
-const highlightedCode = computed(() => {
-	let escaped = props.code
-			.trim()
-			.replace(/&/g, '&amp;')
-			.replace(/</g, '&lt;')
-			.replace(/>/g, '&gt;')
+	const indent = Math.min(
+			...trimmedLines
+					.filter(line => line.trim().length)
+					.map(line => {
+						const match = line.match(/^(\s*)/)
+						return match && match[1] ? match[1].length : 0
+					})
+	)
+	return trimmedLines.map(line => line.slice(indent)).join('\n')
+}
 
-	if (props.language === 'c') {
-		// Highlight C keywords
-		cKeywords.forEach(k => {
-			const regex = new RegExp(`\\b${k}\\b`, 'g')
-			escaped = escaped.replace(regex, `<span class="text-pink-600 font-bold">${k}</span>`)
-		})
+const highlighted = ref('')
 
-		// Highlight comments
-		escaped = escaped.replace(/(\/\/.*)/g, `<span class="text-green-600 italic">$1</span>`)
-	}
+const highlight = () => {
+	highlighted.value = Prism.highlight(normalizedCode(), Prism.languages.c!, 'c')
+}
 
-	return escaped
-})
+watch(() => props.code, highlight, {immediate: true})
+
+onMounted(highlight)
 </script>
 
 <template>
-	<div class="relative my-4">
+	<div class="my-4 w-[80%]">
     <pre
 		    class="
-        bg-gray-50 text-gray-900
-        p-4 rounded-lg
-        border-2 border-pink-400
+        rounded-lg border-2 border-pink-400
+        bg-gray-50 p-4
         text-xs sm:text-sm
         leading-snug
-        max-w-full
-
-        overflow-x-auto
-        whitespace-pre
+        whitespace-pre-wrap break-words
+        w-full overflow-hidden
+        box-border
       "
     >
-      <code v-html="highlightedCode"></code>
+      <code v-html="highlighted" class="language-c"></code>
     </pre>
 	</div>
 </template>
+
+<style scoped>
+pre {
+	background-color: #fdf6f0;
+	box-sizing: border-box;
+}
+
+code {
+	font-family: 'Courier New', monospace;
+	font-size: 0.875rem;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+</style>

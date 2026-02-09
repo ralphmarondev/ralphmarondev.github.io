@@ -80,14 +80,14 @@ int main() {
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
 		<p class="text-gray-600 mb-4 text-lg">
-			A variable in C is a <i>named memory location</i> used to store data that can change while the program is running.
+			A variable in C is a <i class="bg-pink-50 px-2 rounded-lg">named memory location</i> used to store data that can change while the program is running.
 			Instead of remembering complex memory addresses, we use meaningful names to access and manipulate data easily.
 			<br>
 			Think of a variable as a container: <br>
 			<ul class="list-disc list-inside space-y-1">
-				<li>The <i>name</i> is the label on the container.</li>
-				<li>The <i>data type</i> defines what kind of data it can store.</li>
-				<li>The <i>value</i> is the actual data inside it.</li>
+				<li>The <i class="bg-pink-50 px-2 rounded-lg">name</i> is the label on the container.</li>
+				<li>The <i class="bg-pink-50 px-2 rounded-lg">data type</i> defines what kind of data it can store.</li>
+				<li>The <i class="bg-pink-50 px-2 rounded-lg">value</i> is the actual data inside it.</li>
 			</ul>
 		</p>
 

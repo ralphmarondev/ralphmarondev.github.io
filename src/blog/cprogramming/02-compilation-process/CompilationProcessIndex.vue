@@ -59,7 +59,7 @@ const define = '#define add(a,b)'
 				<li>A code editor</li>
 				<li>A C compiler (commonly GCC)</li>
 			</ul>
-			Below is a typical workflow using GCC on Linux.
+			Below is a typical workflow using GCC on Linux. <br>
 
 			<span class="text-gray-600 text-xl">Step 1: Creating a C Source File</span> <br>
 			Create a file with a .c extension: <br>
@@ -79,7 +79,7 @@ const define = '#define add(a,b)'
 			</ul>
 			Example: <br>
 			<span class="bg-pink-50 px-2 rounded-lg">gcc -Wall filename.c -o filename</span> <br>
-			If there are no errors, GCC generates an executable file.
+			If there are no errors, GCC generates an executable file. <br>
 
 			<span class="text-gray-600 text-xl">Step 3: Executing the Program</span> <br>
 			Run the executable:<br>
@@ -96,7 +96,7 @@ const define = '#define add(a,b)'
 			Let's now look at what the compiler actually does internally. <br>
 			To see all intermediate files, compile using: <br>
 			<span class="bg-pink-50 px-2 rounded-lg">gcc -Wall -save-temps filename.c -o filename</span> <br>
-			This command generates multiple files representing each compilation phase.
+			This command generates multiple files representing each compilation phase. <br>
 
 			<span class="text-gray-600 text-xl">1. Preprocessing Phase</span> <br>
 			Input: <span class="bg-pink-50 px-2 rounded-lg">filename.c</span> <br>

@@ -72,16 +72,16 @@ const sections = [
 		<h1 class="text-4xl font-bold text-gray-800 mb-2">C Programming Tutorial</h1>
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
-		<p class="text-gray-600 mb-10 text-lg">
+		<p class="text-gray-600 mb-8 text-lg">
 			C is a powerful general-purpose programming language developed in 1972 by Dennis M. Ritchie at Bell Laboratories.
 			It serves as the foundation for many modern programming languages like C++ and Java.
 			This tutorial provides a structured learning path for beginners to understand C from the basics up to memory
 			management and complex data handling. <br>
 			By the end of this tutorial, you should be able to write well-structured C programs, understand program flow, use
-			functions effectively, and maange memory safely.
+			functions effectively, and manage memory safely.
 		</p>
 
-		<div class="space-y-12">
+		<div class="space-y-8">
 			<div v-for="section in sections" :key="section.title">
 				<h2 class="text-2xl font-semibold text-gray-800 mb-2">{{ section.title }}</h2>
 				<p class="text-gray-500 mb-4 text-lg">{{ section.description }}</p>

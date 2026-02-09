@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import MainLayout from '@/blog/layouts/MainLayout.vue'
+import {ref} from 'vue'
+import CodeBlock from '@/blog/components/CodeBlock.vue'
 
 const lastUpdated = 'February 5, 2026'
+
+const firstProgram = ref(`
+#include <stdio.h>
+
+int main() {
+	printf("Hello there, Ralph is here!");
+	return 0;
+}
+`)
 </script>
 
 <template>
@@ -41,17 +52,9 @@ const lastUpdated = 'February 5, 2026'
 		<p class="text-gray-500 mb-2 text-lg">
 			Here is a simple C program that demonstrates the basic structure and syntax:
 		</p>
+		<CodeBlock :code="firstProgram" language="c" />
 		<p class="text-gray-500 mb-2 text-lg">
-			<!--			#include <stdio.h>-->
-
-			<!--			int main(void) {-->
-			<!--			// This prints "Hello World" to the screen-->
-			<!--			printf("Hello World");-->
-			<!--			return 0;-->
-			<!--			}'-->
-		</p>
-		<p class="text-gray-500 mb-2 text-lg">
-			Output:
+			Output: <span class="bg-pink-50 px-2 rounded-lg">Hello there, Ralph is here!</span><br>
 		</p>
 
 		<h2 class="text-2xl font-semibold text-gray-800 mb-2">

@@ -5,6 +5,14 @@ import CodeBlock from '@/blog/components/CodeBlock.vue'
 
 const lastUpdated = 'February 5, 2026'
 
+const identifierExample1 = ref(`
+// Defining a variable
+int val = 10;
+
+// Defining a function
+void func() { }
+`)
+
 const variableIdentifierProgram = ref(`
 #include <stdio.h>
 
@@ -47,7 +55,7 @@ int main()
 	return 0;
 }
 `)
-const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' before '=' token
+const outputProgram1 = ref(`./main.c: 5:14: error: expected identifier or '(' before '=' token
     int const = 90;`
 )
 </script>
@@ -61,15 +69,9 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 			In C programming, an identifier is a name that you assign to various program elements, such as variables,
 			functions, arrays, structures, or other user-defined items. Essentially, an identifier allows you to refer to a
 			program element later in the code in a clear and meaningful way.
-
 			<br>
 			For Example:
-			<br>
-			<span class="bg-pink-50 px-2 rounded-lg">// Defining a variable </span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">int val = 10; </span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">// Defining a function </span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">void func() { }</span> <br>
-
+			<CodeBlock :code="identifierExample1" language="c" />
 			In the above snippet, <span class="bg-pink-50 px-2 rounded-lg">val</span> and
 			<span class="bg-pink-50 px-2 rounded-lg">func</span> are identifiers - unique names chosen by the programmer to
 			refer to a variable
@@ -167,35 +169,33 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			It is important to understand the difference between keywords and identifiers:
-			<div class="table-wrapper">
-				<table>
-					<tr>
-						<th>Feature</th>
-						<th>Keyword</th>
-						<th>Identifier</th>
-					</tr>
-					<tr>
-						<td>Definition</td>
-						<td>Reserved word in C with a predefined meaning.</td>
-						<td>User-defined name for variables, functions, etc.</td>
-					</tr>
-					<tr>
-						<td>Usage</td>
-						<td>Controls program structure and flow (int, return, if).</td>
-						<td>Refers to programmer-defined elements (age, sum, totalAmount, cutenessLevel).</td>
-					</tr>
-					<tr>
-						<td>Modifiability</td>
-						<td>Cannot be changed or reused.</td>
-						<td>Can be freely created and used.</td>
-					</tr>
-					<tr>
-						<td>Case sensitivity</td>
-						<td>Keywords are case-sensitive (int != Int)</td>
-						<td>Identifiers are also case-sensitive (age != Age)</td>
-					</tr>
-				</table>
-			</div>
+			<table>
+				<tr>
+					<th>Feature</th>
+					<th>Keyword</th>
+					<th>Identifier</th>
+				</tr>
+				<tr>
+					<td>Definition</td>
+					<td>Reserved word in C with a predefined meaning.</td>
+					<td>User-defined name for variables, functions, etc.</td>
+				</tr>
+				<tr>
+					<td>Usage</td>
+					<td>Controls program structure and flow (int, return, if).</td>
+					<td>Refers to programmer-defined elements (age, sum, totalAmount, cutenessLevel).</td>
+				</tr>
+				<tr>
+					<td>Modifiability</td>
+					<td>Cannot be changed or reused.</td>
+					<td>Can be freely created and used.</td>
+				</tr>
+				<tr>
+					<td>Case sensitivity</td>
+					<td>Keywords are case-sensitive (int != Int)</td>
+					<td>Identifiers are also case-sensitive (age != Age)</td>
+				</tr>
+			</table>
 		</p>
 
 		<!--!!! -->
@@ -213,34 +213,10 @@ const outputProgram1 = ref(`./main.c:5:14: error: expected identifier or '(' bef
 </template>
 
 <style scoped>
-.table-wrapper {
-	width: 100%;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-	margin: 12px 0;
-}
-
-table {
-	width: 100%;
-	min-width: 600px; /* forces horizontal scroll on phones */
-	border-collapse: collapse;
-}
-
-th, td {
+table, th, td {
 	border: 1px solid black;
+	border-collapse: collapse;
 	padding: 10px;
 	text-align: center;
-	white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-	.table-wrapper::after {
-		content: "← swipe →";
-		display: block;
-		text-align: right;
-		font-size: 12px;
-		color: #9ca3af;
-		margin-top: 4px;
-	}
 }
 </style>

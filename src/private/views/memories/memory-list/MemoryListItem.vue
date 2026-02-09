@@ -66,7 +66,7 @@ onMounted(async () => {
 
 <template>
 	<router-link
-			:to="`details/${memory.id}`"
+			:to="`/private/details/${memory.id}`"
 			class="group bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col sm:flex-row">
 		<div class="w-full sm:w-48 h-48 sm:h-auto flex-shrink-0 overflow-hidden">
 			<img

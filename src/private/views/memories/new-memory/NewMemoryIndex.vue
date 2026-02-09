@@ -180,7 +180,7 @@ onUnmounted(() => {
 <template>
 	<MainLayout>
 		<div class="mb-4 md:mb-6">
-			<router-link to="/memories"
+			<router-link to="/private/memories"
 			             class="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700
                dark:text-pink-400 dark:hover:text-pink-300 transition-colors text-sm md:text-base">
 				<i class="bx bx-arrow-back text-lg md:text-xl"></i>
@@ -525,7 +525,7 @@ onUnmounted(() => {
 				</div>
 				<div class="flex flex-col sm:flex-row gap-3 pt-4">
 					<router-link
-							to="/memories"
+							to="/private/memories"
 							class="flex-1 px-6 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600
                    text-gray-700 dark:text-gray-300 font-medium text-center
                    hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">

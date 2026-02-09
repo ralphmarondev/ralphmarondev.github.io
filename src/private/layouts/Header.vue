@@ -169,7 +169,7 @@ const markAllAsRead = () => {
 						</div>
 						<div class="px-4 py-3 border-t border-gray-100 dark:border-gray-700">
 							<router-link
-									to="/notifications"
+									to="/private/notifications"
 									class="text-sm text-pink-600 hover:text-pink-700 font-medium text-center block">
 								View All Notifications
 							</router-link>

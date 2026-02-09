@@ -7,11 +7,11 @@ const layout = useLayoutStore()
 const route = useRoute()
 
 const menuItems = [
-	{icon: 'bxs-home', label: 'Dashboard', route: '/dashboard'},
-	{icon: 'bxs-image', label: 'My Memories', route: '/memories'},
-	{icon: 'bxs-book-heart', label: 'My Diary', route: '/diary'},
-	{icon: 'bxs-user', label: 'Profile', route: '/account'},
-	{icon: 'bxs-cog', label: 'Settings', route: '/settings'}
+	{icon: 'bxs-home', label: 'Dashboard', route: '/private/dashboard'},
+	{icon: 'bxs-image', label: 'My Memories', route: '/private/memories'},
+	{icon: 'bxs-book-heart', label: 'My Diary', route: '/private/diary'},
+	{icon: 'bxs-user', label: 'Profile', route: '/private/account'},
+	{icon: 'bxs-cog', label: 'Settings', route: '/private/settings'}
 ]
 
 const isMobile = ref(false)

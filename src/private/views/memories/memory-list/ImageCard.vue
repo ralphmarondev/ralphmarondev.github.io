@@ -69,7 +69,7 @@ const toggleFavorite = (e: Event) => {
 
 <template>
 	<router-link
-			:to="`details/${props.memory.id}`"
+			:to="`/private/details/${props.memory.id}`"
 			class="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-soft hover:shadow-2xl transition-all duration-500 overflow-hidden">
 		<div class="relative w-full h-48 overflow-hidden">
 			<img

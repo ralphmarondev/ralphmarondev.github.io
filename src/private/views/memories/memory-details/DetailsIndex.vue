@@ -240,7 +240,7 @@ onUnmounted(() => {
 	<MainLayout>
 		<div class="mb-4 md:mb-6">
 			<router-link
-					to="/memories"
+					to="/private/memories"
 					class="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 dark:text-pink-400 dark:hover:text-pink-300 transition-colors text-sm md:text-base">
 				<i class="bx bx-arrow-back text-lg md:text-xl"></i>
 				<span class="font-medium">Back to Memories</span>
@@ -551,7 +551,7 @@ onUnmounted(() => {
 			<p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-6 md:mb-8 max-w-md mx-auto px-4">
 				The memory you're looking for doesn't exist or has been removed.
 			</p>
-			<router-link to="/memories"
+			<router-link to="/private/memories"
 			             class="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-xl
                bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold text-sm md:text-base
                hover:shadow-lg hover:scale-[1.02] transition-all duration-300">

@@ -170,7 +170,7 @@ onMounted(async () => {
 					</button>
 
 					<router-link
-							to="/new-memory"
+							to="/private/new-memory"
 							class="px-5 py-3.5 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-2 whitespace-nowrap">
 						<i class="bx bx-plus text-lg"></i>
 						<span>New Memory</span>
@@ -242,7 +242,7 @@ onMounted(async () => {
 				</div>
 
 				<router-link
-						to="/new-memory"
+						to="/private/new-memory"
 						class="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
 					<i class="bx bx-plus"></i>
 					<span class="text-sm">New Memory</span>
@@ -370,7 +370,7 @@ onMounted(async () => {
 					}}
 				</p>
 				<router-link
-						to="/memories/new"
+						to="/private/memories/new"
 						class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
 					<i class="bx bx-plus"></i>
 					Create First Memory

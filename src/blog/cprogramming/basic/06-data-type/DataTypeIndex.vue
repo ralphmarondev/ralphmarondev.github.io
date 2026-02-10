@@ -91,7 +91,7 @@ const functionWithNoReturnExample = ref(`
 
 void greet() {
 	printf("Hello, welcome!\\n");
-	printf("My Instructor is cute :)\\n");
+	printf("Learning C programming is fun!\\n");
 }
 
 int main() {
@@ -101,7 +101,7 @@ int main() {
 `)
 const functionWithNoReturnOutput = ref(`
 Hello, welcome!
-My Instructor is cute :)
+Learning C programming is fun!
 `)
 
 const sizeOfDataTypeExample = ref(`

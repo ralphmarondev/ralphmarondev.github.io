@@ -18,7 +18,7 @@ This website started as my personal portfolio, but it has grown into a hub for m
 
 1. **📥 Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/ralphmarondev/ralphmarondev.github.io
    ````
 
 2. **⚡ Install dependencies:**

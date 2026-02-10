@@ -88,7 +88,13 @@ const sections = [
 
 				<ul class="list-disc list-inside space-y-1 text-pink-500">
 					<li v-for="topic in section.topics" :key="topic.route">
-						<router-link :to="topic.route" class="underline text-lg hover:text-pink-700">{{ topic.title }}</router-link>
+						<router-link
+								:to="topic.route"
+								class="underline text-lg hover:text-pink-700"
+								target="_blank"
+								rel="noopener noreferrer">
+							{{ topic.title }}
+						</router-link>
 					</li>
 				</ul>
 			</div>

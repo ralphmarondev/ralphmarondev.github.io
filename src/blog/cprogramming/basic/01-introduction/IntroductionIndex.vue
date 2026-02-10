@@ -11,8 +11,8 @@ const firstProgram = ref(`
 #include <stdio.h>
 
 int main() {
-	// This prints Hello there, Ralph is here!
-	printf("Hello there, Ralph is here!");
+	// This prints Hello there!
+	printf("Hello there!");
 	return 0;
 }
 `)
@@ -69,7 +69,7 @@ const links = [
 		<CodeBlock :code="firstProgram" language="c" />
 		<p class="text-gray-500 mb-2 text-lg">
 			Output:
-			<OutputBlock output="Hello there, Ralph is here!" />
+			<OutputBlock output="Hello there!" />
 		</p>
 
 		<h2 class="text-2xl font-semibold text-gray-800 mb-2">

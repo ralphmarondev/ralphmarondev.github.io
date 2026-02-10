@@ -1,0 +1,1 @@
+import{_ as e}from"./MainLayout.vue_vue_type_style_index_0_lang-BAgJvh8v.js";import{d as n,y as o,j as a,e as p,o as r}from"./index-Dgoy4z9j.js";const m=n({__name:"InputAndOutputIndex",setup(s){return(u,t)=>(r(),o(e,null,{default:a(()=>[...t[0]||(t[0]=[p("Input and output",-1)])]),_:1}))}});export{m as default};

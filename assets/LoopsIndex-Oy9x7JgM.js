@@ -1,0 +1,1 @@
+import{_ as o}from"./MainLayout.vue_vue_type_style_index_0_lang-BAgJvh8v.js";import{d as t,y as s,j as a,e as n,o as r}from"./index-Dgoy4z9j.js";const c=t({__name:"LoopsIndex",setup(p){return(_,e)=>(r(),s(o,null,{default:a(()=>[...e[0]||(e[0]=[n("Loops",-1)])]),_:1}))}});export{c as default};

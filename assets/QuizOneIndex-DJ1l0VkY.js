@@ -1,0 +1,1 @@
+import{_ as a}from"./MainLayout.vue_vue_type_style_index_0_lang-BAgJvh8v.js";import{d as t,y as s,j as n,e as o,o as r}from"./index-Dgoy4z9j.js";const m=t({__name:"QuizOneIndex",setup(i){return(_,e)=>(r(),s(a,null,{default:n(()=>[...e[0]||(e[0]=[o("Quiz basics varaibles and data types",-1)])]),_:1}))}});export{m as default};

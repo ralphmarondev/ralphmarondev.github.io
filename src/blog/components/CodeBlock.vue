@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {onMounted, ref, watch} from 'vue'
 import Prism from 'prismjs'
-import 'prismjs/components/prism-c.js'
 
 const props = defineProps<{
 	code: string

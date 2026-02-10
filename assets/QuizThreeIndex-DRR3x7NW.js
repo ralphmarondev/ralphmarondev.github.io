@@ -1,1 +1,0 @@
-import{_ as t}from"./MainLayout.vue_vue_type_style_index_0_lang-BFtLnDSm.js";import{d as o,x as n,j as a,e as s,o as r}from"./index-CRuENrYq.js";const p=o({__name:"QuizThreeIndex",setup(i){return(_,e)=>(r(),n(t,null,{default:a(()=>[...e[0]||(e[0]=[s("Conditioanl statements and loops index",-1)])]),_:1}))}});export{p as default};

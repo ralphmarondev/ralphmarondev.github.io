@@ -1,0 +1,1 @@
+import{_ as e}from"./MainLayout.vue_vue_type_style_index_0_lang-9gUT_XFJ.js";import{d as n,y as o,j as a,e as s,o as r}from"./index-CwgypZy3.js";const l=n({__name:"ConditionalStatementsIndex",setup(i){return(m,t)=>(r(),o(e,null,{default:a(()=>[...t[0]||(t[0]=[s("Conditional statemenet",-1)])]),_:1}))}});export{l as default};

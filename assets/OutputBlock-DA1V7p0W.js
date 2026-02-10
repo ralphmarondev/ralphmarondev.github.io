@@ -1,3 +1,0 @@
-import{P as r}from"./CodeBlock-B5pCUJyF.js";import{d as i,r as l,l as u,g as d,c as m,b as n,e as a,o as g,_}from"./index-CRuENrYq.js";const h={class:"my-2 w-[80%]"},x={class:"w-full flex items-center rounded-lg border-2 border-pink-400 bg-pink-100 px-4 py-3 text-xs sm:text-sm leading-snug whitespace-pre-wrap break-words box-border"},f=["innerHTML"],b=i({__name:"OutputBlock",props:{output:{}},setup(p){const t=p,c=()=>t.output.replace(/\r\n/g,`
-`).replace(/^\n+/,"").replace(/\n+$/,""),o=l(""),s=()=>{o.value=r.highlight(c(),r.languages.c,"c")};return u(()=>t.output,s,{immediate:!0}),d(s),(k,e)=>(g(),m("div",h,[n("pre",x,[e[0]||(e[0]=a("  ",-1)),n("code",{innerHTML:o.value},null,8,f),e[1]||(e[1]=a(`
-`,-1))])]))}}),v=_(b,[["__scopeId","data-v-03167549"]]);export{v as O};

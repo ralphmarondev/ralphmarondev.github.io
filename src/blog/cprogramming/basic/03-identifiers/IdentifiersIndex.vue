@@ -3,6 +3,7 @@ import {ref} from 'vue'
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import CodeBlock from '@/blog/components/CodeBlock.vue'
 import OutputBlock from '@/blog/components/OutputBlock.vue'
+import UsefulLinks from '@/blog/components/UsefulLinks.vue'
 
 const lastUpdated = 'February 5, 2026'
 
@@ -60,6 +61,18 @@ const outputProgram1 = ref(`
 ./main.c: 5:14: error: expected identifier or '(' before '=' token
 int const = 90;`
 )
+
+const links = [
+	{title: 'Introduction to C', route: '/blog/c-introduction'},
+	{title: 'Compilation Process', route: '/blog/c-compilation-process'},
+	{title: 'Keywords', route: '/blog/c-keywords'},
+	{title: 'Variables', route: '/blog/c-variables'},
+	{title: 'Data Types', route: '/blog/c-data-types'},
+	{title: 'Input and Output', route: '/blog/c-input-output'},
+	{title: 'Operators', route: '/blog/c-operators'},
+	{title: 'Conditional Statements', route: '/blog/c-conditional-statements'},
+	{title: 'Loops', route: '/blog/c-loops'}
+]
 </script>
 
 <template>
@@ -212,6 +225,8 @@ int const = 90;`
 			<OutputBlock :output="outputProgram1" />
 			This demonstrate why it's important to avoid keywords when naming your identifiers.
 		</p>
+
+		<UsefulLinks :links="links" />
 	</MainLayout>
 </template>
 

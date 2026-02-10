@@ -2,6 +2,8 @@
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import {ref} from 'vue'
 import CodeBlock from '@/blog/components/CodeBlock.vue'
+import UsefulLinks from '@/blog/components/UsefulLinks.vue'
+import OutputBlock from '@/blog/components/OutputBlock.vue'
 
 const lastUpdated = 'February 6, 2026'
 
@@ -41,6 +43,13 @@ int main() {
 	return 0;
 }
 `)
+const multipleDataTypeOutput = ref(`
+Age: 20
+Height: 5.7
+Pi: 3.14159
+Grade: A
+`)
+
 const integerExample = ref(`
 #include <stdio.h>
 
@@ -90,6 +99,11 @@ int main() {
 	return 0;
 }
 `)
+const functionWithNoReturnOutput = ref(`
+Hello, welcome!
+My Instructor is cute :)
+`)
+
 const sizeOfDataTypeExample = ref(`
 #include <stdio.h>
 
@@ -102,6 +116,24 @@ int main() {
 	return 0;
 }
 `)
+const sizeOfDataTypeOutput = ref(`
+The size of int: 4
+The size of char: 1
+The size of float: 4
+The size of double: 8
+`)
+
+const links = [
+	{title: 'Introduction to C', route: '/blog/c-introduction'},
+	{title: 'Compilation Process', route: '/blog/c-compilation-process'},
+	{title: 'Identifiers', route: '/blog/c-identifiers'},
+	{title: 'Keywords', route: '/blog/c-keywords'},
+	{title: 'Variables', route: '/blog/c-variables'},
+	{title: 'Input and Output', route: '/blog/c-input-output'},
+	{title: 'Operators', route: '/blog/c-operators'},
+	{title: 'Conditional Statements', route: '/blog/c-conditional-statements'},
+	{title: 'Loops', route: '/blog/c-loops'}
+]
 </script>
 
 <template>
@@ -160,11 +192,8 @@ int main() {
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			<CodeBlock :code="multipleDataTypesExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Age: 20</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Height: 5.7</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Pi: 3.14159</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Grade: A</span> <br>
+			Output:
+			<OutputBlock :output="multipleDataTypeOutput" />
 		</p>
 
 		<!--!!!-->
@@ -183,7 +212,8 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="integerExample" language="c" />
-			Output: <span class="bg-pink-50 px-2 rounded-lg">var = 22</span> <br>
+			Output:
+			<OutputBlock output="var = 22" />
 		</p>
 
 		<!--!!!-->
@@ -207,7 +237,8 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="characterExample" language="c" />
-			Output: <span class="bg-pink-50 px-2 rounded-lg">ch = A</span> <br>
+			Output:
+			<OutputBlock output="ch = A" />
 			<span class="text-pink-700">Note: </span> Internally, characters are stored using ASCII values.
 		</p>
 
@@ -227,7 +258,8 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="floatingPointExample" language="c" />
-			Output: <span class="bg-pink-50 px-2 rounded-lg">val = 12.450000</span> <br>
+			Output:
+			<OutputBlock output="val = 12.450000" />
 			<span class="text-pink-700">Note: </span> Use <span class="bg-pink-50 px-2 rounded-lg">double</span> when
 			precision matters (scientific calculations, finance, physics).
 		</p>
@@ -249,7 +281,8 @@ int main() {
 			</ul>
 			Example: <br>
 			<CodeBlock :code="doubleExample" language="c" />
-			Output: <span class="bg-pink-50 px-2 rounded-lg">val = 1.452100</span> <br>
+			Output:
+			<OutputBlock output="val = 1.452100" />
 		</p>
 
 		<!--!!!-->
@@ -267,9 +300,8 @@ int main() {
 			</ol>
 			Example: <br>
 			<CodeBlock :code="functionWithNoReturnExample" language="c" />
-			Output: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">Hello, welcome!</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">My Instructor is cute :)</span> <br>
+			Output:
+			<OutputBlock :output="functionWithNoReturnOutput" />
 		</p>
 
 		<!--!!!-->
@@ -282,11 +314,8 @@ int main() {
 
 			Example: <br>
 			<CodeBlock :code="sizeOfDataTypeExample" language="c" />
-			Output (Typical 64-bit System): <br>
-			<span class="bg-pink-50 px-2 rounded-lg">The size of int: 4</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">The size of char: 1</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">The size of float: 4</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">The size of double: 8</span> <br>
+			Output (Typical 64-bit System):
+			<OutputBlock :output="sizeOfDataTypeOutput" />
 		</p>
 
 		<!--!!!-->
@@ -361,5 +390,7 @@ int main() {
 				<li>Type conversion allows flexibility in operations.</li>
 			</ul>
 		</p>
+
+		<UsefulLinks :links="links" />
 	</MainLayout>
 </template>

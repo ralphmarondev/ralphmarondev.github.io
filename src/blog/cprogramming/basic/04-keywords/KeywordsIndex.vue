@@ -2,6 +2,7 @@
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import CodeBlock from '@/blog/components/CodeBlock.vue'
 import {ref} from 'vue'
+import UsefulLinks from '@/blog/components/UsefulLinks.vue'
 
 const lastUpdated = 'February 6, 2026'
 
@@ -27,6 +28,18 @@ int main() {
 	return 0;
 }
 `)
+
+const links = [
+	{title: 'Introduction to C', route: '/blog/c-introduction'},
+	{title: 'Compilation Process', route: '/blog/c-compilation-process'},
+	{title: 'Identifiers', route: '/blog/c-identifiers'},
+	{title: 'Variables', route: '/blog/c-variables'},
+	{title: 'Data Types', route: '/blog/c-data-types'},
+	{title: 'Input and Output', route: '/blog/c-input-output'},
+	{title: 'Operators', route: '/blog/c-operators'},
+	{title: 'Conditional Statements', route: '/blog/c-conditional-statements'},
+	{title: 'Loops', route: '/blog/c-loops'}
+]
 </script>
 
 <template>
@@ -326,6 +339,8 @@ int main() {
 				<li>Learn them by category, not by memorization</li>
 			</ul>
 		</p>
+
+		<UsefulLinks :links="links" />
 	</MainLayout>
 </template>
 

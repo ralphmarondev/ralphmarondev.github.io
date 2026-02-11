@@ -1,10 +1,29 @@
 <script setup lang="ts">
 import MainLayout from '@/blog/layouts/MainLayout.vue'
 import UsefulLinks from '@/blog/components/UsefulLinks.vue'
+import {ref} from 'vue'
+import CodeBlock from '@/blog/components/CodeBlock.vue'
+import OutputBlock from '@/blog/components/OutputBlock.vue'
+import ImageBlock from '@/blog/components/ImageBlock.vue'
 
 const lastUpdated = 'February 6, 2026'
 const stdio = '#include <stdio.h>'
 const define = '#define add(a,b)'
+
+const sampleProgram = ref(`
+#include <stdio.h>
+
+int main() {
+	// This prints Hello there!
+	printf("Hello there!\\n");
+	return 0;
+}
+`)
+
+const runExecutable = ref(`
+./main    // Linux or macOS
+main      // Windows
+`)
 
 const links = [
 	{title: 'Introduction to C', route: '/blog/c-introduction'},
@@ -75,30 +94,31 @@ const links = [
 			Below is a typical workflow using GCC on Linux. <br>
 
 			<span class="text-gray-600 text-xl">Step 1: Creating a C Source File</span> <br>
-			Create a file with a .c extension: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">vim filename.c</span> <br>
+			Create a file with a .c extension:
+			<OutputBlock output="vim main.c" />
 			(You can also use any editor like VS Code, Nano, or Notepad on Windows.) <br>
 
-			Example program: <br>
-			// code goes here <br>
+			Example program:
+			<CodeBlock :code="sampleProgram" language="c" />
 
 			<span class="text-gray-600 text-xl">Step 2: Compiling the Program</span> <br>
-			Use the GCC compiler:<br>
-			<span class="bg-pink-50 px-2 rounded-lg">gcc filename.c -o filename</span> <br>
+			Use the GCC compiler:
+			<OutputBlock output="gcc main.c -o main" />
+
 			Common GCC Options <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li><span class="bg-pink-50 px-2 rounded-lg">-Wall</span> - enables all warnings (recommended)</li>
 				<li><span class="bg-pink-50 px-2 rounded-lg">-o</span> - specifies output file name</li>
 			</ul>
-			Example: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">gcc -Wall filename.c -o filename</span> <br>
+			Example:
+			<OutputBlock output="gcc -Wall main.c -o main" />
 			If there are no errors, GCC generates an executable file. <br>
 
 			<span class="text-gray-600 text-xl">Step 3: Executing the Program</span> <br>
-			Run the executable:<br>
-			<span class="bg-pink-50 px-2 rounded-lg">./filename // Linux or macOS</span> <br>
-			<span class="bg-pink-50 px-2 rounded-lg">filename // Windows</span> <br>
+			Run the executable:
+			<OutputBlock :output="runExecutable" />
 			The program executes and prints the output.
+			<ImageBlock src="/blog/c/compilation-process1.png" caption="Program Output" />
 		</p>
 
 		<!--!!!-->
@@ -107,9 +127,11 @@ const links = [
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			Let's now look at what the compiler actually does internally. <br>
-			To see all intermediate files, compile using: <br>
-			<span class="bg-pink-50 px-2 rounded-lg">gcc -Wall -save-temps filename.c -o filename</span> <br>
-			This command generates multiple files representing each compilation phase. <br>
+			To see all intermediate files, compile using:
+			<OutputBlock output="gcc -Wall -save-temps main.c -o main" />
+			This command generates multiple files representing each compilation phase.
+
+			<ImageBlock src="/blog/c/compilation-process2.png" caption="Generated intermediate files" />
 
 			<span class="text-gray-600 text-xl">1. Preprocessing Phase</span> <br>
 			Input: <span class="bg-pink-50 px-2 rounded-lg">filename.c</span> <br>
@@ -129,7 +151,8 @@ const links = [
 				<li>Macros like <span class="bg-pink-50 px-2 rounded-lg">{{ define }}</span> are expanded.</li>
 				<li>Comments disappear completely.</li>
 			</ul>
-			The output file <span class="bg-pink-50 px-2 rounded-lg">filename.i</span> is pure C code, but much longer. <br>
+			The output file <span class="bg-pink-50 px-2 rounded-lg">filename.i</span> is pure C code, but much longer.
+			<ImageBlock src="/blog/c/compilation-process3.png" caption="Pure C Code File" />
 
 			<span class="text-gray-600 text-xl">2. Compilation Phase</span> <br>
 			Input: <span class="bg-pink-50 px-2 rounded-lg">filename.i</span> <br>
@@ -140,9 +163,12 @@ const links = [
 				<li>The preprocessed code is checked for syntax errors.</li>
 				<li>Code is translated into assembly language.</li>
 			</ul>
+
+
 			The output <span class="bg-pink-50 px-2 rounded-lg">filename.s</span> contains assembly instructions specific to
 			the system architecture. <br>
-			Assembly is still human-readable, but very low-level. <br>
+			Assembly is still human-readable, but very low-level.
+			<ImageBlock src="/blog/c/compilation-process4.png" caption="Assembly Code" />
 
 			<span class="text-gray-600 text-xl">3. Assembly Phase</span> <br>
 			Input: <span class="bg-pink-50 px-2 rounded-lg">filename.s</span> <br>
@@ -155,7 +181,9 @@ const links = [
 				<li>Function call (like printf) are not yet resolved.</li>
 				<li>The file is not executable.</li>
 			</ul>
-			The output file is called an object file. <br>
+
+			The output file is called an object file.
+			<ImageBlock src="/blog/c/compilation-process5.png" caption="Machine Level Instruction File" />
 
 			<span class="text-gray-600 text-xl">4. Linking Phase</span> <br>
 			Input: One or more <span class="bg-pink-50 px-2 rounded-lg">.o</span> files<br>

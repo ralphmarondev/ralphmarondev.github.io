@@ -34,7 +34,7 @@ onMounted(highlight)
 </script>
 
 <template>
-	<div class="my-2 w-[80%]">
+	<div class="my-2">
     <pre
 		    class="
         rounded-lg border-2 border-pink-400
@@ -42,8 +42,10 @@ onMounted(highlight)
         text-xs sm:text-sm
         leading-snug
         whitespace-pre-wrap break-words
-        w-full overflow-hidden
+        overflow-hidden
         box-border
+        max-w-full
+        md:max-w-3xl
       "
     >
       <code v-html="highlighted" class="language-c"></code>

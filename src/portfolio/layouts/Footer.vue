@@ -43,7 +43,7 @@ onUnmounted(() => {
 <template>
 	<div>
 		<div v-show="showButton"
-		     class="fixed bottom-8 right-8 z-50 transition-opacity duration-500">
+		     class="fixed bottom-8 right-8 z-50 transition-opacity duration-500 pointer-events-none">
 			<button
 					@click="scrollToTop"
 					class="w-14 h-14 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-transform duration-300 hover:translate-y-1"
@@ -52,7 +52,7 @@ onUnmounted(() => {
 			</button>
 		</div>
 
-		<footer class="bg-gray-900 text-gray-300 mt-12">
+		<footer class="bg-gray-900 text-gray-300">
 			<div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
 
 				<!-- About Me Section -->
@@ -134,7 +134,7 @@ onUnmounted(() => {
 			</div>
 
 			<div class="border-t border-gray-700 mt-8 py-4 text-center text-gray-400 text-sm">
-				&copy; {{ currentYear}} Ralph Maron Eda. All rights reserved.
+				&copy; {{ currentYear }} Ralph Maron Eda. All rights reserved.
 			</div>
 		</footer>
 	</div>

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 </script>
 <template>
-	<section class='py-20 bg-gradient-to-b from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden'
-	         id='about'>
-		<div class='container'>
-			<div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-				<div class='text-center mb-16' data-aos='fade-up'>
-					<h2 class='text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white'>
-						About <span class='text-purple-600 dark:text-purple-400'>Me</span>
+	<section class="py-20 bg-gradient-to-b from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+	         id="about">
+		<div class="container">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16" data-aos="fade-up">
+					<h2 class="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+						About <span class="text-purple-600 dark:text-purple-400">Me</span>
 					</h2>
-					<p class='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed'>
+					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
 						Get to know the story behind my code, where I started, what drives me, and why I love building mobile
 						apps.
 					</p>
@@ -28,7 +28,7 @@
 									</div>
 									<h4 class="text-lg font-medium text-gray-900 dark:text-white">Bio</h4>
 								</div>
-								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-break-spaces">
+								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 									Self-taught mobile developer since 2023 with a Computer Engineering background. Passionate about
 									Kotlin, Compose Multiplatform, and Spring Boot with JWT for backend.
 								</p>
@@ -40,7 +40,7 @@
 									</div>
 									<h4 class="text-lg font-medium text-gray-900 dark:text-white">Hobbies</h4>
 								</div>
-								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 									Enjoy hiking, playing clash of clans, watching sci-fi movies, and contributing to open-source
 									projects.
 								</p>
@@ -52,7 +52,7 @@
 									</div>
 									<h4 class="text-lg font-medium text-gray-900 dark:text-white">Languages</h4>
 								</div>
-								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-break-spaces">
+								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 									Fluent in English, Tagalog, and Ilocano.
 								</p>
 							</div>
@@ -63,7 +63,7 @@
 									</div>
 									<h4 class="text-lg font-medium text-gray-900 dark:text-white">Contact</h4>
 								</div>
-								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-break-spaces">
+								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 									Email: edaralphmaron@gmail.com <br>Phone: +639617906582 <br>LinkedIn: linkedin.com/in/ralph-maron-eda/
 								</p>
 							</div>
@@ -74,7 +74,7 @@
 									</div>
 									<h4 class="text-lg font-medium text-gray-900 dark:text-white">Location</h4>
 								</div>
-								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-break-spaces">
+								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 									Based in Cagayan, Philippines. Available for remote work worldwide.
 								</p>
 							</div>
@@ -85,7 +85,7 @@
 									</div>
 									<h4 class="text-lg font-medium text-gray-900 dark:text-white">Education Summary</h4>
 								</div>
-								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-break-spaces">
+								<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 									Bachelor of Science in Computer Engineering, Cagayan State University - Carig Campus (2021 - 2025).
 								</p>
 							</div>

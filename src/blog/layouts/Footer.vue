@@ -106,7 +106,7 @@ const tutorialsLinks = [
 		</div>
 
 		<div class="border-t border-gray-700 mt-8 py-4 text-center text-gray-400 text-sm">
-			&copy; {{ currentYear}} Ralph Maron Eda. All rights reserved.
+			&copy; {{ currentYear }} Ralph Maron Eda. All rights reserved.
 		</div>
 	</footer>
 </template>

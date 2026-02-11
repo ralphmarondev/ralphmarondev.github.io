@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Header from '@/blog/layouts/Header.vue'
+import Footer from '@/blog/layouts/Footer.vue'
 </script>
 
 <template>
@@ -8,16 +9,7 @@ import Header from '@/blog/layouts/Header.vue'
 		<main class="flex-1 px-6 py-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
 			<slot />
 		</main>
-
-		<footer class="bg-gray-900 dark:bg-gray-950 text-white py-6" id="footer">
-			<div class="container">
-				<div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-					<p class="text-gray-400 text-sm">
-						&copy; 2026 Ralph Maron Eda. All rights reserved.
-					</p>
-				</div>
-			</div>
-		</footer>
+		<Footer />
 	</div>
 </template>
 

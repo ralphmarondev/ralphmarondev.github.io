@@ -1,4 +1,0 @@
-import{d as g,r as h,m as u,g as _,c as f,b as a,e as i,X as c,o as x,_ as w}from"./index-Dgoy4z9j.js";const b={class:"my-2 w-[80%]"},k={class:"rounded-lg border-2 border-pink-400 bg-white px-4 text-xs sm:text-sm leading-snug whitespace-pre-wrap break-words w-full overflow-hidden box-border"},v=["innerHTML"],B=g({__name:"CodeBlock",props:{code:{},language:{}},setup(d){const n=d,l=()=>{const e=n.code.split(`
-`).filter((t,s)=>s===0||t.trim()!==""),p=Math.min(...e.filter(t=>t.trim().length).map(t=>{const s=t.match(/^(\s*)/);return s&&s[1]?s[1].length:0}));return e.map(t=>t.slice(p)).join(`
-`)},o=h(""),r=()=>{o.value=c.highlight(l(),c.languages.c,"c")};return u(()=>n.code,r,{immediate:!0}),_(r),(m,e)=>(x(),f("div",b,[a("pre",k,[e[0]||(e[0]=i("      ",-1)),a("code",{innerHTML:o.value,class:"language-c"},null,8,v),e[1]||(e[1]=i(`
-    `,-1))])]))}}),M=w(B,[["__scopeId","data-v-7f6763d5"]]);export{M as C};

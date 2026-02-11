@@ -1,1 +1,0 @@
-import{_ as e}from"./MainLayout.vue_vue_type_style_index_0_lang-BAgJvh8v.js";import{d as o,y as a,j as n,e as r,o as s}from"./index-Dgoy4z9j.js";const m=o({__name:"QuizTwoIndex",setup(u){return(p,t)=>(s(),a(e,null,{default:n(()=>[...t[0]||(t[0]=[r("Input and output quiz",-1)])]),_:1}))}});export{m as default};

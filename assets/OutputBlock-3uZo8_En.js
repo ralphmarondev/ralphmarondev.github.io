@@ -1,0 +1,3 @@
+import{d as l,r as u,m as i,g as d,c as m,b as n,e as r,Y as a,o as g,_ as x}from"./index-BcYPtOxY.js";const _={class:"my-2"},h={class:"flex items-center rounded-lg border-2 border-pink-400 bg-pink-100 px-4 py-3 text-xs sm:text-sm leading-snug whitespace-pre-wrap break-words box-border max-w-full md:max-w-3xl"},b=["innerHTML"],f=l({__name:"OutputBlock",props:{output:{}},setup(p){const t=p,c=()=>t.output.replace(/\r\n/g,`
+`).replace(/^\n+/,"").replace(/\n+$/,""),s=u(""),o=()=>{s.value=a.highlight(c(),a.languages.c,"c")};return i(()=>t.output,o,{immediate:!0}),d(o),(k,e)=>(g(),m("div",_,[n("pre",h,[e[0]||(e[0]=r("  ",-1)),n("code",{innerHTML:s.value},null,8,b),e[1]||(e[1]=r(`
+`,-1))])]))}}),B=x(f,[["__scopeId","data-v-3183a279"]]);export{B as O};

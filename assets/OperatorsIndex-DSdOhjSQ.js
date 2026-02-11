@@ -1,1 +1,0 @@
-import{_ as t}from"./MainLayout.vue_vue_type_style_index_0_lang-ORDhMWYV.js";import{d as o,y as r,j as a,e as s,o as n}from"./index-DjcpV5CO.js";const c=o({__name:"OperatorsIndex",setup(p){return(_,e)=>(n(),r(t,null,{default:a(()=>[...e[0]||(e[0]=[s("Operators",-1)])]),_:1}))}});export{c as default};

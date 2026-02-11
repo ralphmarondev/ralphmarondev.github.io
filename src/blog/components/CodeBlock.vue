@@ -25,7 +25,8 @@ const normalizedCode = () => {
 const highlighted = ref('')
 
 const highlight = () => {
-	highlighted.value = Prism.highlight(normalizedCode(), Prism.languages.c!, 'c')
+	const lang = Prism.languages[props.language] || Prism.languages.c
+	highlighted.value = Prism.highlight(normalizedCode(), lang!, props.language)
 }
 
 watch(() => props.code, highlight, {immediate: true})

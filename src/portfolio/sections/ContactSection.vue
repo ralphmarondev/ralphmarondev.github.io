@@ -6,9 +6,14 @@ const isContactForm = ref(true)
 const formRef = ref<HTMLFormElement | null>(null)
 const status = ref('')
 const isSuccess = ref(false)
+const isSending = ref(false)
 
 const handleSubmit = async () => {
-	if (!formRef.value) return
+	if (!formRef.value || isSending.value) return
+
+	isSending.value = true
+	isSuccess.value = false
+	status.value = ''
 
 	try {
 		await emailClient.sendForm(formRef.value)
@@ -16,10 +21,11 @@ const handleSubmit = async () => {
 		status.value = 'Message sent successfully'
 		formRef.value.reset()
 	} catch (error) {
-		isSuccess.value = true
+		isSuccess.value = false
 		console.error(error)
 		status.value = 'Failed to send message.'
 	} finally {
+		isSending.value = false
 		setTimeout(() => {
 			status.value = ''
 		}, 4000)
@@ -81,9 +87,13 @@ const handleSubmit = async () => {
 								          placeholder="Your Message"></textarea>
 							</div>
 							<button type="submit"
-							        class="w-full py-3 px-6 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 flex items-center justify-center space-x-2">
-								<i class="bx bx-send text-lg"></i>
-								<span>Send Message</span>
+							        :disabled="isSending"
+							        class="w-full py-3 px-6 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
+
+								<span v-if="isSending"
+								      class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+								<i v-else class="bx bx-send text-lg"></i>
+								<span>{{ isSending ? 'Sending...' : 'Send Message' }}</span>
 							</button>
 						</form>
 

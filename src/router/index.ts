@@ -2,6 +2,7 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 import {useAuthStore} from '@/private/store/useAuthStore.ts'
 import {blogRoutes} from '@/blog/router'
 import {privateRoutes} from '@/private/router'
+import {projectRoutes} from '@/projects/router'
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -18,7 +19,14 @@ const router = createRouter({
 			component: () => import('@/blog/BlogIndex.vue'),
 			meta: {title: 'Blogs', icon: '/ralphmaron.png'}
 		},
+		{
+			path: '/projects',
+			name: 'projects',
+			component: () => import('@/projects/ProjectIndex.vue'),
+			meta: {title: 'Projects', icon: '/ralphmaron.png'}
+		},
 		...blogRoutes,
+		...projectRoutes,
 		...privateRoutes,
 		{
 			path: '/:pathMatch(.*)*',

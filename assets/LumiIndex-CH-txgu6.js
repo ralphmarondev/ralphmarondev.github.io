@@ -1,0 +1,1 @@
+import{_ as t}from"./MainLayout.vue_vue_type_style_index_0_lang-DmoVevQr.js";import{d as o,x as a,j as n,e as r,o as s}from"./index-DdgbXUPT.js";import"./Footer.vue_vue_type_script_setup_true_lang-CKyncM6S.js";const d=o({__name:"LumiIndex",setup(m){return(i,e)=>(s(),a(t,null,{default:n(()=>[...e[0]||(e[0]=[r(" lumi index ",-1)])]),_:1}))}});export{d as default};

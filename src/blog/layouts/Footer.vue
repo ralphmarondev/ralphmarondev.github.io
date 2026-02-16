@@ -50,8 +50,6 @@ const tutorialsLinks = [
 						<router-link
 								:to="link.route"
 								class="hover:text-white transition"
-								target="_blank"
-								rel="noopener noreferrer"
 						>
 							{{ link.name }}
 						</router-link>

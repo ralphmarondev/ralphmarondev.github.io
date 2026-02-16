@@ -65,7 +65,7 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-quiz-io-operators',
 		name: 'c-quiz-io-operators',
 		component: () => import('@/blog/cprogramming/basic/10-quiz/QuizTwoIndex.vue'),
-		meta: {title: 'C - Quiz Two', icon: '/ralphmaron.png'}
+		meta: {title: 'Quiz Input-Output and Operators', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-conditional-statements',
@@ -83,6 +83,6 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-quiz-conditional-loops',
 		name: 'c-quiz-conditional-loops',
 		component: () => import('@/blog/cprogramming/basic/13-quiz/QuizThreeIndex.vue'),
-		meta: {title: 'Conditional Statements', icon: '/ralphmaron.png'}
+		meta: {title: 'Quiz Condional and Loops', icon: '/ralphmaron.png'}
 	}
 ]

@@ -10,18 +10,19 @@ const sections = [
 				'operations. This section sets the foundation for writing simple C programs.',
 		topics: [
 			{title: 'C Introduction', route: '/blog/c-introduction'},
-			{title: 'Compilation Process', route: '/blog/c-compilation-process'},
-			{title: 'Identifiers', route: '/blog/c-identifiers'},
+			{title: 'Compilation Process in C', route: '/blog/c-compilation-process'},
+			{title: 'Identifiers in C', route: '/blog/c-identifiers'},
 			{title: 'C Keywords', route: '/blog/c-keywords'},
 			{title: 'C Variables', route: '/blog/c-variables'},
 			{title: 'Data Type in C', route: '/blog/c-data-types'},
 			{title: 'Quiz: C Basics | Variables | Data Types', route: '/blog/c-quiz-basics'},
 			{title: 'Input and Output in C', route: '/blog/c-input-output'},
-			{title: 'Operators', route: '/blog/c-operators'},
+			{title: 'Operators in C', route: '/blog/c-operators'},
 			{title: 'Quiz: Input and Output | Operators', route: '/blog/c-quiz-io-operators'},
-			{title: 'Conditional Statements', route: '/blog/c-conditional-statements'},
+			{title: 'Conditional Statements in C', route: '/blog/c-conditional-statements'},
+			{title: 'Quiz: Conditional Statements in C', route: '/blog/c-quiz-conditional-statements'},
 			{title: 'Loops', route: '/blog/c-loops'},
-			{title: 'Quiz: Conditional Statements and Loops', route: '/blog/c-quiz-conditional-loops'}
+			{title: 'Quiz: Loops in C', route: '/blog/c-quiz-loops'}
 		]
 	},
 	{

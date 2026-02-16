@@ -74,15 +74,15 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		meta: {title: 'Conditional Statements in C', icon: '/ralphmaron.png'}
 	},
 	{
-		path: '/blog/c-loops',
-		name: 'c-loops',
-		component: () => import('@/blog/cprogramming/basic/12-loops/LoopsIndex.vue'),
-		meta: {title: 'Loops in C', icon: '/ralphmaron.png'}
+		path: '/blog/c-quiz-conditional-statements',
+		name: 'c-quiz-conditional-statements',
+		component: () => import('@/blog/cprogramming/basic/12-quiz/QuizThreeIndex.vue'),
+		meta: {title: 'Quiz Conditional Statements in C', icon: '/ralphmaron.png'}
 	},
 	{
-		path: '/blog/c-quiz-conditional-loops',
-		name: 'c-quiz-conditional-loops',
-		component: () => import('@/blog/cprogramming/basic/13-quiz/QuizThreeIndex.vue'),
-		meta: {title: 'Quiz Conditional and Loops', icon: '/ralphmaron.png'}
+		path: '/blog/c-loops',
+		name: 'c-loops',
+		component: () => import('@/blog/cprogramming/basic/13-loops/LoopsIndex.vue'),
+		meta: {title: 'Loops in C', icon: '/ralphmaron.png'}
 	}
 ]

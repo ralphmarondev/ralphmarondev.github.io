@@ -201,7 +201,7 @@ const links = [
 			Integer Data Type (int)
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
-			The <span class="bg-pink-50 px-2 rounded-lg">int</span> data type is used to store whole numbers.
+			The <span class="bg-pink-50 px-2 rounded-lg">int</span> data type is used to store whole numbers. <br>
 
 			<span class="text-gray-700 text-xl">Characteristics</span> <br>
 			<ul class="list-disc list-inside space-y-1">
@@ -221,7 +221,7 @@ const links = [
 			Character Data Type (int)
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
-			The <span class="bg-pink-50 px-2 rounded-lg">char</span> data type stores a single character.
+			The <span class="bg-pink-50 px-2 rounded-lg">char</span> data type stores a single character. <br>
 
 			<span class="text-gray-700 text-xl">Characteristics</span> <br>
 			<ul class="list-disc list-inside space-y-1">
@@ -248,7 +248,7 @@ const links = [
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			The <span class="bg-pink-50 px-2 rounded-lg">float</span> data type stores decimal numbers with limited precision.
-
+			<br>
 			<span class="text-gray-700 text-xl">Characteristics</span> <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li>Used for numbers with fractional parts.</li>
@@ -271,7 +271,7 @@ const links = [
 		<p class="text-gray-500 mb-2 text-lg">
 			The <span class="bg-pink-50 px-2 rounded-lg">double</span> data type stores decimal numbers with higher precision
 			than float.
-
+			<br>
 			<span class="text-gray-700 text-xl">Characteristics</span> <br>
 			<ul class="list-disc list-inside space-y-1">
 				<li>More precise than <span class="bg-pink-50 px-2 rounded-lg">float</span></li>

@@ -98,7 +98,6 @@ const links = [
 	{title: 'Data Types', route: '/blog/c-data-types'},
 	{title: 'Input and Output', route: '/blog/c-input-output'},
 	{title: 'Operators', route: '/blog/c-operators'},
-	{title: 'Conditional Statements', route: '/blog/c-conditional-statements'},
 	{title: 'Loops', route: '/blog/c-loops'}
 ]
 </script>

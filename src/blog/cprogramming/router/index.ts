@@ -77,7 +77,7 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-loops',
 		name: 'c-loops',
 		component: () => import('@/blog/cprogramming/basic/12-loops/LoopsIndex.vue'),
-		meta: {title: 'Conditional Statements', icon: '/ralphmaron.png'}
+		meta: {title: 'Loops', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-quiz-conditional-loops',

@@ -1,6 +1,7 @@
 import type {RouteRecordRaw} from 'vue-router'
 
 export const CProgrammingRoutes: RouteRecordRaw[] = [
+	// Basics
 	{
 		path: '/blog/c-programming-language',
 		name: 'c-programming',
@@ -90,5 +91,13 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-quiz-loops',
 		component: () => import('@/blog/cprogramming/basic/14-quiz/QuizFourIndex.vue'),
 		meta: {title: 'Quiz Loops in C', icon: '/ralphmaron.png'}
+	},
+
+	// Functions
+	{
+		path: '/blog/c-functions',
+		name: 'c-functions',
+		component: () => import('@/blog/cprogramming/functions/01-introduction/IntroductionIndex.vue'),
+		meta: {title: 'Functions in C', icon: '/ralphmaron.png'}
 	}
 ]

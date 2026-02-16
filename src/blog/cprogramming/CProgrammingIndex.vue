@@ -30,7 +30,7 @@ const sections = [
 		description: 'Learn how to create modular, reusable code using functions. Explore parameter passing, return types, ' +
 				'recursion, and how functions make program easier to manage.',
 		topics: [
-			{title: 'Functions in C', route: '/blog/c-programming-language'},
+			{title: 'Functions in C', route: '/blog/c-functions'},
 			{title: 'Parameter Passing Techniques', route: '/blog/c-programming-language'},
 			{title: 'Main Function', route: '/blog/c-programming-language'},
 			{title: 'Recursion', route: '/blog/c-programming-language'},

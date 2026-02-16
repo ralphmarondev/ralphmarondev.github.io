@@ -17,7 +17,7 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-compilation-process',
 		name: 'c-compilation-process',
 		component: () => import('@/blog/cprogramming/basic/02-compilation-process/CompilationProcessIndex.vue'),
-		meta: {title: 'C Compilation Process', icon: '/ralphmaron.png'}
+		meta: {title: 'C Compilation Process in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-identifiers',
@@ -29,7 +29,7 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-keywords',
 		name: 'c-keywords',
 		component: () => import('@/blog/cprogramming/basic/04-keywords/KeywordsIndex.vue'),
-		meta: {title: 'Identifiers in C', icon: '/ralphmaron.png'}
+		meta: {title: 'Keywords in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-variables',
@@ -53,36 +53,36 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		path: '/blog/c-input-output',
 		name: 'c-input-output',
 		component: () => import('@/blog/cprogramming/basic/08-input-and-output/InputAndOutputIndex.vue'),
-		meta: {title: 'C Input and Output', icon: '/ralphmaron.png'}
+		meta: {title: 'Input and Output in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-operators',
 		name: 'c-operators',
 		component: () => import('@/blog/cprogramming/basic/09-operators/OperatorsIndex.vue'),
-		meta: {title: 'C Operators', icon: '/ralphmaron.png'}
+		meta: {title: 'Operators in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-quiz-io-operators',
 		name: 'c-quiz-io-operators',
 		component: () => import('@/blog/cprogramming/basic/10-quiz/QuizTwoIndex.vue'),
-		meta: {title: 'Quiz Input-Output and Operators', icon: '/ralphmaron.png'}
+		meta: {title: 'Quiz Input-Output and Operators in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-conditional-statements',
 		name: 'c-conditional-statements',
 		component: () => import('@/blog/cprogramming/basic/11-conditional-statements/ConditionalStatementsIndex.vue'),
-		meta: {title: 'Conditional Statements', icon: '/ralphmaron.png'}
+		meta: {title: 'Conditional Statements in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-loops',
 		name: 'c-loops',
 		component: () => import('@/blog/cprogramming/basic/12-loops/LoopsIndex.vue'),
-		meta: {title: 'Loops', icon: '/ralphmaron.png'}
+		meta: {title: 'Loops in C', icon: '/ralphmaron.png'}
 	},
 	{
 		path: '/blog/c-quiz-conditional-loops',
 		name: 'c-quiz-conditional-loops',
 		component: () => import('@/blog/cprogramming/basic/13-quiz/QuizThreeIndex.vue'),
-		meta: {title: 'Quiz Condional and Loops', icon: '/ralphmaron.png'}
+		meta: {title: 'Quiz Conditional and Loops', icon: '/ralphmaron.png'}
 	}
 ]

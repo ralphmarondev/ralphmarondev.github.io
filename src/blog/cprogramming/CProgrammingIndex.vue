@@ -21,7 +21,7 @@ const sections = [
 			{title: 'Quiz: Input and Output | Operators', route: '/blog/c-quiz-io-operators'},
 			{title: 'Conditional Statements in C', route: '/blog/c-conditional-statements'},
 			{title: 'Quiz: Conditional Statements in C', route: '/blog/c-quiz-conditional-statements'},
-			{title: 'Loops', route: '/blog/c-loops'},
+			{title: 'Loops in C', route: '/blog/c-loops'},
 			{title: 'Quiz: Loops in C', route: '/blog/c-quiz-loops'}
 		]
 	},

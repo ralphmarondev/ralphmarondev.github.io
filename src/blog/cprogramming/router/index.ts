@@ -84,5 +84,11 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-loops',
 		component: () => import('@/blog/cprogramming/basic/13-loops/LoopsIndex.vue'),
 		meta: {title: 'Loops in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/blog/c-quiz-loops',
+		name: 'c-quiz-loops',
+		component: () => import('@/blog/cprogramming/basic/14-quiz/QuizFourIndex.vue'),
+		meta: {title: 'Quiz Loops in C', icon: '/ralphmaron.png'}
 	}
 ]

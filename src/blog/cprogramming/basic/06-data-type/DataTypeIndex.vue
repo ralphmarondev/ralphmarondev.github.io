@@ -63,7 +63,7 @@ const characterExample = ref(`
 #include <stdio.h>
 
 int main() {
-	char c = 'A';
+	char ch = 'A';
 	printf("ch = %c", ch);
 	return 0;
 }
@@ -218,7 +218,7 @@ const links = [
 
 		<!--!!!-->
 		<h2 class="text-2xl font-semibold text-gray-800 mb-2">
-			Character Data Type (int)
+			Character Data Type (char)
 		</h2>
 		<p class="text-gray-500 mb-2 text-lg">
 			The <span class="bg-pink-50 px-2 rounded-lg">char</span> data type stores a single character. <br>

@@ -282,6 +282,5 @@ const links = [
 		</p>
 
 		<UsefulLinks :links="links" />
-		can you
 	</MainLayout>
 </template>

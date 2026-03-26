@@ -9,18 +9,18 @@ const exploreCards = [
 		image: '/blog/c.png',
 		route: '/blog/c-programming-language'
 	},
-	{
-		title: 'Git & GitHub',
-		description: 'Learn version control, collaboration, and real-world development workflows.',
-		image: '/blog/git.png',
-		route: '/blog/git-github'
-	},
-	{
-		title: 'Kotlin',
-		description: 'Explore modern programming with Kotlin, focusing on clarity, safety, and productivity.',
-		image: '/blog/kotlin.png',
-		route: '/blog/kotlin'
-	}
+	// {
+	// 	title: 'Git & GitHub',
+	// 	description: 'Learn version control, collaboration, and real-world development workflows.',
+	// 	image: '/blog/git.png',
+	// 	route: '/blog/git-github'
+	// },
+	// {
+	// 	title: 'Kotlin',
+	// 	description: 'Explore modern programming with Kotlin, focusing on clarity, safety, and productivity.',
+	// 	image: '/blog/kotlin.png',
+	// 	route: '/blog/kotlin'
+	// }
 ]
 </script>
 
@@ -32,7 +32,7 @@ const exploreCards = [
 			Explore
 		</h2>
 
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
 			<router-link
 					v-for="card in exploreCards"
 					:key="card.title"

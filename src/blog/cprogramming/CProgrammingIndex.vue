@@ -64,6 +64,13 @@ const sections = [
 			{title: 'Memory Leaks', route: '/blog/c-programming-language'},
 			{title: 'Quiz: Memory Management', route: '/blog/c-programming-language'}
 		]
+	},
+	{
+		title: 'Sample Programs',
+		description: 'Play this kids!',
+		topics: [
+			{title: 'Average of 2 numbers', route: '/blog/c-programming-language'},
+		]
 	}
 ]
 </script>

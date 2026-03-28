@@ -1,7 +1,6 @@
-<!-- features/portfolio/layouts/MainLayout.vue -->
 <script setup lang="ts">
-import Header from './Header.vue'
-import Footer from './Footer.vue'
+import Header from '@/features/portfolio/archive/v1/layouts/Header.vue'
+import Footer from '@/shared/layouts/Footer.vue'
 </script>
 
 <template>
@@ -12,4 +11,5 @@ import Footer from './Footer.vue'
 		</main>
 		<Footer />
 	</div>
+
 </template>

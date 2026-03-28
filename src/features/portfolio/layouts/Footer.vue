@@ -1,139 +1,55 @@
+<!-- shared/layouts/Footer.vue -->
 <script setup lang="ts">
-import {onMounted, onUnmounted, ref} from 'vue'
-import {RouterLink} from 'vue-router'
-
-const showButton = ref(false)
-const currentYear = ref(new Date().getFullYear())
-
-const aboutLinks = [
-	{name: 'About Me', route: '/#about'},
-	{name: 'Contact', route: '/#contact'},
-	{name: 'Privacy Policy', route: '/privacy-policy'}
-]
-
-const projectsLinks = [
-	{name: 'All Projects', route: '/projects'},
-	{name: 'Lumi OS', route: '/projects/lumi-os'},
-	{name: 'KeepSafe', route: '/projects/keepsafe'}
-]
-
-const tutorialsLinks = [
-	{name: 'All Tutorials', route: '/blog'},
-	{name: 'C Language', route: '/blog/c-programming-language'},
-	{name: 'C++', route: '/blog/cpp'}
-]
-
-const handleScroll = () => {
-	showButton.value = window.scrollY > 300
-}
-
-const scrollToTop = () => {
-	window.scrollTo({top: 0, behavior: 'smooth'})
-}
-
-onMounted(() => {
-	window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-	window.removeEventListener('scroll', handleScroll)
-})
+const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-	<div>
-		<div v-show="showButton"
-		     class="fixed bottom-8 right-8 z-50 transition-opacity duration-500 pointer-events-none">
-			<button
-					@click="scrollToTop"
-					class="w-14 h-14 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-transform duration-300 hover:translate-y-1"
-					aria-label="Scroll to top">
-				<i class="bx bx-chevron-up text-2xl"></i>
-			</button>
-		</div>
+	<footer class="bg-gray-900 text-gray-300">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+			<div class="grid md:grid-cols-4 gap-8">
+				<!-- Brand -->
+				<div class="col-span-2">
+					<div class="flex items-center mb-4">
+						<i class="bx bx-code text-2xl text-purple-500"></i>
+						<span class="ml-2 text-xl font-bold text-white">Ralph Maron Eda</span>
+					</div>
+					<p class="text-gray-400 text-sm leading-relaxed">
+						Crafting elegant mobile experiences with Kotlin and Compose Multiplatform.
+						Building the future, one line of code at a time.
+					</p>
+				</div>
 
-		<footer class="bg-gray-900 text-gray-300">
-			<div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
-
-				<!-- About Me Section -->
+				<!-- Quick Links -->
 				<div>
-					<h3 class="text-white font-semibold mb-4">About Me</h3>
+					<h3 class="text-white font-semibold mb-4">Quick Links</h3>
 					<ul class="space-y-2">
-						<li v-for="link in aboutLinks" :key="link.name">
-							<router-link
-									:to="link.route"
-									class="hover:text-white transition"
-							>
-								{{ link.name }}
-							</router-link>
-						</li>
+						<li><router-link to="/#home" class="text-gray-400 hover:text-purple-400 transition text-sm">Home</router-link></li>
+						<li><router-link to="/#about" class="text-gray-400 hover:text-purple-400 transition text-sm">About</router-link></li>
+						<li><router-link to="/#projects" class="text-gray-400 hover:text-purple-400 transition text-sm">Projects</router-link></li>
+						<li><router-link to="/#tutorials" class="text-gray-400 hover:text-purple-400 transition text-sm">Tutorials</router-link></li>
 					</ul>
 				</div>
 
-				<!-- Projects Section -->
-				<div>
-					<h3 class="text-white font-semibold mb-4">Projects</h3>
-					<ul class="space-y-2">
-						<li v-for="link in projectsLinks" :key="link.name">
-							<router-link
-									:to="link.route"
-									class="hover:text-white transition"
-							>
-								{{ link.name }}
-							</router-link>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Tutorials Section -->
-				<div>
-					<h3 class="text-white font-semibold mb-4">Tutorials</h3>
-					<ul class="space-y-2">
-						<li v-for="link in tutorialsLinks" :key="link.name">
-							<router-link
-									:to="link.route"
-									class="hover:text-white transition"
-							>
-								{{ link.name }}
-							</router-link>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Connect Section -->
+				<!-- Connect -->
 				<div>
 					<h3 class="text-white font-semibold mb-4">Connect</h3>
-					<p class="text-gray-400 text-sm mb-4">
-						Follow me on social media or subscribe to my newsletter.
-					</p>
-					<div class="flex space-x-4">
-						<a href="https://www.facebook.com/imralphmaron"
-						   class="hover:text-white transition">
-							<i class="bx bxl-facebook-square text-2xl"></i>
+					<div class="flex space-x-3">
+						<a href="https://github.com/ralphmarondev" target="_blank" class="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition">
+							<i class="bx bxl-github text-xl"></i>
 						</a>
-						<a href="https://www.tiktok.com/@ralphmaron"
-						   class="hover:text-white transition">
-							<i class="bx bxl-tiktok text-2xl"></i>
+						<a href="https://linkedin.com/in/ralph-maron-eda" target="_blank" class="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition">
+							<i class="bx bxl-linkedin text-xl"></i>
 						</a>
-						<a href="https://www.instagram.com/ralphmaron"
-						   class="hover:text-white transition">
-							<i class="bx bxl-instagram text-2xl"></i>
-						</a>
-						<a href="https://www.linkedin.com/in/ralph-maron-eda"
-						   class="hover:text-white transition">
-							<i class="bx bxl-linkedin-square text-2xl"></i>
-						</a>
-						<a href="https://www.youtube.com/@RalphMaronEda"
-						   class="hover:text-white transition">
-							<i class="bx bxl-youtube text-2xl"></i>
+						<a href="https://www.instagram.com/ralphmaron" target="_blank" class="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition">
+							<i class="bx bxl-instagram text-xl"></i>
 						</a>
 					</div>
 				</div>
 			</div>
 
-			<div class="border-t border-gray-700 mt-8 py-4 text-center text-gray-400 text-sm">
+			<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
 				&copy; {{ currentYear }} Ralph Maron Eda. All rights reserved.
 			</div>
-		</footer>
-	</div>
+		</div>
+	</footer>
 </template>

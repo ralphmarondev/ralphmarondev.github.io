@@ -1,150 +1,113 @@
+<!-- features/portfolio/components/Header/Header.vue -->
 <script setup lang="ts">
-import {onMounted, ref, watch} from 'vue'
-import {useNavigationStore} from '@/app/store/useNavigationStore.ts'
-import {useThemeStore} from '@/app/store/useThemeStore.ts'
-import AOS from 'aos'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useNavigationStore } from '@/app/store/useNavigationStore.ts'
+import { useThemeStore } from '@/app/store/useThemeStore.ts'
 
 const nav = useNavigationStore()
 const theme = useThemeStore()
 const mobileMenuOpen = ref(false)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+	isScrolled.value = window.scrollY > 50
+}
 
 onMounted(() => {
-	AOS.init()
+	window.addEventListener('scroll', handleScroll)
 })
 
-watch(() => theme.dark, () => {
-	AOS.refresh()
+onUnmounted(() => {
+	window.removeEventListener('scroll', handleScroll)
 })
 
-function toggleMobileMenu() {
-	mobileMenuOpen.value = !mobileMenuOpen.value
-}
+const navItems = [
+	{ to: '/#home', icon: 'bx-home', label: 'Home' },
+	{ to: '/#about', icon: 'bx-id-card', label: 'About' },
+	{ to: '/#projects', icon: 'bx-code', label: 'Projects' },
+	{ to: '/#tutorials', icon: 'bx-book-open', label: 'Tutorials' },
+	{ to: '/#contact', icon: 'bx-envelope', label: 'Contact' }
+]
 </script>
 
 <template>
-	<nav class="bg-white dark:bg-gray-900 shadow-lg fixed w-full z-50 py-1.5" data-aos="fade-down"
-	     data-aos-duration="1000">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-			<div class="flex items-center">
-				<i class="bx bx-code text-3xl md:text-2xl text-gray-800 dark:text-white"></i>
-				<span class="hidden md:flex ml-2 text-2xl font-bold text-gray-800 dark:text-white">
-				Ralph Maron Eda
-			</span>
+	<nav
+			class="fixed w-full z-50 transition-all duration-300"
+			:class="isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg py-1' : 'bg-white dark:bg-gray-900 shadow-lg py-1.5'"
+	>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between h-16 items-center">
+				<!-- Logo -->
+				<router-link to="/" class="flex items-center group">
+					<div class="relative">
+						<i class="bx bx-code text-3xl text-purple-600 dark:text-purple-400"></i>
+						<div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full blur opacity-0 group-hover:opacity-50 transition duration-300"></div>
+					</div>
+					<span class="ml-2 text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            Ralph
+          </span>
+				</router-link>
+
+				<!-- Desktop Navigation -->
+				<div class="hidden md:flex items-center space-x-1">
+					<router-link
+							v-for="item in navItems"
+							:key="item.label"
+							:to="item.to"
+							class="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition group"
+							:class="{ 'text-purple-600 dark:text-purple-400': nav.activeSection === item.label.toLowerCase() }"
+					>
+						<i :class="['bx', item.icon, 'mr-1 text-lg']"></i>
+						{{ item.label }}
+						<span
+								class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 to-pink-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+								:class="{ 'scale-x-100': nav.activeSection === item.label.toLowerCase() }"
+						></span>
+					</router-link>
+
+					<button
+							@click="theme.toggleTheme"
+							class="ml-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+					>
+						<i class="bx text-xl" :class="theme.dark ? 'bx-sun text-yellow-400' : 'bx-moon'"></i>
+					</button>
+				</div>
+
+				<!-- Mobile Menu Button -->
+				<div class="md:hidden flex items-center space-x-2">
+					<button
+							@click="theme.toggleTheme"
+							class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+					>
+						<i class="bx text-xl" :class="theme.dark ? 'bx-sun text-yellow-400' : 'bx-moon'"></i>
+					</button>
+					<button
+							@click="mobileMenuOpen = !mobileMenuOpen"
+							class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+					>
+						<i class="bx text-2xl" :class="mobileMenuOpen ? 'bx-x' : 'bx-menu'"></i>
+					</button>
+				</div>
 			</div>
-			<div class="hidden md:flex items-center space-x-4">
-				<router-link
-						:to="{path: '/', hash: '#home'}"
-						class="flex items-center px-3 py-2 rounded-md text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
-						:class="{'bg-gray-800 text-white shadow-lg': nav.activeSection==='home'}">
-					<i class="bx bx-home mr-2"></i>
-					Home
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#about'}"
-						class="flex items-center px-3 py-2 rounded-md text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
-						:class="{'bg-gray-800 text-white shadow-lg': nav.activeSection==='about'}">
-					<i class="bx bx-id-card mr-2"></i>
-					About
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#education'}"
-						class="flex items-center px-3 py-2 rounded-md text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
-						:class="{'bg-gray-800 text-white shadow-lg': nav.activeSection==='education'}">
-					<i class="bx bx-book mr-2"></i>
-					Education
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#skills'}"
-						class="flex items-center px-3 py-2 rounded-md text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
-						:class="{'bg-gray-800 text-white shadow-lg': nav.activeSection==='skills'}">
-					<i class="bx bx-code-alt mr-2"></i>
-					Skills
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#projects'}"
-						class="flex items-center px-3 py-2 rounded-md text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
-						:class="{'bg-gray-800 text-white shadow-lg': nav.activeSection==='projects'}">
-					<i class="bx bx-code mr-2"></i>
-					Projects
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#contact'}"
-						class="flex items-center px-3 py-2 rounded-md text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
-						:class="{'bg-gray-800 text-white shadow-lg': nav.activeSection==='contact'}">
-					<i class="bx bx-envelope mr-2"></i>
-					Contact
-				</router-link>
 
-				<button @click="theme.toggleTheme"
-				        class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-					<i class="bx" :class="theme.dark ? 'bx-sun' : 'bx-moon'"></i>
-				</button>
-			</div>
-			<div class="md:hidden flex items-center space-x-2">
-				<button @click="theme.toggleTheme"
-				        class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-					<i class="bx text-2xl md:text-xl" :class="theme.dark ? 'bx-sun' : 'bx-moon'"></i>
-				</button>
-				<button @click="toggleMobileMenu"
-				        class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-					<i class="bx text-2xl md:text-xl" :class="mobileMenuOpen ? 'bx-x' : 'bx-menu'"></i>
-				</button>
-			</div>
-		</div>
-
-		<div v-show="mobileMenuOpen"
-		     class="md:hidden fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg z-50 transition-transform duration-300 transform"
-		     :class="mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
-
-			<button
-					@click="mobileMenuOpen = false"
-					class="absolute top-4 left-5 p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-				<i class="bx bx-x text-2xl"></i>
-			</button>
-
-			<div class="flex flex-col mt-16 space-y-4 px-6">
-				<router-link
-						:to="{path: '/', hash: '#home'}"
-						@click="mobileMenuOpen=false"
-						class="flex items-center px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition">
-					<i class="bx bx-home mr-2"></i>
-					Home
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#about'}"
-						@click="mobileMenuOpen=false"
-						class="flex items-center px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition">
-					<i class="bx bx-id-card mr-2"></i>
-					About
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#education'}"
-						@click="mobileMenuOpen=false"
-						class="flex items-center px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition">
-					<i class="bx bx-book mr-2"></i>
-					Education
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#skills'}"
-						@click="mobileMenuOpen=false"
-						class="flex items-center px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition">
-					<i class="bx bx-code-alt mr-2"></i>
-					Skills
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#projects'}"
-						@click="mobileMenuOpen=false"
-						class="flex items-center px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition">
-					<i class="bx bx-code mr-2"></i>
-					Projects
-				</router-link>
-				<router-link
-						:to="{path: '/', hash: '#contact'}"
-						@click="mobileMenuOpen=false"
-						class="flex items-center px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition">
-					<i class="bx bx-envelope mr-2"></i>
-					Contact
-				</router-link>
+			<!-- Mobile Menu -->
+			<div
+					v-show="mobileMenuOpen"
+					class="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t border-gray-200 dark:border-gray-700 py-4"
+			>
+				<div class="flex flex-col space-y-2 px-4">
+					<router-link
+							v-for="item in navItems"
+							:key="item.label"
+							:to="item.to"
+							@click="mobileMenuOpen = false"
+							class="flex items-center px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 dark:hover:from-purple-900/20 dark:hover:to-pink-900/20 transition"
+							:class="{ 'text-purple-600 dark:text-purple-400 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20': nav.activeSection === item.label.toLowerCase() }"
+					>
+						<i :class="['bx', item.icon, 'mr-3 text-xl']"></i>
+						{{ item.label }}
+					</router-link>
+				</div>
 			</div>
 		</div>
 	</nav>

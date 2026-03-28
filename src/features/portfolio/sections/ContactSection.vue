@@ -1,8 +1,8 @@
+<!-- CONTACT SECTION - Simplified Single View -->
 <script setup lang="ts">
 import {ref} from 'vue'
 import {emailClient} from '@/app/emailjs.ts'
 
-const isContactForm = ref(true)
 const formRef = ref<HTMLFormElement | null>(null)
 const status = ref('')
 const isSuccess = ref(false)
@@ -18,175 +18,214 @@ const handleSubmit = async () => {
 	try {
 		await emailClient.sendForm(formRef.value)
 		isSuccess.value = true
-		status.value = 'Message sent successfully'
+		status.value = 'Message sent successfully! I\'ll get back to you soon.'
 		formRef.value.reset()
 	} catch (error) {
 		isSuccess.value = false
 		console.error(error)
-		status.value = 'Failed to send message.'
+		status.value = 'Failed to send message. Please try again.'
 	} finally {
 		isSending.value = false
 		setTimeout(() => {
 			status.value = ''
-		}, 4000)
+		}, 5000)
 	}
 }
+
+const contactMethods = [
+	{
+		icon: 'bx-envelope',
+		title: 'Email',
+		value: 'edaralphmaron@gmail.com',
+		link: 'mailto:edaralphmaron@gmail.com',
+		color: 'purple',
+		description: 'Send me an email anytime'
+	},
+	{
+		icon: 'bxl-linkedin',
+		title: 'LinkedIn',
+		value: 'ralph-maron-eda',
+		link: 'https://linkedin.com/in/ralph-maron-eda',
+		color: 'blue',
+		description: 'Connect professionally'
+	},
+	{
+		icon: 'bxl-github',
+		title: 'GitHub',
+		value: 'ralphmarondev',
+		link: 'https://github.com/ralphmarondev',
+		color: 'gray',
+		description: 'Check out my code'
+	},
+	{
+		icon: 'bx-phone',
+		title: 'Phone',
+		value: '+63 961 706 582',
+		link: 'tel:+63961706582',
+		color: 'green',
+		description: 'Available for calls'
+	}
+]
 </script>
 
 <template>
-	<section class="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden" id="contact">
-		<div class="container">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-16 aos-init aos-animate" data-aos="fade-up">
-					<h2 class="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Get In
-						<span class="text-purple-600 dark:text-purple-400">Touch</span>
-					</h2>
-					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-						Reach out to collaborate, discuss opportunities, or just say hello!
-					</p>
+	<section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12" data-aos="fade-up">
+				<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-4">
+					<i class="bx bx-chat text-lg"></i>
+					<span>Let's Connect</span>
 				</div>
-				<div class="flex justify-center mb-12 aos-init aos-animate" data-aos="fade-up">
-					<div
-							class="bg-white dark:bg-gray-900 p-1 flex rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
-						<button @click="isContactForm = true"
-						        class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-						        :class="isContactForm ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
-							<i class="bx bx-edit text-xl"></i>
-							<span>Contact Form</span>
-						</button>
-						<button @click="isContactForm = false"
-						        class="px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
-						        :class="!isContactForm ? ' bg-purple-600 text-white shadow-lg' : ' text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'">
-							<i class="bx bx-share-alt text-xl"></i>
-							<span>Contact Methods</span>
-						</button>
-					</div>
-				</div>
-				<div class="max-w-2xl mx-auto aos-init aos-animate" data-aos="fade-up" v-if="isContactForm">
-					<div
-							class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-						<form class="space-y-6" @submit.prevent="handleSubmit" ref="formRef">
-							<div>
-								<label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Name</label>
-								<input type="text" id="name" name="name" required
-								       class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
-								       placeholder="Your Name">
-							</div>
-							<div>
-								<label for="email"
-								       class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email</label>
-								<input type="email" id="email" name="email" required
-								       class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
-								       placeholder="Your Email">
-							</div>
-							<div>
-								<label for="message"
-								       class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Message</label>
-								<textarea name="message" id="message" required rows="5"
-								          class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
-								          placeholder="Your Message"></textarea>
-							</div>
-							<button type="submit"
-							        :disabled="isSending"
-							        class="w-full py-3 px-6 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
+				<h2 class="text-4xl lg:text-5xl font-bold mb-4">
+					Get In <span class="text-purple-600 dark:text-purple-400">Touch</span>
+				</h2>
+				<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+					Have a project in mind or want to learn programming? I'd love to hear from you!
+				</p>
+			</div>
 
-								<span v-if="isSending"
-								      class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-								<i v-else class="bx bx-send text-lg"></i>
-								<span>{{ isSending ? 'Sending...' : 'Send Message' }}</span>
+			<div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				<!-- Contact Form -->
+				<div data-aos="fade-right">
+					<div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 h-full">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+							<i class="bx bx-edit text-purple-500 text-2xl"></i>
+							Send a Message
+						</h3>
+						<form class="space-y-4" @submit.prevent="handleSubmit" ref="formRef">
+							<div>
+								<input
+										type="text"
+										id="name"
+										name="name"
+										required
+										class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+										placeholder="Your name"
+								/>
+							</div>
+							<div>
+								<input
+										type="email"
+										id="email"
+										name="email"
+										required
+										class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+										placeholder="Your email"
+								/>
+							</div>
+							<div>
+                <textarea
+		                name="message"
+		                id="message"
+		                required
+		                rows="5"
+		                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition resize-none"
+		                placeholder="Your message"
+                ></textarea>
+							</div>
+							<button
+									type="submit"
+									:disabled="isSending"
+									class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+							>
+                <span v-if="isSending" class="inline-flex items-center gap-2">
+                  <i class="bx bx-loader-alt animate-spin"></i>
+                  Sending...
+                </span>
+								<span v-else class="inline-flex items-center gap-2">
+                  <i class="bx bx-send"></i>
+                  Send Message
+                </span>
 							</button>
+							<p v-if="status" :class="isSuccess ? 'text-green-600' : 'text-red-600'" class="text-sm text-center">
+								{{ status }}
+							</p>
 						</form>
+					</div>
+				</div>
 
-						<p class="mt-4 text-center text-sm"
-						   :class="isSuccess ? 'text-green-600': 'text-red-600'">
-							{{ status }}
+				<!-- Contact Information -->
+				<div data-aos="fade-left">
+					<div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 h-full">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+							<i class="bx bx-info-circle text-purple-500 text-2xl"></i>
+							Connect With Me
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+							Prefer other ways to reach me? Here's how you can connect:
 						</p>
-					</div>
-				</div>
-				<div class="grid lg:grid-cols-3 gap-8 aos-init aos-animate" data-aos="fade-up" v-else>
-					<div class="group">
-						<div
-								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-							<div class="flex items-center mb-6">
-								<div
-										class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
-									<i class="bx bx-mail-send text-xl"></i>
+
+						<div class="space-y-4">
+							<a
+									v-for="method in contactMethods"
+									:key="method.title"
+									:href="method.link"
+									target="_blank"
+									class="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 group cursor-pointer"
+							>
+								<div class="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 flex items-center justify-center group-hover:scale-110 transition">
+									<i :class="['bx', method.icon, `text-${method.color}-500 text-xl`]"></i>
 								</div>
-								<h3 class="text-xl font-bold text-gray-900 dark:text-white">Email</h3>
-							</div>
-							<div class="space-y-4">
-								<div
-										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
-									<div class="flex items-center space-x-2">
-										<i class="bx bx-envelope text-lg text-purple-500"></i>
-										<div>
-											<p class="font-semibold text-gray-900 dark:text-white">Personal Email</p>
-											<p class="text-sm text-gray-600 dark:text-gray-400">edaralphmaron@gmail.com</p>
-										</div>
-									</div>
+								<div class="flex-1">
+									<h4 class="font-semibold text-gray-900 dark:text-white text-sm">
+										{{ method.title }}
+									</h4>
+									<p class="text-xs text-gray-500 dark:text-gray-400">
+										{{ method.value }}
+									</p>
+									<p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+										{{ method.description }}
+									</p>
 								</div>
-							</div>
+								<i class="bx bx-chevron-right text-gray-400 group-hover:text-purple-500 transition group-hover:translate-x-1"></i>
+							</a>
 						</div>
-					</div>
-					<div class="group">
-						<div
-								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-							<div class="flex items-center mb-6">
-								<div
-										class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
-									<i class="bx bx-share-alt text-xl"></i>
-								</div>
-								<h3 class="text-xl font-bold text-gray-900 dark:text-white">Social Media</h3>
+
+						<!-- Quick Response Note -->
+						<div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+							<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+								<i class="bx bx-time-five"></i>
+								<span>Usually responds within 24 hours</span>
 							</div>
-							<div class="space-y-4">
-								<div
-										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
-									<div class="flex items-center space-x-2">
-										<i class="bx bxl-linkedin text-lg text-purple-500"></i>
-										<div>
-											<p class="font-semibold text-gray-900 dark:text-white">LinkedIn</p>
-											<p class="text-sm text-gray-600 dark:text-gray-400">linkedin.com/in/ralph-maron-eda</p>
-										</div>
-									</div>
-								</div>
-								<div
-										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
-									<div class="flex items-center space-x-2">
-										<i class="bx bxl-github text-lg text-purple-500"></i>
-										<div>
-											<p class="font-semibold text-gray-900 dark:text-white">Github</p>
-											<p class="text-sm text-gray-600 dark:text-gray-400">github.com/ralphmarondev</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="group">
-						<div
-								class="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-							<div class="flex items-center mb-6">
-								<div
-										class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-4 shadow-lg">
-									<i class="bx bx-phone-call text-xl"></i>
-								</div>
-								<h3 class="text-xl font-bold text-gray-900 dark:text-white">Phone</h3>
-							</div>
-							<div class="space-y-4">
-								<div
-										class="p-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800">
-									<div class="flex items-center space-x-2">
-										<i class="bx bx-phone text-lg text-purple-500"></i>
-										<div>
-											<p class="font-semibold text-gray-900 dark:text-white">Mobile</p>
-											<p class="text-sm text-gray-600 dark:text-gray-400">+63961706582</p>
-										</div>
-									</div>
-								</div>
+							<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-2">
+								<i class="bx bx-check-shield"></i>
+								<span>Your information is kept private</span>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+
+			<!-- Social Media Links (Quick Access) -->
+			<div class="flex justify-center gap-4 mt-12" data-aos="fade-up">
+				<a
+						href="https://github.com/ralphmarondev"
+						target="_blank"
+						class="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+				>
+					<i class="bx bxl-github text-xl text-gray-700 dark:text-gray-300"></i>
+				</a>
+				<a
+						href="https://linkedin.com/in/ralph-maron-eda"
+						target="_blank"
+						class="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+				>
+					<i class="bx bxl-linkedin text-xl text-blue-600"></i>
+				</a>
+				<a
+						href="https://www.instagram.com/ralphmaron"
+						target="_blank"
+						class="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+				>
+					<i class="bx bxl-instagram text-xl text-pink-600"></i>
+				</a>
+				<a
+						href="https://www.youtube.com/@RalphMaronEda"
+						target="_blank"
+						class="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+				>
+					<i class="bx bxl-youtube text-xl text-red-600"></i>
+				</a>
 			</div>
 		</div>
 	</section>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import UsefulLinks from '@/features/tutorials/components/UsefulLinks.vue'
+import UsefulLinks from '@/shared/components/UsefulLinks.vue'
 import {ref} from 'vue'
-import CodeBlock from '@/features/tutorials/components/CodeBlock.vue'
-import OutputBlock from '@/features/tutorials/components/OutputBlock.vue'
-import ImageBlock from '@/features/tutorials/components/ImageBlock.vue'
+import CodeBlock from '@/shared/components/CodeBlock.vue'
+import OutputBlock from '@/shared/components/OutputBlock.vue'
+import ImageBlock from '@/shared/components/ImageBlock.vue'
 import MainLayout from '@/features/tutorials/layouts/MainLayout.vue'
 
 const lastUpdated = 'February 6, 2026'

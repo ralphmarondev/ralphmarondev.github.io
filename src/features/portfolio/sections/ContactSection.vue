@@ -50,14 +50,6 @@ const contactMethods = [
 		description: 'Connect professionally'
 	},
 	{
-		icon: 'bxl-github',
-		title: 'GitHub',
-		value: 'ralphmarondev',
-		link: 'https://github.com/ralphmarondev',
-		color: 'gray',
-		description: 'Check out my code'
-	},
-	{
 		icon: 'bx-phone',
 		title: 'Phone',
 		value: '+63 961 706 582',

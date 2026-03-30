@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainLayout from '@/features/tutorials/layouts/MainLayout.vue'
+import TutorialMainLayout from '@/shared/layouts/TutorialMainLayout.vue'
 import AnimatedHeader from '@/features/projects/AnimatedHeader.vue'
 
 const exploreCards = [
@@ -25,7 +25,7 @@ const exploreCards = [
 </script>
 
 <template>
-	<MainLayout>
+	<TutorialMainLayout>
 		<AnimatedHeader />
 
 		<h2 class="text-2xl font-semibold text-gray-800 mb-6">
@@ -63,5 +63,5 @@ const exploreCards = [
 				</div>
 			</router-link>
 		</div>
-	</MainLayout>
+	</TutorialMainLayout>
 </template>

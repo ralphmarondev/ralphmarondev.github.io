@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainLayout from '@/blog/layouts/MainLayout.vue'
+import TutorialMainLayout from '@/shared/layouts/TutorialMainLayout.vue'
 import UsefulLinks from '@/shared/components/UsefulLinks.vue'
 import {ref} from 'vue'
 import CodeBlock from '@/shared/components/CodeBlock.vue'
@@ -64,7 +64,9 @@ const links = [
 </script>
 
 <template>
-	<MainLayout>
+	<TutorialMainLayout
+			title="C Programming"
+			link="/c-programming-language">
 		<h2 class="text-3xl font-bold text-gray-800 mb-2">C Programming Quiz: Introduction and Basics</h2>
 		<p class="text-sm text-gray-500 mb-4">Last Updated: {{ lastUpdated }}</p>
 
@@ -149,5 +151,5 @@ const links = [
 		<OutputBlock :output="problem5OutputA" />
 
 		<UsefulLinks :links="links" />
-	</MainLayout>
+	</TutorialMainLayout>
 </template>

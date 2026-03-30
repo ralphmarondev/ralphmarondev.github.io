@@ -3,7 +3,7 @@ import {ref} from 'vue'
 import CodeBlock from '@/shared/components/CodeBlock.vue'
 import OutputBlock from '@/shared/components/OutputBlock.vue'
 import UsefulLinks from '@/shared/components/UsefulLinks.vue'
-import MainLayout from '@/features/tutorials/layouts/MainLayout.vue'
+import TutorialMainLayout from '@/shared/layouts/TutorialMainLayout.vue'
 
 const lastUpdated = 'February 5, 2026'
 
@@ -30,7 +30,9 @@ const links = [
 </script>
 
 <template>
-	<MainLayout>
+	<TutorialMainLayout
+			title="C Programming"
+			link="/c-programming-language">
 		<h2 class="text-3xl font-bold text-gray-800 mb-2">C Language Introduction</h2>
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
@@ -202,5 +204,5 @@ const links = [
 		</p>
 
 		<UsefulLinks :links="links" />
-	</MainLayout>
+	</TutorialMainLayout>
 </template>

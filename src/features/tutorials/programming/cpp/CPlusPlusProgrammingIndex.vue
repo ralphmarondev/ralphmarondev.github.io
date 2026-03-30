@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainLayout from '@/blog/layouts/MainLayout.vue'
+import MainLayout from '@/shared/layouts/TutorialMainLayout.vue'
 
 const lastUpdated = 'February 11, 2026'
 

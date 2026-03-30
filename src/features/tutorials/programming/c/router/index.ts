@@ -95,7 +95,7 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 
 	// Functions
 	{
-		path: '/blog/c-functions',
+		path: '/c-functions',
 		name: 'c-functions',
 		component: () => import('@/features/tutorials/programming/c/views/functions/01-introduction/IntroductionIndex.vue'),
 		meta: {title: 'Functions in C', icon: '/ralphmaron.png'}

@@ -4,7 +4,7 @@ import {ref} from 'vue'
 import CodeBlock from '@/shared/components/CodeBlock.vue'
 import OutputBlock from '@/shared/components/OutputBlock.vue'
 import ImageBlock from '@/shared/components/ImageBlock.vue'
-import MainLayout from '@/features/tutorials/layouts/MainLayout.vue'
+import TutorialMainLayout from '@/shared/layouts/TutorialMainLayout.vue'
 
 const lastUpdated = 'February 6, 2026'
 const stdio = '#include <stdio.h>'
@@ -39,7 +39,9 @@ const links = [
 </script>
 
 <template>
-	<MainLayout>
+	<TutorialMainLayout
+			title="C Programming"
+			link="/c-programming-language">
 		<h2 class="text-3xl font-bold text-gray-800 mb-2">Compilation Process in C (Behind the Scenes)</h2>
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
@@ -242,5 +244,5 @@ const links = [
 		</p>
 
 		<UsefulLinks :links="links" />
-	</MainLayout>
+	</TutorialMainLayout>
 </template>

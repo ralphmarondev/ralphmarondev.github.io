@@ -20,10 +20,10 @@ const router = createRouter({
 			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
 		},
 		{
-			path: '/blog',
-			name: 'blog',
-			component: () => import('@/features/tutorials/BlogIndex.vue'),
-			meta: {title: 'Blogs', icon: '/ralphmaron.png'}
+			path: '/tutorials',
+			name: 'tutorials',
+			component: () => import('@/features/tutorials/TutorialsIndex.vue'),
+			meta: {title: 'Tutorials', icon: '/ralphmaron.png'}
 		},
 		{
 			path: '/projects',

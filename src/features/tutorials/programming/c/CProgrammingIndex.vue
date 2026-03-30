@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainLayout from '@/features/tutorials/layouts/MainLayout.vue'
+import TutorialMainLayout from '@/shared/layouts/TutorialMainLayout.vue'
 
 const lastUpdated = 'February 5, 2026'
 
@@ -9,20 +9,20 @@ const sections = [
 		description: 'Understand the fundamentals of C programming including data storage, program flow, and essential ' +
 				'operations. This section sets the foundation for writing simple C programs.',
 		topics: [
-			{title: 'C Introduction', route: '/blog/c-introduction'},
-			{title: 'Compilation Process in C', route: '/blog/c-compilation-process'},
-			{title: 'Identifiers in C', route: '/blog/c-identifiers'},
-			{title: 'C Keywords', route: '/blog/c-keywords'},
-			{title: 'C Variables', route: '/blog/c-variables'},
-			{title: 'Data Type in C', route: '/blog/c-data-types'},
-			{title: 'Quiz: C Basics | Variables | Data Types', route: '/blog/c-quiz-basics'},
-			{title: 'Input and Output in C', route: '/blog/c-input-output'},
-			{title: 'Operators in C', route: '/blog/c-operators'},
-			{title: 'Quiz: Input and Output | Operators', route: '/blog/c-quiz-io-operators'},
-			{title: 'Conditional Statements in C', route: '/blog/c-conditional-statements'},
-			{title: 'Quiz: Conditional Statements in C', route: '/blog/c-quiz-conditional-statements'},
-			{title: 'Loops in C', route: '/blog/c-loops'},
-			{title: 'Quiz: Loops in C', route: '/blog/c-quiz-loops'}
+			{title: 'C Introduction', route: '/c-introduction'},
+			{title: 'Compilation Process in C', route: '/c-compilation-process'},
+			{title: 'Identifiers in C', route: '/c-identifiers'},
+			{title: 'C Keywords', route: '/c-keywords'},
+			{title: 'C Variables', route: '/c-variables'},
+			{title: 'Data Type in C', route: '/c-data-types'},
+			{title: 'Quiz: C Basics | Variables | Data Types', route: '/c-quiz-basics'},
+			{title: 'Input and Output in C', route: '/c-input-output'},
+			{title: 'Operators in C', route: '/c-operators'},
+			{title: 'Quiz: Input and Output | Operators', route: '/c-quiz-io-operators'},
+			{title: 'Conditional Statements in C', route: '/c-conditional-statements'},
+			{title: 'Quiz: Conditional Statements in C', route: '/c-quiz-conditional-statements'},
+			{title: 'Loops in C', route: '/c-loops'},
+			{title: 'Quiz: Loops in C', route: '/c-quiz-loops'}
 		]
 	},
 	{
@@ -30,13 +30,10 @@ const sections = [
 		description: 'Learn how to create modular, reusable code using functions. Explore parameter passing, return types, ' +
 				'recursion, and how functions make program easier to manage.',
 		topics: [
-			{title: 'Functions in C', route: '/blog/c-functions'},
-			{title: 'Parameter Passing Techniques', route: '/blog/c-programming-language'},
-			{title: 'Main Function', route: '/blog/c-programming-language'},
-			{title: 'Recursion', route: '/blog/c-programming-language'},
-			{title: 'Inline Function', route: '/blog/c-programming-language'},
-			{title: 'Nested Functions', route: '/blog/c-programming-language'},
-			{title: 'Quiz: Functions', route: '/blog/c-programming-language'}
+			{title: 'Functions in C', route: '/c-functions'},
+			{title: 'Main Function', route: '/c-main-function'},
+			{title: 'Recursion', route: '/c-recursion'},
+			{title: 'Quiz: Functions', route: '/c-quiz-functions'}
 		]
 	},
 	{
@@ -44,14 +41,11 @@ const sections = [
 		description: 'Dive into arrays, pointers, strings, functions, structures, and unions. Understand how to store, manipulate, ' +
 				'and organize more complex data efficiently.',
 		topics: [
-			{title: 'C Arrays', route: '/blog/c-programming-language'},
-			{title: 'Pointers in C', route: '/blog/c-programming-language'},
-			{title: 'C Strings', route: '/blog/c-programming-language'},
-			{title: 'Quiz: Array | Pointers | Strings', route: '/blog/c-programming-language'},
-			{title: 'Structures', route: '/blog/c-programming-language'},
-			{title: 'Unions', route: '/blog/c-programming-language'},
-			{title: 'Enumeration (enum)', route: '/blog/c-programming-language'},
-			{title: 'Quiz: Structure & Union', route: '/blog/c-programming-language'}
+			{title: 'C Arrays', route: '/c-arrays'},
+			{title: 'C Strings', route: '/c-strings'},
+			{title: 'Quiz: Array and Strings', route: '/c-quiz-array'},
+			{title: 'Structures', route: '/c-structures'},
+			{title: 'Quiz: Structures', route: '/c-quiz-structure'}
 		]
 	},
 	{
@@ -59,24 +53,24 @@ const sections = [
 		description: 'Learn how C manages memory manually, including dynamic allocation and avoiding memory leaks. This ' +
 				'section is crucial for writing efficient programs.',
 		topics: [
-			{title: 'Program\'s Memory Layout', route: '/blog/c-programming-language'},
-			{title: 'Dynamic Memory Allocation', route: '/blog/c-programming-language'},
-			{title: 'Memory Leaks', route: '/blog/c-programming-language'},
-			{title: 'Quiz: Memory Management', route: '/blog/c-programming-language'}
+			{title: 'Program\'s Memory Layout', route: '/c-memory-layout'},
+			{title: 'Dynamic Memory Allocation', route: '/c-dynamic-memory'},
+			{title: 'Memory Leaks', route: '/c-memory-leaks'},
+			{title: 'Quiz: Memory Management', route: '/c-quiz-memory-management'}
 		]
 	},
 	{
 		title: 'Sample Programs',
 		description: 'Play this kids!',
 		topics: [
-			{title: 'Average of 2 numbers', route: '/blog/c-programming-language'}
+			{title: 'Average of 2 numbers', route: '/c/average-of-2-numbers'}
 		]
 	}
 ]
 </script>
 
 <template>
-	<MainLayout>
+	<TutorialMainLayout>
 		<h1 class="text-4xl font-bold text-gray-800 mb-2">C Programming Tutorial</h1>
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 
@@ -98,14 +92,14 @@ const sections = [
 					<li v-for="topic in section.topics" :key="topic.route">
 						<router-link
 								:to="topic.route"
-								class="underline text-lg hover:text-pink-700"
-								target="_blank"
-								rel="noopener noreferrer">
+								class="underline text-lg hover:text-pink-700">
+							<!--								target="_blank"-->
+							<!--								rel="noopener noreferrer"-->
 							{{ topic.title }}
 						</router-link>
 					</li>
 				</ul>
 			</div>
 		</div>
-	</MainLayout>
+	</TutorialMainLayout>
 </template>

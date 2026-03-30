@@ -111,5 +111,11 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-arrays',
 		component: () => import('@/features/tutorials/programming/c/views/arrays/01-introduction/ArrayIntroductionIndex.vue'),
 		meta: {title: 'Arrays in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c-structures',
+		name: 'c-structures',
+		component: () => import('@/features/tutorials/programming/c/views/structures/01-introduction/StructuresIntroductionIndex.vue'),
+		meta: {title: 'Structures in C', icon: '/ralphmaron.png'}
 	}
 ]

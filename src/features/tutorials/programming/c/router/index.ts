@@ -113,6 +113,12 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		meta: {title: 'Arrays in C', icon: '/ralphmaron.png'}
 	},
 	{
+		path: '/c-strings',
+		name: 'c-strings',
+		component: () => import('@/features/tutorials/programming/c/views/strings/01-introduction/StringIntroductionIndex.vue'),
+		meta: {title: 'Strings in C', icon: '/ralphmaron.png'}
+	},
+	{
 		path: '/c-structures',
 		name: 'c-structures',
 		component: () => import('@/features/tutorials/programming/c/views/structures/01-introduction/StructuresIntroductionIndex.vue'),

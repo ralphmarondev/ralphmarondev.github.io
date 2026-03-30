@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainLayout from '@/blog/layouts/MainLayout.vue'
+import MainLayout from '@/features/tutorials/layouts/MainLayout.vue'
 import UsefulLinks from '@/shared/components/UsefulLinks.vue'
 import {ref} from 'vue'
 import CodeBlock from '@/shared/components/CodeBlock.vue'

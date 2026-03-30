@@ -135,5 +135,11 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-string-functions',
 		component: () => import('@/features/tutorials/programming/c/views/standard-library/strings/StringsIndex.vue'),
 		meta: {title: 'String Functions in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c-utility-functions',
+		name: 'c-utility-functions',
+		component: () => import('@/features/tutorials/programming/c/views/standard-library/typecasting-and-utility/TypeCastingAndUtilityIndex.vue'),
+		meta: {title: 'Typecasting and Utility Functions in C', icon: '/ralphmaron.png'}
 	}
 ]

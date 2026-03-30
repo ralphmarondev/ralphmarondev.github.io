@@ -352,7 +352,7 @@ const tutorialsLinksFooter = [
 					<div class="relative flex justify-center" data-aos="fade-left">
 						<div class="relative z-10 cursor-pointer" @click="handleImageClick">
 							<div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-							<img src="/ralphmaron.png"
+							<img src="/ralphmaron.webp"
 							     alt="Ralph Maron Eda"
 							     class="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-white dark:border-gray-800 hover:scale-105 transition-transform duration-300" />
 						</div>
@@ -384,7 +384,7 @@ const tutorialsLinksFooter = [
 
 				<div class="flex flex-col lg:flex-row gap-12 items-center">
 					<div class="lg:w-1/3" data-aos="fade-right">
-						<img src="/ralphmaron.png"
+						<img src="/ralphmaron.webp"
 						     alt="Ralph Maron Eda"
 						     class="w-80 h-80 object-cover rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300" />
 					</div>
@@ -423,7 +423,7 @@ const tutorialsLinksFooter = [
 							<div class="p-5 bg-white dark:bg-gray-900 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
 								<div class="flex items-center space-x-3 mb-3">
 									<div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-										<i class="bx bx-graduation text-white text-lg"></i>
+										<i class="bx bxs-school text-white text-lg"></i>
 									</div>
 									<h4 class="text-lg font-semibold">Education</h4>
 								</div>

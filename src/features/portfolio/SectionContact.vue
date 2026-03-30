@@ -1,4 +1,3 @@
-<!-- CONTACT SECTION - Simplified Single View -->
 <script setup lang="ts">
 import {ref} from 'vue'
 import {emailClient} from '@/app/emailjs.ts'

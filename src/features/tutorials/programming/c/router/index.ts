@@ -153,5 +153,11 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-file-handling',
 		component: () => import('@/features/tutorials/programming/c/views/file-handling/01-introduction/FileHandlingIndex.vue'),
 		meta: {title: 'File handling in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c-memory-layout',
+		name: 'c-memory-layout',
+		component: () => import('@/features/tutorials/programming/c/views/memory-management/01-memory-layout/MemoryLayoutIndex.vue'),
+		meta: {title: 'Program Memory Layout in C', icon: '/ralphmaron.png'}
 	}
 ]

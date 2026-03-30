@@ -37,8 +37,8 @@ const sections = [
 		]
 	},
 	{
-		title: 'Compound Data Types',
-		description: 'Dive into arrays, pointers, strings, functions, structures, and unions. Understand how to store, manipulate, ' +
+		title: 'Arrays, Strings & Structures',
+		description: 'Dive into arrays, strings, and structures. Understand how to store, manipulate, ' +
 				'and organize more complex data efficiently.',
 		topics: [
 			{title: 'C Arrays', route: '/c-arrays'},
@@ -46,6 +46,26 @@ const sections = [
 			{title: 'Quiz: Array and Strings', route: '/c-quiz-array'},
 			{title: 'Structures', route: '/c-structures'},
 			{title: 'Quiz: Structures', route: '/c-quiz-structure'}
+		]
+	},
+	{
+		title: 'Standard Library',
+		description: 'Learn commonly used built-in functions provided by C for math operations, string manipulation, and general utilities.',
+		topics: [
+			{title: 'Math Functions in C', route: '/c-math-functions'},
+			{title: 'String Functions in C', route: '/c-string-functions'},
+			{title: 'Type Casting & Utility Functions', route: '/c-utility-functions'},
+			{title: 'Quiz: Standard Library', route: '/c-quiz-standard-library'}
+		]
+	},
+	{
+		title: 'File Handling',
+		description: 'Learn how to read from and write to files in C. This is essential for storing data permanently.',
+		topics: [
+			{title: 'File Handling Basics', route: '/c-file-handling'},
+			{title: 'Reading Files', route: '/c-file-reading'},
+			{title: 'Writing Files', route: '/c-file-writing'},
+			{title: 'Quiz: File Handling', route: '/c-quiz-file'}
 		]
 	},
 	{

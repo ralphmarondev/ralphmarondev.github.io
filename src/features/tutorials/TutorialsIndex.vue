@@ -52,7 +52,7 @@ import {RouterLink} from 'vue-router'
 						C Programming Language
 					</h3>
 					<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-						Master the fundamentals of programming with C - from variables and loops to pointers and memory
+						Master the fundamentals of programming with C - from variables and loops to arrays and file
 						management.
 					</p>
 

@@ -63,8 +63,6 @@ const sections = [
 		description: 'Learn how to read from and write to files in C. This is essential for storing data permanently.',
 		topics: [
 			{title: 'File Handling Basics', route: '/c-file-handling'},
-			{title: 'Reading Files', route: '/c-file-reading'},
-			{title: 'Writing Files', route: '/c-file-writing'},
 			{title: 'Quiz: File Handling', route: '/c-quiz-file'}
 		]
 	},

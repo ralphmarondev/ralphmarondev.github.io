@@ -141,5 +141,11 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-utility-functions',
 		component: () => import('@/features/tutorials/programming/c/views/standard-library/typecasting-and-utility/TypeCastingAndUtilityIndex.vue'),
 		meta: {title: 'Typecasting and Utility Functions in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c-file-handling',
+		name: 'c-file-handling',
+		component: () => import('@/features/tutorials/programming/c/views/file-handling/01-introduction/FileHandlingIndex.vue'),
+		meta: {title: 'File handling in C', icon: '/ralphmaron.png'}
 	}
 ]

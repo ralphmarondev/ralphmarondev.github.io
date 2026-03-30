@@ -105,5 +105,11 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-main-function',
 		component: () => import('@/features/tutorials/programming/c/views/functions/02-main-function/MainFunctionIndex.vue'),
 		meta: {title: 'Main Function in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c-arrays',
+		name: 'c-arrays',
+		component: () => import('@/features/tutorials/programming/c/views/arrays/01-introduction/ArrayIntroductionIndex.vue'),
+		meta: {title: 'Arrays in C', icon: '/ralphmaron.png'}
 	}
 ]

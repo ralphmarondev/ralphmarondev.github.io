@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
 			</div>
 		</nav>
 
-		<main class="flex-1 px-6 py-6 md:px-8 lg:px-12 w-5xl mx-auto">
+		<main class="flex-1 px-6 py-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
 			<slot />
 		</main>
 

@@ -49,6 +49,14 @@ const sections = [
 		]
 	},
 	{
+		title: 'Pointers',
+		description: 'Learn how pointers work in C, how they store memory addresses, and how they are used with arrays and functions.',
+		topics: [
+			{title: 'Introduction to Pointers', route: '/c-pointers'},
+			{title: 'Quiz: Pointers', route: '/c-quiz-pointers'}
+		]
+	},
+	{
 		title: 'Standard Library',
 		description: 'Learn commonly used built-in functions provided by C for math operations, string manipulation, and general utilities.',
 		topics: [

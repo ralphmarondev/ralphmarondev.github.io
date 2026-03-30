@@ -125,6 +125,12 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		meta: {title: 'Structures in C', icon: '/ralphmaron.png'}
 	},
 	{
+		path: '/c-pointers',
+		name: 'c-pointers',
+		component: () => import('@/features/tutorials/programming/c/views/pointers/01-introduction/PointersIntroductionIndex.vue'),
+		meta: {title: 'Pointers in C', icon: '/ralphmaron.png'}
+	},
+	{
 		path: '/c-math-functions',
 		name: 'c-math-functions',
 		component: () => import('@/features/tutorials/programming/c/views/standard-library/math/MathIndex.vue'),

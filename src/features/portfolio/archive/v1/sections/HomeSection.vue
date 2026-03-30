@@ -152,7 +152,7 @@ const handleImageClick = () => {
 							class="relative flex justify-center items-center aos-init aos-animate" data-aos="fade-left">
 						<div class="relative z-10" @click="handleImageClick">
 							<img
-									src="/ralphmaron.png"
+									src="/ralphmaron.webp"
 									alt="Ralph Maron Eda"
 									class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-900/50 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"
 							/>

@@ -14,12 +14,6 @@ const router = createRouter({
 			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
 		},
 		{
-			path: '/v1',
-			name: 'portfolio-v1',
-			component: () => import('@/features/portfolio/archive/v1/PortfolioIndex.vue'),
-			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
-		},
-		{
 			path: '/tutorials',
 			name: 'tutorials',
 			component: () => import('@/features/tutorials/TutorialsIndex.vue'),

@@ -14,7 +14,7 @@
 				</div>
 				<div class="flex flex-col lg:flex-row gap-12">
 					<div class="lg:w-1/3 flex justify-center lg:justify-start aos-init aos-animate" data-aos="fade-left">
-						<img src="/ralphmaron.png" alt="Ralph Maron Eda"
+						<img src="/ralphmaron.webp" alt="Ralph Maron Eda"
 						     class="w-80 h-80 object-cover shadow-xl hover:rotate-3 transition-transform duration-300">
 					</div>
 					<div class="lg:w-2/3">

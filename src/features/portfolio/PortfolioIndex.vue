@@ -39,6 +39,32 @@ const navItems = [
 const featuredProjects = [
 	{
 		id: 1,
+		name: 'Lumi',
+		description: 'Virtual operating system experience within an Android app featuring multiple mini-apps.',
+		longDescription: 'A complete OS simulation with file manager, media player, notes, calculator, and 15+ integrated applications.',
+		image: '/projects/lumi.jpg', // Add your image path
+		tags: ['Jetpack Compose', 'Koin', 'Firebase', 'Room'],
+		icon: 'bx-terminal',
+		gradient: 'from-pink-500 to-orange-500',
+		github: 'https://github.com/ralphmarondev/MaronOS',
+		demo: null,
+		featured: true
+	},
+	{
+		id: 2,
+		name: 'Mewzi',
+		description: 'Cross-platform family information manager with end-to-end encryption.',
+		longDescription: 'Secure application for managing family information across Android, iOS, and Desktop with encrypted storage.',
+		image: '/projects/mewzi.jpg', // Add your image path
+		tags: ['Jetpack Compose', 'Kotlin', 'Django', 'Postgresql'],
+		icon: 'bx-lock-alt',
+		gradient: 'from-orange-500 to-purple-500',
+		github: 'https://github.com/ralphmarondev/KeepSafe',
+		demo: null,
+		featured: true
+	},
+	{
+		id: 3,
 		name: 'PiSync',
 		description: 'Smart access control system for condominiums with mobile app, desktop app, and Raspberry Pi integration.',
 		longDescription: 'Complete IoT solution with real-time door access management, biometric authentication, and comprehensive logging system.',
@@ -49,99 +75,7 @@ const featuredProjects = [
 		github: 'https://github.com/maronworks/pi-sync',
 		demo: null,
 		featured: true
-	},
-	{
-		id: 2,
-		name: 'Maron OS',
-		description: 'Virtual operating system experience within an Android app featuring multiple mini-apps.',
-		longDescription: 'A complete OS simulation with file manager, media player, notes, calculator, and 15+ integrated applications.',
-		image: '/projects/maronos.jpg', // Add your image path
-		tags: ['Jetpack Compose', 'Koin', 'Firebase', 'Room'],
-		icon: 'bx-terminal',
-		gradient: 'from-pink-500 to-orange-500',
-		github: 'https://github.com/ralphmarondev/MaronOS',
-		demo: null,
-		featured: true
-	},
-	{
-		id: 3,
-		name: 'KeepSafe',
-		description: 'Cross-platform family information manager with end-to-end encryption.',
-		longDescription: 'Secure application for managing family information across Android, iOS, and Desktop with encrypted storage.',
-		image: '/projects/keepsafe.jpg', // Add your image path
-		tags: ['Compose Multiplatform', 'Kotlin', 'Firebase', 'Koin'],
-		icon: 'bx-lock-alt',
-		gradient: 'from-orange-500 to-purple-500',
-		github: 'https://github.com/ralphmarondev/KeepSafe',
-		demo: null,
-		featured: true
 	}
-]
-
-// ==================== TUTORIALS DATA - Only 3 Best Tutorials with Images ====================
-const featuredTutorials = [
-	{
-		id: 1,
-		title: 'Building Cross-Platform Apps with Compose Multiplatform',
-		description: 'Learn how to create apps that run on Android, iOS, and Desktop with shared Kotlin code.',
-		image: '/tutorials/compose-multiplatform.jpg', // Add your image path
-		category: 'Mobile Development',
-		readTime: '25 min read',
-		level: 'Intermediate',
-		icon: 'bxl-kotlin',
-		gradient: 'from-purple-500 to-pink-500',
-		slug: 'compose-multiplatform-guide'
-	},
-	{
-		id: 2,
-		title: 'Mastering Spring Boot with Kotlin',
-		description: 'Build robust, production-ready REST APIs with Spring Boot and Kotlin.',
-		image: '/tutorials/spring-boot.jpg', // Add your image path
-		category: 'Backend Development',
-		readTime: '30 min read',
-		level: 'Intermediate',
-		icon: 'bxl-spring-boot',
-		gradient: 'from-green-500 to-emerald-500',
-		slug: 'spring-boot-kotlin-guide'
-	},
-	{
-		id: 3,
-		title: 'Modern Android Architecture with Jetpack Compose',
-		description: 'Clean Architecture, MVVM, and dependency injection with Koin.',
-		image: '/tutorials/jetpack-compose.jpg', // Add your image path
-		category: 'Mobile Development',
-		readTime: '20 min read',
-		level: 'Advanced',
-		icon: 'bxl-android',
-		gradient: 'from-blue-500 to-purple-500',
-		slug: 'android-jetpack-compose-guide'
-	}
-]
-
-const allAchievements = [
-	// Competition Achievements
-	{title: 'Regional Programming Competition', place: 'Champion', year: '2023', level: 'Regional', icon: 'bx-trophy'},
-	{title: 'National Programming Competition', place: '11th Place', year: '2023', level: 'National', icon: 'bx-award'},
-	{
-		title: 'Regional Programming Competition',
-		place: '1st Runner Up',
-		year: '2024',
-		level: 'Regional',
-		icon: 'bx-medal'
-	},
-	{title: 'Best Research Award', place: 'Champion', year: '2024', level: 'Regional', icon: 'bx-bulb'}
-
-	// Add your other achievements here
-	// { title: 'Dean\'s Lister', year: '2023', icon: 'bx-star' },
-	// { title: 'Scholarship Award', year: '2022', icon: 'bx-dollar' },
-	// etc.
-]
-
-// ==================== ABOUT LINKS ====================
-const aboutLinks = [
-	{name: 'About Me', route: '/#about', icon: 'bx-user'},
-	{name: 'Contact', route: '/#contact', icon: 'bx-envelope'},
-	{name: 'Privacy Policy', route: '/privacy-policy', icon: 'bx-shield-quarter'}
 ]
 
 // ==================== METHODS ====================
@@ -360,7 +294,7 @@ const tutorialsLinksFooter = [
 							<i class="bx bxl-android text-2xl text-green-500"></i>
 						</div>
 						<div class="absolute bottom-10 right-0 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float-delayed">
-							<i class="bx bxl-kotlin text-2xl text-purple-500"></i>
+							<i class="bx bxl-java text-2xl text-purple-500"></i>
 						</div>
 						<div class="absolute top-20 right-10 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-float">
 							<i class="bx bxl-spring-boot text-xl text-green-500"></i>
@@ -441,10 +375,6 @@ const tutorialsLinksFooter = [
 		         class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-12" data-aos="fade-up">
-					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-4">
-						<i class="bx bx-trophy text-lg"></i>
-						<span>Recognition & Awards</span>
-					</div>
 					<h2 class="text-4xl lg:text-5xl font-bold mb-4">
 						<span class="text-gray-900 dark:text-white">Competition</span>
 						<span class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent"> Achievements</span>
@@ -512,7 +442,7 @@ const tutorialsLinksFooter = [
 									11th Place • 2023
 								</p>
 								<p class="text-gray-600 dark:text-gray-400 text-sm">
-									Ranked 11th out of 50+ universities nationwide in the National Programming Competition.
+									Ranked 11th against universities nationwide in the National Programming Competition.
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
@@ -557,13 +487,11 @@ const tutorialsLinksFooter = [
 					</div>
 				</div>
 				<!-- View All Achievements Button -->
-				<div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
-					<RouterLink
-							to="/achievements"
-							class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all duration-300"
-					>
+				<div class="text-center mt-12" data-aos="fade-up">
+					<RouterLink to="/achievements"
+					            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-purple-600 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300">
 						View All Achievements
-						<i class="bx bx-chevron-right text-xl"></i>
+						<i class="bx bx-chevron-right"></i>
 					</RouterLink>
 				</div>
 			</div>
@@ -637,23 +565,18 @@ const tutorialsLinksFooter = [
 		</section>
 
 		<!-- ==================== TUTORIALS SECTION - With Images ==================== -->
-		<!-- ==================== TUTORIALS SECTION - Updated with Your Actual Content ==================== -->
 		<section id="tutorials" class="py-20 bg-gray-50 dark:bg-gray-800/50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-12" data-aos="fade-up">
-					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-4">
-						<i class="bx bx-book-heart text-lg"></i>
-						<span>For Students & Learners</span>
-					</div>
 					<h2 class="text-4xl lg:text-5xl font-bold mb-4">
 						Programming <span class="text-purple-600 dark:text-purple-400">Tutorials</span>
 					</h2>
 					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-						Learn programming from the ground up — resources designed for my students
+						Learn programming from the ground up, resources designed most especially for my students
 					</p>
 					<div class="flex justify-center gap-3 mt-3">
         <span class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">
-          📚 50+ students learning
+          📚 80+ students learning
         </span>
 						<span class="text-sm px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
           ⭐ Beginner friendly
@@ -689,10 +612,7 @@ const tutorialsLinksFooter = [
 							<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500 mb-2">
 								<i class="bx bx-time"></i>
 								<span>Complete Series</span>
-								<span>•</span>
-								<i class="bx bx-signal"></i>
-								<span>Beginner → Advanced</span>
-								<span>•</span>
+								<span class="px-2"></span>
 								<i class="bx bx-book-open"></i>
 								<span>15+ Lessons</span>
 							</div>
@@ -723,7 +643,7 @@ const tutorialsLinksFooter = [
 									<i class="bx bx-chevron-right group-hover:ml-1 transition"></i>
 								</div>
 								<div class="text-xs text-gray-500">
-									<i class="bx bx-user"></i> 25+ students
+									March 30, 2026
 								</div>
 							</div>
 						</div>
@@ -757,10 +677,7 @@ const tutorialsLinksFooter = [
 							<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500 mb-2">
 								<i class="bx bx-time"></i>
 								<span>Complete Series</span>
-								<span>•</span>
-								<i class="bx bx-signal"></i>
-								<span>Intermediate</span>
-								<span>•</span>
+								<span class="px-2"></span>
 								<i class="bx bx-book-open"></i>
 								<span>12+ Lessons</span>
 							</div>
@@ -790,7 +707,7 @@ const tutorialsLinksFooter = [
 									<i class="bx bx-chevron-right group-hover:ml-1 transition"></i>
 								</div>
 								<div class="text-xs text-gray-500">
-									<i class="bx bx-user"></i> 15+ students
+									April 1, 2026
 								</div>
 							</div>
 						</div>
@@ -824,10 +741,7 @@ const tutorialsLinksFooter = [
 							<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500 mb-2">
 								<i class="bx bx-time"></i>
 								<span>Complete Series</span>
-								<span>•</span>
-								<i class="bx bx-signal"></i>
-								<span>Beginner → Advanced</span>
-								<span>•</span>
+								<span class="px-2"></span>
 								<i class="bx bx-book-open"></i>
 								<span>20+ Lessons</span>
 							</div>
@@ -857,7 +771,7 @@ const tutorialsLinksFooter = [
 									<i class="bx bx-chevron-right group-hover:ml-1 transition"></i>
 								</div>
 								<div class="text-xs text-gray-500">
-									<i class="bx bx-user"></i> 20+ students
+									April 2, 2026
 								</div>
 							</div>
 						</div>

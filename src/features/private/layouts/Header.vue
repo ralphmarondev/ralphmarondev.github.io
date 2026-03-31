@@ -185,7 +185,7 @@ const markAllAsRead = () => {
 						class="flex items-center gap-2 p-1 rounded-2xl transition-all duration-300 hover:bg-white/80 dark:hover:bg-gray-700/80 hover:shadow-md active:scale-95">
 					<span class="relative">
 						<img
-								src="/ralphmaron.png"
+								src="/ralphmaron.webp"
 								alt="Ralph Maron Eda"
 								class="w-9 h-9 rounded-full object-cover border-2 border-white dark:border-gray-800 shadow-sm"
 						/>

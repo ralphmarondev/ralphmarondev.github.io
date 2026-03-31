@@ -155,6 +155,12 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		meta: {title: 'Typecasting and Utility Functions in C', icon: '/ralphmaron.png'}
 	},
 	{
+		path: '/c-quiz-standard-library',
+		name: 'c-quiz-standard-library',
+		component: () => import('@/features/tutorials/programming/c/views/standard-library/01-quiz/StandardLibraryQuiz.vue'),
+		meta: {title: 'Quiz Standard Library in C', icon: '/ralphmaron.png'}
+	},
+	{
 		path: '/c-file-handling',
 		name: 'c-file-handling',
 		component: () => import('@/features/tutorials/programming/c/views/file-handling/01-introduction/FileHandlingIndex.vue'),

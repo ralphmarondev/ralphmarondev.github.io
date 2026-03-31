@@ -27,7 +27,7 @@ char str[] = "Ralph";
 `)
 
 const whatIsHappening2 = ref(`
-{ 'R', 'a', 'l', 'p', 'h', '\0' )
+{ 'R', 'a', 'l', 'p', 'h', '\\0' )
 `)
 
 const accessingCharacters = ref(`

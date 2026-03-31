@@ -86,10 +86,10 @@ const sections = [
 		]
 	},
 	{
-		title: 'Sample Programs',
-		description: 'Play this kids!',
+		title: 'What\'s Next?',
+		description: 'Strengthen your understanding by reviewing common C programs and solving additional practice problems. This section helps you recognize patterns and improve problem-solving skills.',
 		topics: [
-			{title: 'Average of 2 numbers', route: '/c/average-of-2-numbers'}
+			{title: 'Common C Programs', route: '/c-common-programs'}
 		]
 	}
 ]

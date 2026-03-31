@@ -159,5 +159,103 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-memory-layout',
 		component: () => import('@/features/tutorials/programming/c/views/memory-management/01-memory-layout/MemoryLayoutIndex.vue'),
 		meta: {title: 'Program Memory Layout in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c-common-programs',
+		name: 'c-common-programs',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/CommonCProgramIndex.vue'),
+		meta: {title: 'C Common Programs', icon: '/ralphmaron.png'}
+	},
+	// easy
+	{
+		path: '/c/print-hello-sir-ralph',
+		name: 'c-print-hello-sir-ralph',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/PrintRalphMaronEda.vue'),
+		meta: {title: 'Print Hello Sir Ralph', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/swap-two-numbers',
+		name: 'c-swap-two-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/SwapTwoNumbers.vue'),
+		meta: {title: 'Swap Two numbers', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/be-precise-in-c',
+		name: 'c-be-precise-in-c',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/BePreciseInC.vue'),
+		meta: {title: 'Be Precise in C', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/last-digit-of-a-number',
+		name: 'c-last-digit-of-a-number',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/LastDigitOfANumber.vue'),
+		meta: {title: 'Last Digit of A Number', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/compute-a-over-b',
+		name: 'c-compute-a-over-b',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/ComputeAOverB.vue'),
+		meta: {title: 'Compute A over B', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/compare-two-numbers',
+		name: 'c-compare-two-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/CompareTwoNumbers.vue'),
+		meta: {title: 'Compare Two Numbers', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/positive-negative-or-zero',
+		name: 'c-positive-negative-or-zero',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/PositiveNegativeOrZero.vue'),
+		meta: {title: 'Compare Two Numbers', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/sum-of-n-numbers',
+		name: 'c-sum-of-n-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/easy/SumOfnNumbers.vue'),
+		meta: {title: 'Compare Two Numbers', icon: '/ralphmaron.png'}
+	},
+	// medium
+	{
+		path: '/c/even-odd-checker',
+		name: 'c-even-odd-checker',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/EvenOrOddChecker.vue'),
+		meta: {title: 'Even or Odd Checker', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/greatest-of-three-numbers',
+		name: 'c-greatest-of-three-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/GreatestofThreeNumbers.vue'),
+		meta: {title: 'Greatest of Three Numbers', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/leap-year-checker',
+		name: 'c-leap-year-checker',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/LeapYearChecker.vue'),
+		meta: {title: 'Leap Year Checker', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/fizz-challenge',
+		name: 'c-fizz-challenge',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/FizzBuzzChallenge.vue'),
+		meta: {title: 'FizzBuzz Challenge', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/simple-calculator',
+		name: 'c-simple-calculator',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/SimpleCalculator.vue'),
+		meta: {title: 'Simple Calculator', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/first-digit-of-a-number',
+		name: 'c-first-digit-of-a-number',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/FirstDigitOfANumber.vue'),
+		meta: {title: 'First Digit of a Number', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/count-digits',
+		name: 'c-count-digits',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/CountDigits.vue'),
+		meta: {title: 'Count Digits', icon: '/ralphmaron.png'}
 	}
 ]

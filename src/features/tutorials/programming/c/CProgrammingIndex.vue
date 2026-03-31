@@ -32,7 +32,7 @@ const sections = [
 		topics: [
 			{title: 'Functions in C', route: '/c-functions'},
 			{title: 'Main Function', route: '/c-main-function'},
-			{title: 'Recursion', route: '/c-recursion'},
+			// {title: 'Recursion', route: '/c-recursion'},
 			{title: 'Quiz: Functions', route: '/c-quiz-functions'}
 		]
 	},

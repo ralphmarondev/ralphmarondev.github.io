@@ -3,6 +3,13 @@ import {RouterLink} from 'vue-router'
 import Footer from '@/shared/layouts/Footer.vue'
 import {ref} from 'vue'
 
+const props = defineProps({
+	showNavItems: {
+		type: Boolean,
+		default: true
+	}
+})
+
 const nav = ref({activeSection: ref('home')})
 const theme = ref({
 	dark: false, toggleTheme: () => {
@@ -39,7 +46,7 @@ const navItems = [
 					</RouterLink>
 
 					<!-- Desktop Navigation -->
-					<div class="hidden md:flex items-center space-x-1">
+					<div v-if="props.showNavItems" class="hidden md:flex items-center space-x-1">
 						<RouterLink
 								v-for="item in navItems"
 								:key="item.name"
@@ -64,7 +71,7 @@ const navItems = [
 					</div>
 
 					<!-- Mobile Menu Button -->
-					<div class="md:hidden flex items-center space-x-2">
+					<div v-if="props.showNavItems" class="md:hidden flex items-center space-x-2">
 						<button
 								@click="theme.toggleTheme"
 								class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"

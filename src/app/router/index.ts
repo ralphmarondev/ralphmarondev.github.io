@@ -14,6 +14,12 @@ const router = createRouter({
 			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
 		},
 		{
+			path: '/achievements',
+			name: 'achievements',
+			component: () => import('@/features/portfolio/views/achievements/AchievementsIndex.vue'),
+			meta: {title: 'Ralph Maron Eda | Achievements', icon: '/ralphmaron.png'}
+		},
+		{
 			path: '/tutorials',
 			name: 'tutorials',
 			component: () => import('@/features/tutorials/TutorialsIndex.vue'),

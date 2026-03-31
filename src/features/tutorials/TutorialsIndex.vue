@@ -40,10 +40,7 @@ import {RouterLink} from 'vue-router'
 					<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500 mb-2">
 						<i class="bx bx-time"></i>
 						<span>Complete Series</span>
-						<span>•</span>
-						<i class="bx bx-signal"></i>
-						<span>Beginner → Advanced</span>
-						<span>•</span>
+						<span class="px-1"></span>
 						<i class="bx bx-book-open"></i>
 						<span>15+ Lessons</span>
 					</div>
@@ -108,10 +105,7 @@ import {RouterLink} from 'vue-router'
 					<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500 mb-2">
 						<i class="bx bx-time"></i>
 						<span>Complete Series</span>
-						<span>•</span>
-						<i class="bx bx-signal"></i>
-						<span>Intermediate</span>
-						<span>•</span>
+						<span class="px-1"></span>
 						<i class="bx bx-book-open"></i>
 						<span>12+ Lessons</span>
 					</div>

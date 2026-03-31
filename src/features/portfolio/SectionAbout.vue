@@ -86,13 +86,11 @@ import {RouterLink} from 'vue-router'
 						<div class="relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 							<div class="relative h-48 overflow-hidden bg-gradient-to-r from-purple-600 to-pink-500">
 								<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition"></div>
-								<div class="absolute inset-0 flex items-center justify-center">
-									<i class="bx bx-trophy text-7xl text-white/80"></i>
-								</div>
+								<img src="/achievements/regcon2023.png" alt="Regional Convention 2023">
 								<div class="absolute top-4 right-4">
-              <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
-                1st Place
-              </span>
+		              <span class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
+		                1st Place
+		              </span>
 								</div>
 							</div>
 
@@ -109,7 +107,7 @@ import {RouterLink} from 'vue-router'
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
-									<span class="text-xs text-gray-500">Cagayan Valley Region</span>
+									<span class="text-xs text-gray-500">Region 2</span>
 								</div>
 							</div>
 						</div>
@@ -120,13 +118,11 @@ import {RouterLink} from 'vue-router'
 						<div class="relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 							<div class="relative h-48 overflow-hidden bg-gradient-to-r from-purple-500 to-pink-400">
 								<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition"></div>
-								<div class="absolute inset-0 flex items-center justify-center">
-									<i class="bx bx-award text-7xl text-white/80"></i>
-								</div>
+								<img src="/achievements/natcon2023.png" alt="National Convention 2023">
 								<div class="absolute top-4 right-4">
-              <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-bold rounded-full shadow-lg">
-                Top 11
-              </span>
+		              <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-bold rounded-full shadow-lg">
+		                Top 11
+		              </span>
 								</div>
 							</div>
 
@@ -153,13 +149,11 @@ import {RouterLink} from 'vue-router'
 						<div class="relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 							<div class="relative h-48 overflow-hidden bg-gradient-to-r from-pink-500 to-purple-600">
 								<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition"></div>
-								<div class="absolute inset-0 flex items-center justify-center">
-									<i class="bx bx-medal text-7xl text-white/80"></i>
-								</div>
+								<img src="/achievements/recgon2024.png" alt="Regional Convention 2024">
 								<div class="absolute top-4 right-4">
-              <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold rounded-full shadow-lg">
-                2nd Place
-              </span>
+		              <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold rounded-full shadow-lg">
+		                2nd Place
+		              </span>
 								</div>
 							</div>
 
@@ -176,7 +170,7 @@ import {RouterLink} from 'vue-router'
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
-									<span class="text-xs text-gray-500">Cagayan Valley Region</span>
+									<span class="text-xs text-gray-500">Region 2</span>
 								</div>
 							</div>
 						</div>

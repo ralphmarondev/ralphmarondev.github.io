@@ -131,10 +131,11 @@ import {RouterLink} from 'vue-router'
 									National Programming Competition
 								</h3>
 								<p class="text-sm text-purple-600 dark:text-purple-400 font-semibold mb-2">
-									11th Place • 2023
+									11th Place • 2024
 								</p>
 								<p class="text-gray-600 dark:text-gray-400 text-sm">
-									Ranked 11th against universities nationwide in the National Programming Competition.
+									Competed against the top representatives from all regions of the Philippines and proudly placed 11th
+									nationally.
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
@@ -162,7 +163,7 @@ import {RouterLink} from 'vue-router'
 									Regional Programming Competition
 								</h3>
 								<p class="text-sm text-purple-600 dark:text-purple-400 font-semibold mb-2">
-									1st Runner Up • 2024
+									1st Runner Up • 2025
 								</p>
 								<p class="text-gray-600 dark:text-gray-400 text-sm">
 									Secured 2nd place in the Regional Convention Programming Competition, defending our university's

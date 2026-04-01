@@ -27,8 +27,8 @@ const achievements: Achievement[] = [
 	},
 	{
 		title: 'National Programming Competition',
-		subtitle: '11th Place • 2023',
-		description: 'Ranked 11th against universities nationwide in the National Programming Competition.',
+		subtitle: '11th Place • 2024',
+		description: 'Competed against the top representatives from all regions of the Philippines and proudly placed 11th nationally.',
 		img: '/achievements/natcon2023.png',
 		badgeText: 'Top 11',
 		badgeGradient: 'from-blue-500 to-cyan-500',
@@ -38,7 +38,7 @@ const achievements: Achievement[] = [
 	},
 	{
 		title: 'Regional Programming Competition',
-		subtitle: '1st Runner Up • 2024',
+		subtitle: '1st Runner Up • 2025',
 		description: 'Secured 2nd place in the Regional Convention Programming Competition, defending our university\'s reputation.',
 		img: '/achievements/recgon2024.png',
 		badgeText: '2nd Place',

@@ -60,10 +60,9 @@ const featuredProjects = [
 			</div>
 
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<RouterLink
+				<div
 						v-for="project in featuredProjects"
 						:key="project.id"
-						:to="project.route"
 						class="group bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 						data-aos="fade-up">
 					<!-- Project Image -->
@@ -101,7 +100,7 @@ const featuredProjects = [
 							</RouterLink>
 						</div>
 					</div>
-				</RouterLink>
+				</div>
 			</div>
 
 			<div class="text-center mt-12" data-aos="fade-up">

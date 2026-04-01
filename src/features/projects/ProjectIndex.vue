@@ -6,19 +6,19 @@ const exploreCards = [
 	{
 		title: 'Lumi OS',
 		description: 'A mobile-based virtual operating system built with Jetpack Compose, featuring mini-apps that simulate real app behavior within a single Android experience.',
-		image: '/projects/lumi-os.png',
+		image: '/blog/kotlin.png',
 		route: '/projects/lumi-os'
 	},
 	{
 		title: 'KeepSafe',
 		description: 'A cross-platform family management system built with Compose Multiplatform, supporting offline storage with Room and cloud sync via Firebase.',
-		image: '/projects/keepsafe.png',
+		image: '/blog/git.png',
 		route: '/projects/keepsafe'
 	},
 	{
 		title: 'MoodTracker',
 		description: 'A lightweight personal tracking app designed to monitor daily mood patterns with a clean and focused interface.',
-		image: '/projects/moodtracker.png',
+		image: '/blog/c.png',
 		route: '/projects/moodtracker'
 	}
 ]
@@ -32,7 +32,7 @@ const exploreCards = [
 			Explore
 		</h2>
 
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+		<div class="grid md:grid-cols-2 gap-6">
 			<router-link
 					v-for="card in exploreCards"
 					:key="card.title"

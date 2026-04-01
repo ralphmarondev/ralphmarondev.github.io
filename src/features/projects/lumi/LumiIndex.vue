@@ -10,7 +10,8 @@ const handleDownload = (e: Event) => {
 </script>
 
 <template>
-	<ProjectsMainLayout>
+	<ProjectsMainLayout
+			title="Lumi Operating System">
 		<div class="min-h-screen">
 			<!-- Hero Section -->
 			<section class="relative overflow-hidden">

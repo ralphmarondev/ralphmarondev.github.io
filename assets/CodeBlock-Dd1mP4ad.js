@@ -1,4 +1,0 @@
-import{d as p,r as u,j as h,i as _,c as x,a as l,e as d,Y as a,o as f,_ as w}from"./index-CHxIOmuf.js";const b={class:"my-2"},k={class:"rounded-lg border-2 border-pink-400 bg-white px-4 text-xs sm:text-sm leading-snug whitespace-pre-wrap break-words overflow-hidden box-border max-w-full md:max-w-3xl"},v=["innerHTML"],B=p({__name:"CodeBlock",props:{code:{},language:{}},setup(c){const s=c,g=()=>{const e=s.code.split(`
-`).filter((t,n)=>n===0||t.trim()!==""),m=Math.min(...e.filter(t=>t.trim().length).map(t=>{const n=t.match(/^(\s*)/);return n&&n[1]?n[1].length:0}));return e.map(t=>t.slice(m)).join(`
-`)},r=u(""),i=()=>{const o=a.languages[s.language]||a.languages.c;r.value=a.highlight(g(),o,s.language)};return h(()=>s.code,i,{immediate:!0}),_(i),(o,e)=>(f(),x("div",b,[l("pre",k,[e[0]||(e[0]=d("      ",-1)),l("code",{innerHTML:r.value,class:"language-c"},null,8,v),e[1]||(e[1]=d(`
-    `,-1))])]))}}),M=w(B,[["__scopeId","data-v-0518ddde"]]);export{M as C};

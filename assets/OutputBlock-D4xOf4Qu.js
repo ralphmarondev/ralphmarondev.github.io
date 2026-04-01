@@ -1,0 +1,3 @@
+import{d as i,r as l,j as u,i as d,c as m,a as n,e as r,Y as a,o as g,_ as x}from"./index-Y8rI04PW.js";const _={class:"my-2"},h={class:"flex items-center rounded-lg border-2 border-pink-400 bg-pink-100 px-4 py-3 text-xs sm:text-sm leading-snug whitespace-pre-wrap break-words box-border max-w-full md:max-w-3xl"},f=["innerHTML"],b=i({__name:"OutputBlock",props:{output:{}},setup(p){const t=p,c=()=>t.output.replace(/\r\n/g,`
+`).replace(/^\n+/,"").replace(/\n+$/,""),s=l(""),o=()=>{s.value=a.highlight(c(),a.languages.c,"c")};return u(()=>t.output,o,{immediate:!0}),d(o),(k,e)=>(g(),m("div",_,[n("pre",h,[e[0]||(e[0]=r("  ",-1)),n("code",{innerHTML:s.value},null,8,f),e[1]||(e[1]=r(`
+`,-1))])]))}}),B=x(b,[["__scopeId","data-v-db4cef21"]]);export{B as O};

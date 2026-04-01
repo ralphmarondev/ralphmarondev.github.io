@@ -31,6 +31,12 @@ const router = createRouter({
 			component: () => import('@/features/projects/ProjectIndex.vue'),
 			meta: {title: 'Projects', icon: '/ralphmaron.png'}
 		},
+		{
+			path: '/privacy-policy',
+			name: 'privacy-policy',
+			component: () => import('@/shared/views/PrivacyPolicy.vue'),
+			meta: {title: 'Privacy Policy', icon: '/ralphmaron.png'}
+		},
 		...privateRoutes,
 		...projectRoutes,
 		...tutorialRoutes,

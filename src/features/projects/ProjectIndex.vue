@@ -15,7 +15,8 @@ const featuredProjects = [
 		gradient: 'from-pink-500 to-orange-500',
 		github: 'https://github.com/ralphmarondev/lumi-release',
 		demo: null,
-		featured: true
+		featured: true,
+		route: '/projects/lumi'
 	},
 	{
 		id: 2,
@@ -28,7 +29,8 @@ const featuredProjects = [
 		gradient: 'from-orange-500 to-purple-500',
 		github: 'https://github.com/ralphmarondev/Mewzi',
 		demo: null,
-		featured: true
+		featured: true,
+		route: '/projects/mewzi'
 	},
 	{
 		id: 3,
@@ -41,7 +43,8 @@ const featuredProjects = [
 		gradient: 'from-purple-500 to-pink-500',
 		github: 'https://github.com/ralphmarondev/Keepsafe',
 		demo: null,
-		featured: true
+		featured: true,
+		route: '/projects/keepsafe'
 	}
 ]
 </script>
@@ -88,7 +91,7 @@ const featuredProjects = [
 						   class="text-sm text-gray-600 dark:text-gray-400 hover:text-purple-600 transition flex items-center gap-1">
 							<i class="bx bxl-github"></i> GitHub
 						</a>
-						<RouterLink :to="`/projects/${project.id}`"
+						<RouterLink :to="project.route"
 						            class="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1">
 							Learn More <i class="bx bx-chevron-right"></i>
 						</RouterLink>

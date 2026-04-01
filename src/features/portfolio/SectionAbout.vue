@@ -107,7 +107,7 @@ import {RouterLink} from 'vue-router'
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
-									<span class="text-xs text-gray-500">Region 2</span>
+									<span class="text-xs text-gray-500">Nueva Vizcaya State University - Bambang Campus</span>
 								</div>
 							</div>
 						</div>
@@ -139,7 +139,7 @@ import {RouterLink} from 'vue-router'
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
-									<span class="text-xs text-gray-500">National Level</span>
+									<span class="text-xs text-gray-500">Adamson University, Ermita Manila</span>
 								</div>
 							</div>
 						</div>
@@ -171,7 +171,7 @@ import {RouterLink} from 'vue-router'
 								</p>
 								<div class="mt-4 flex items-center gap-2">
 									<i class="bx bx-map text-gray-400"></i>
-									<span class="text-xs text-gray-500">Region 2</span>
+									<span class="text-xs text-gray-500">University of La Salette, Santiago City</span>
 								</div>
 							</div>
 						</div>

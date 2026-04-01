@@ -22,7 +22,7 @@ const achievements: Achievement[] = [
 		badgeText: '1st Place',
 		badgeGradient: 'from-yellow-500 to-orange-500',
 		gradientBg: 'from-purple-600 to-pink-500',
-		location: 'Region 2',
+		location: 'Nueva Vizcaya State University - Bambang Campus',
 		delay: 0
 	},
 	{
@@ -33,7 +33,7 @@ const achievements: Achievement[] = [
 		badgeText: 'Top 11',
 		badgeGradient: 'from-blue-500 to-cyan-500',
 		gradientBg: 'from-purple-500 to-pink-400',
-		location: 'National Level',
+		location: 'Adamson University, Ermita Manila',
 		delay: 100
 	},
 	{
@@ -44,8 +44,30 @@ const achievements: Achievement[] = [
 		badgeText: '2nd Place',
 		badgeGradient: 'from-purple-500 to-pink-500',
 		gradientBg: 'from-pink-500 to-purple-600',
-		location: 'Region 2',
+		location: 'University of La Salette, Santiago City',
 		delay: 200
+	},
+	{
+		title: 'Research Presentation Competition',
+		subtitle: '1st Place • 2025',
+		description: 'Our group of three secured 1st place in a regional research presentation, showcasing innovative solutions and teamwork.',
+		img: '/achievements/research2025.jpg',
+		badgeText: '1st Place',
+		badgeGradient: 'from-green-400 to-teal-500',
+		gradientBg: 'from-blue-500 to-purple-500',
+		location: 'University of La Salette, Santiago City',
+		delay: 300
+	},
+	{
+		title: "Dean's List",
+		subtitle: 'Last Semester • 2024-2025',
+		description: 'Recognized for outstanding academic performance as a Computer Engineering student at Cagayan State University – Carig Campus.',
+		img: '/achievements/deanslist2025.jpg',
+		badgeText: 'Honor',
+		badgeGradient: 'from-yellow-400 to-orange-400',
+		gradientBg: 'from-pink-500 to-purple-500',
+		location: 'Cagayan State University - Carig Campus',
+		delay: 400
 	}
 ]
 </script>

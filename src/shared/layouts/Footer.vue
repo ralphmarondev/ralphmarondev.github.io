@@ -12,7 +12,7 @@ const aboutLinks = [
 
 const projectsLinks = [
 	{name: 'All Projects', route: '/projects', icon: 'bx-grid-alt'},
-	{name: 'Lumi OS', route: '/projects/lumi-os', icon: 'bx-window-alt'},
+	{name: 'Lumi', route: '/projects/lumi', icon: 'bx-window-alt'},
 	{name: 'KeepSafe', route: '/projects/keepsafe', icon: 'bx-lock-alt'}
 ]
 

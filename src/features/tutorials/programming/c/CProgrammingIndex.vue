@@ -96,7 +96,8 @@ const sections = [
 </script>
 
 <template>
-	<TutorialMainLayout>
+	<TutorialMainLayout
+			title="C Programming">
 		<h1 class="text-4xl font-bold text-gray-800 mb-2">C Programming Tutorial</h1>
 		<p class="text-sm text-gray-500 mb-4">Last Updated : {{ lastUpdated }}</p>
 

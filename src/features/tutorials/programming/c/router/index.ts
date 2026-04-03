@@ -349,5 +349,42 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-arrays-count-occurrences',
 		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/CountOccurrences.vue'),
 		meta: {title: 'Count Occurrences of a Number', icon: '/ralphmaron.png'}
+	},
+	// advanced
+	{
+		path: '/c/arrays/reverse-array',
+		name: 'c-arrays-reverse-array',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/ReverseArray.vue'),
+		meta: {title: 'Reverse an Array', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/left-rotate',
+		name: 'c-arrays-left-rotate',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/LeftRotate.vue'),
+		meta: {title: 'Left Rotate an Array by One', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/right-rotate',
+		name: 'c-arrays-right-rotate',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/RightRotate.vue'),
+		meta: {title: 'Right Rotate an Array by One', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/separate-even-odd',
+		name: 'c-arrays-separate-even-odd',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/SeparateEvenOdd.vue'),
+		meta: {title: 'Separate Even and Odd Elements into Two Arrays', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/sum-2d-array',
+		name: 'c-arrays-sum-2d-array',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/SumMatrix.vue'),
+		meta: {title: 'Sum of 2D Array (Matrix)', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/star-patterns',
+		name: 'c-loops-star-patterns',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/PrintStarPattern.vue'),
+		meta: {title: 'Print Star Patterns (Nested Loops)', icon: '/ralphmaron.png'}
 	}
 ]

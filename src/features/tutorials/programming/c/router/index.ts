@@ -386,5 +386,12 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-loops-star-patterns',
 		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/advanced/PrintStarPattern.vue'),
 		meta: {title: 'Print Star Patterns (Nested Loops)', icon: '/ralphmaron.png'}
+	},
+	// all in one programs
+	{
+		path: '/c-solved-all-concepts',
+		name: 'c-solved-all-concepts',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/all-in-one/AllInOneIndex.vue'),
+		meta: {title: 'All-in-One Programs (All Concepts)', icon: '/ralphmaron.png'}
 	}
 ]

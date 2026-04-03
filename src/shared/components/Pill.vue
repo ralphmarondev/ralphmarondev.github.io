@@ -4,7 +4,7 @@ const props = defineProps<{ color?: string }>()
 
 <template>
   <span
-		  class="px-2 py-0.5 rounded-lg font-medium text-sm"
+		  class="px-2 py-0.5 rounded-lg font-medium"
 		  :class="props.color ? props.color : 'bg-pink-50 text-pink-700'"
   >
     <slot />

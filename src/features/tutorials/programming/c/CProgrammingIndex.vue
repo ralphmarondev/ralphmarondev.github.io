@@ -89,7 +89,9 @@ const sections = [
 		title: 'What\'s Next?',
 		description: 'Strengthen your understanding by reviewing common C programs and solving additional practice problems. This section helps you recognize patterns and improve problem-solving skills.',
 		topics: [
-			{title: 'Common C Programs', route: '/c-common-programs'}
+			{title: 'Common C Programs', route: '/c-common-programs'},
+			{title: 'Loops and Arrays Programs', route: '/c-solved-loops-arrays'},
+			{title: 'Structures Programs', route: '/c-solved-structures'}
 		]
 	}
 ]

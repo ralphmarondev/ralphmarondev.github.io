@@ -269,5 +269,85 @@ export const CProgrammingRoutes: RouteRecordRaw[] = [
 		name: 'c-count-digits',
 		component: () => import('@/features/tutorials/programming/c/views/01-programs/common/medium/CountDigits.vue'),
 		meta: {title: 'Count Digits', icon: '/ralphmaron.png'}
+	},
+	// loops and arrays
+	{
+		path: '/c-solved-loops-arrays',
+		name: 'c-solved-loops-arrays',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/LoopsAndArraysIndex.vue'),
+		meta: {title: 'Loops and Arrays Programs', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/print-1-to-10',
+		name: 'c-loops-print-1-to-10',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/easy/PrintNumbersOneToTen.vue'),
+		meta: {title: 'Print Numbrers 1 to 10', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/print-even-numbers',
+		name: 'c-loops-print-even-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/easy/PrintEvenNumbersUpToN.vue'),
+		meta: {title: 'Print Even Numbers up to N', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/print-odd-numbers',
+		name: 'c-loops-print-odd-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/easy/PrintOddNumberUpToN.vue'),
+		meta: {title: 'Print Odd Numbers up to N', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/sum-first-n-numbers',
+		name: 'c-loops-sum-first-n-numbers',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/easy/SumOfFirstNNumbers.vue'),
+		meta: {title: 'Sum of First N Numbers', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/factorial',
+		name: 'c-loops-factorial',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/easy/FactorialOfANumber.vue'),
+		meta: {title: 'Factorial of a Number', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/loops/multiplication-table',
+		name: 'c-loops-multiplication-table',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/easy/MultiplicationTable.vue'),
+		meta: {title: 'Print Multiplication Table', icon: '/ralphmaron.png'}
+	},
+	// medium
+	{
+		path: '/c/arrays/print-elements',
+		name: 'c-arrays-print-elements',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/PrintArrayElements.vue'),
+		meta: {title: 'Print All Elements of an Array', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/print-reverse',
+		name: 'c-arrays-print-reverse',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/PrintArrayReverse.vue'),
+		meta: {title: 'Print Array in Reverse', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/sum-elements',
+		name: 'c-arrays-sum-elements',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/SumArrayElements.vue'),
+		meta: {title: 'Sum of Array Elements', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/average-elements',
+		name: 'c-arrays-average-elements',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/AverageArrayElements.vue'),
+		meta: {title: 'Average of Array Elements', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/max-min',
+		name: 'c-arrays-max-min',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/MinMaxArray.vue'),
+		meta: {title: 'Find Maximum and Minimum in Array', icon: '/ralphmaron.png'}
+	},
+	{
+		path: '/c/arrays/count-occurrences',
+		name: 'c-arrays-count-occurrences',
+		component: () => import('@/features/tutorials/programming/c/views/01-programs/loops-and-arrays/medium/CountOccurrences.vue'),
+		meta: {title: 'Count Occurrences of a Number', icon: '/ralphmaron.png'}
 	}
 ]

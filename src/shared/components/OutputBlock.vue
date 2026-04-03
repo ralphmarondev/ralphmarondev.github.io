@@ -36,7 +36,6 @@ onMounted(highlight)
 			    whitespace-pre-wrap break-words
 			    box-border
 	        max-w-full
-	        md:max-w-3xl
 			  "
     >
   <code v-html="highlighted"></code>

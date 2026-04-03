@@ -7,7 +7,7 @@ const props = defineProps<{
 	language: string
 }>()
 
-const normalizedCode = () => {
+const normalizedCodeOld = () => {
 	const lines = props.code.split('\n')
 	const trimmedLines = lines.filter((line, i) => i === 0 || line.trim() !== '')
 
@@ -19,6 +19,44 @@ const normalizedCode = () => {
 						return match && match[1] ? match[1].length : 0
 					})
 	)
+	return trimmedLines.map(line => line.slice(indent)).join('\n')
+}
+
+const normalizedCode = () => {
+	const lines = props.code.split('\n')
+
+	const trimmedLines: string[] = []
+	let emptyCount = 0
+
+	for (const line of lines) {
+		if (line.trim() === '') {
+			emptyCount++
+			if (emptyCount <= 1) {
+				trimmedLines.push('')
+			}
+		} else {
+			emptyCount = 0
+			trimmedLines.push(line)
+		}
+	}
+
+	// remove trailing empty lines
+	while (
+			trimmedLines.length &&
+			trimmedLines[trimmedLines.length - 1]!.trim() === ''
+			) {
+		trimmedLines.pop()
+	}
+
+	const indent = Math.min(
+			...trimmedLines
+					.filter(line => line.trim().length)
+					.map(line => {
+						const match = line.match(/^(\s*)/)
+						return match && match[1] ? match[1].length : 0
+					})
+	)
+
 	return trimmedLines.map(line => line.slice(indent)).join('\n')
 }
 
@@ -46,7 +84,6 @@ onMounted(highlight)
         overflow-hidden
         box-border
         max-w-full
-        md:max-w-3xl
       "
     >
       <code v-html="highlighted" class="language-c"></code>

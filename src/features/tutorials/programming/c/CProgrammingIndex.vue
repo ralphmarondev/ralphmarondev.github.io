@@ -91,7 +91,7 @@ const sections = [
 		topics: [
 			{title: 'Common C Programs', route: '/c-common-programs'},
 			{title: 'Loops and Arrays Programs', route: '/c-solved-loops-arrays'},
-			{title: 'Structures Programs', route: '/c-solved-structures'}
+			{title: 'Advanced Programs (All Concepts)', route: '/c-solved-all-concepts'}
 		]
 	}
 ]

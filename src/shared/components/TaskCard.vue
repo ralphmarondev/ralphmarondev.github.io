@@ -9,7 +9,7 @@ defineProps<{
 		<h2 class="font-semibold text-md text-pink-600 mb-1">
 			📝 {{ title || 'Task' }}
 		</h2>
-		<div class="text-gray-700 text-base leading-relaxed">
+		<div class="text-gray-700 text-lg leading-relaxed">
 			<slot />
 		</div>
 	</div>

@@ -51,7 +51,7 @@ pre {
 
 code {
 	font-family: 'Courier New', monospace;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	white-space: pre-wrap;
 	word-break: break-word;
 }

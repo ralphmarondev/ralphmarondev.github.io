@@ -70,12 +70,12 @@ router.beforeEach(async (to, _, next) => {
 	}
 
 	if (to.meta?.title) document.title = to.meta.title as string
-	if (to.meta?.icon) {
-		const link: HTMLLinkElement = document.querySelector(`link[rel~='icon']`) || document.createElement('link')
-		link.rel = 'icon'
-		link.href = to.meta.icon as string
-		document.head.appendChild(link)
-	}
+	// if (to.meta?.icon) {
+	// 	const link: HTMLLinkElement = document.querySelector(`link[rel~='icon']`) || document.createElement('link')
+	// 	link.rel = 'icon'
+	// 	link.href = to.meta.icon as string
+	// 	document.head.appendChild(link)
+	// }
 
 	next()
 })

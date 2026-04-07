@@ -1,0 +1,1 @@
+import{d as n,c as r,s as t,n as a,o as l}from"./index-BoiLWSy3.js";const m=n({__name:"Pill",props:{color:{}},setup(e){const o=e;return(s,p)=>(l(),r("span",{class:a(["px-2 py-0.5 rounded-lg font-medium",o.color?o.color:"bg-pink-50 text-pink-700"])},[t(s.$slots,"default")],2))}});export{m as _};

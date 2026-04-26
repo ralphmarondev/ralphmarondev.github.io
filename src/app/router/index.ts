@@ -11,31 +11,31 @@ const router = createRouter({
 			path: '/',
 			name: 'portfolio',
 			component: () => import('@/features/portfolio/PortfolioIndex.vue'),
-			meta: {title: 'Ralph Maron Eda', icon: '/ralphmaron.png'}
+			meta: {title: 'Ralph Maron Eda'}
 		},
 		{
 			path: '/achievements',
 			name: 'achievements',
 			component: () => import('@/features/portfolio/views/achievements/AchievementsIndex.vue'),
-			meta: {title: 'Ralph Maron Eda | Achievements', icon: '/ralphmaron.png'}
+			meta: {title: 'Ralph Maron Eda | Achievements'}
 		},
 		{
 			path: '/tutorials',
 			name: 'tutorials',
 			component: () => import('@/features/tutorials/TutorialsIndex.vue'),
-			meta: {title: 'Tutorials', icon: '/ralphmaron.png'}
+			meta: {title: 'Tutorials'}
 		},
 		{
 			path: '/projects',
 			name: 'projects',
 			component: () => import('@/features/projects/ProjectIndex.vue'),
-			meta: {title: 'Projects', icon: '/ralphmaron.png'}
+			meta: {title: 'Projects'}
 		},
 		{
 			path: '/privacy-policy',
 			name: 'privacy-policy',
 			component: () => import('@/shared/views/PrivacyPolicy.vue'),
-			meta: {title: 'Privacy Policy', icon: '/ralphmaron.png'}
+			meta: {title: 'Privacy Policy'}
 		},
 		...privateRoutes,
 		...projectRoutes,
@@ -44,7 +44,7 @@ const router = createRouter({
 			path: '/:pathMatch(.*)*',
 			name: 'not-found',
 			component: () => import('@/shared/views/NotFoundIndex.vue'),
-			meta: {title: 'Page Not Found', icon: '/ralphmaron.png'}
+			meta: {title: 'Page Not Found'}
 		}
 	],
 	scrollBehavior(to) {

@@ -80,7 +80,7 @@ import {RouterLink} from 'vue-router'
 
 			<!-- Java Programming Tutorial -->
 			<RouterLink
-					to="/java-programming-langauge"
+					to="/java-programming-language"
 					class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 					data-aos="fade-up"
 					data-aos-delay="200"

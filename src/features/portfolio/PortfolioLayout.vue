@@ -29,7 +29,7 @@ const navItems = [
 </script>
 
 <template>
-	<div>
+	<div class="bg-gray-50 dark:bg-gray-800/50">
 		<nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm fixed w-full z-50 py-2 transition-all duration-300"
 		     data-aos="fade-down">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

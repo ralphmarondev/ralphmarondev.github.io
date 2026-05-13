@@ -94,21 +94,24 @@ const featuredProjects = [
 							   class="text-sm text-gray-600 dark:text-gray-400 hover:text-purple-600 transition flex items-center gap-1">
 								<i class="bx bxl-github"></i> GitHub
 							</a>
-							<RouterLink :to="project.route"
-							            class="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1">
+							<router-link
+									:to="project.route"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1">
 								Learn More <i class="bx bx-chevron-right"></i>
-							</RouterLink>
+							</router-link>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="text-center mt-12" data-aos="fade-up">
-				<RouterLink to="/projects"
-				            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-purple-600 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300">
+				<router-link to="/projects"
+				             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-purple-600 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300">
 					View All Projects
 					<i class="bx bx-chevron-right"></i>
-				</RouterLink>
+				</router-link>
 			</div>
 		</div>
 	</section>

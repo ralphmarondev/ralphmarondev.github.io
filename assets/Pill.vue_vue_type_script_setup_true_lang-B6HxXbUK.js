@@ -1,0 +1,1 @@
+import{d as n,o as r,c as t,s as a,n as l}from"./index-BPX1bKrC.js";const m=n({__name:"Pill",props:{color:{}},setup(e){const o=e;return(s,p)=>(r(),t("span",{class:l(["px-2 py-0.5 rounded-lg font-medium",o.color?o.color:"bg-pink-50 text-pink-700"])},[a(s.$slots,"default")],2))}});export{m as _};

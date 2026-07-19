@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as o,s as t}from"./index-DzB2MRah.js";const c={},r={class:"bg-pink-50 px-2 rounded-lg"};function a(e,_){return n(),o("span",r,[t(e.$slots,"default")])}const p=s(c,[["render",a]]);export{p as S};

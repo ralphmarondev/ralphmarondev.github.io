@@ -1,0 +1,54 @@
+import{_ as y}from"./TutorialMainLayout.vue_vue_type_script_setup_true_lang-pHU7Iykn.js";import{C as r}from"./CodeBlock-Dq1Y_ZOo.js";import{O as n}from"./OutputBlock-3JjA_7_X.js";import{u as c}from"./cProgramming-MNohmiCX.js";import{d as b,r as a,p as f,l as S,m as v,o as C,a as e,t as U,b as s,k as l}from"./index-DzB2MRah.js";const k={class:"text-gray-500 mb-2 text-lg"},w={class:"text-gray-500 mb-2 text-lg"},B={class:"text-gray-500 mb-2 text-lg"},N={class:"text-gray-500 mb-2 text-lg"},A={class:"text-gray-500 mb-2 text-lg"},P={class:"text-gray-500 mb-2 text-lg"},W="March 30, 2026",D=b({__name:"StructuresIntroductionIndex",setup(M){const u=c(),o=a(`
+char name[50];
+int age;
+float grade;
+`),i=a(`
+struct Student
+{
+	char name[50];
+	int age;
+	float grade;
+};
+`),d=a(`
+#include <stdio.h>
+
+struct A
+{
+	int x;
+}
+
+int main()
+{
+	struct A a; // create variable
+	a.x = 11; // assign value
+
+	printf("%d", a.x);
+	return 0;
+}
+`),g=a(`
+struct StructureName
+{
+	datatype member1;
+	datatype member2;
+};
+`),m=a(`
+s1.age = 20;
+`),x=a(`
+typedef struct
+{
+	int x;
+} Point;
+
+Point p1 = {10};
+`),p=a(`
+struct Child
+{
+	int x;
+};
+
+struct Parent
+{
+	int a;
+	struct Child b;
+};
+`);return(O,t)=>(C(),f(y,{title:"C Programming",navigation:v(u).sections},{default:S(()=>[t[8]||(t[8]=e("h2",{class:"text-3xl font-bold text-gray-800 mb-2"},"Structures in C",-1)),e("p",{class:"text-sm text-gray-500 mb-4"},"Last Updated : "+U(W)),t[9]||(t[9]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," What is a Structure? ",-1)),t[10]||(t[10]=e("p",{class:"text-gray-500 mb-2 text-lg"},[s(" A "),e("b",null,"structure"),s(" is a user-defined data type that allows you to group different types of data into one unit. "),e("br"),s(" Unlike arrays (same type), structures can store mixed data types. ")],-1)),t[11]||(t[11]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Why Use Structures? ",-1)),e("p",k,[t[0]||(t[0]=s(" Without structures: ",-1)),l(r,{code:o.value,language:"c"},null,8,["code"]),t[1]||(t[1]=s(" With structures: ",-1)),l(r,{code:i.value,language:"c"},null,8,["code"]),t[2]||(t[2]=e("ul",{class:"list-disc list-inside space-y-1"},[e("li",null,"Cleaner"),e("li",null,"Organized"),e("li",null,"Represent real-world objects")],-1))]),t[12]||(t[12]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Basic Example ",-1)),e("p",w,[l(r,{code:d.value,language:"c"},null,8,["code"]),t[3]||(t[3]=s(" Output: ",-1)),l(n,{output:"11"})]),t[13]||(t[13]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Structure Syntax ",-1)),e("p",B,[l(r,{code:g.value,language:"c"},null,8,["code"])]),t[14]||(t[14]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Accessing Structure Member ",-1)),e("p",N,[t[4]||(t[4]=s(" Use the dot operator (.) ",-1)),l(r,{code:m.value,language:"c"},null,8,["code"])]),t[15]||(t[15]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Initializing Structures using typedef ",-1)),e("p",A,[l(r,{code:x.value,language:"c"},null,8,["code"]),t[5]||(t[5]=s(" No need to write struct everytime. ",-1))]),t[16]||(t[16]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Nested Structures ",-1)),e("p",P,[t[6]||(t[6]=s(" Structures inside structures: ",-1)),l(r,{code:p.value,language:"c"},null,8,["code"]),t[7]||(t[7]=s(" Access: ",-1)),l(n,{output:"p.b.x = 5"})]),t[17]||(t[17]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Structure Memory ",-1)),t[18]||(t[18]=e("p",{class:"text-gray-500 mb-2 text-lg"},[e("ul",{class:"list-disc list-inside space-y-1"},[e("li",null,"Structures may have extra unused space."),e("li",null,"This is called padding.")]),s(" Helps improve performance. ")],-1)),t[19]||(t[19]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Real World Use Cases ",-1)),t[20]||(t[20]=e("p",{class:"text-gray-500 mb-2 text-lg"},[s(" Structures are used for: "),e("ul",{class:"list-disc list-inside space-y-1"},[e("li",null,"Students (name, age, grade)"),e("li",null,"Engineering data (length, width, material)"),e("li",null,"Data structures (linked list, trees)"),e("li",null,"Grouping related data.")])],-1)),t[21]||(t[21]=e("h2",{class:"text-2xl font-semibold text-gray-800 mb-2"}," Key Takeaways ",-1)),t[22]||(t[22]=e("p",{class:"text-gray-500 mb-2 text-lg"},[e("ul",{class:"list-disc list-inside space-y-1"},[e("li",null,"Structures group different data types."),e("li",null,"Use typedef for cleaner code.")])],-1))]),_:1},8,["navigation"]))}});export{D as default};

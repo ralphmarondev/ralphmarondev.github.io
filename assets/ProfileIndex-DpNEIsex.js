@@ -1,0 +1,1 @@
+import{_ as o}from"./MainLayout.vue_vue_type_script_setup_true_lang-DWicuDYA.js";import{d as t,h as r,i as a,o as n,g as s}from"./index-fUs2VaN6.js";const m=t({__name:"ProfileIndex",setup(_){return(f,e)=>(n(),r(o,null,{default:a(()=>[...e[0]||(e[0]=[s(" Profile ",-1)])]),_:1}))}});export{m as default};

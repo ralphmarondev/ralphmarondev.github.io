@@ -1,0 +1,1 @@
+import{_ as s}from"./MainLayout.vue_vue_type_script_setup_true_lang-Or-oJNwO.js";import{d as e,j as t,h as o,i as n,z as r,o as i,a as l,t as u,s as c}from"./index-D3WOnH5O.js";const C=e({__name:"ClassDetailIndex",setup(_){const a=r().params.id;return t(()=>{}),(d,m)=>(i(),o(s,null,{default:n(()=>[l("p",null,"Class Details: "+u(c(a)),1)]),_:1}))}});export{C as default};

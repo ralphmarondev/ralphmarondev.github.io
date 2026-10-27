@@ -1,0 +1,1 @@
+import{_ as o,o as n,c as s,X as t}from"./index-DxySYCEn.js";const r={},c={class:"px-1 py-0.5 font-semibold leading-none font-mono rounded bg-purple-100 text-gray-600"};function a(e,l){return n(),s("span",c,[t(e.$slots,"default")])}const _=o(r,[["render",a]]);export{_ as T};

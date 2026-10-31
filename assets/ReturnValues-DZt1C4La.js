@@ -1,0 +1,57 @@
+import{_ as a}from"./logo-C9ImmdpX.js";import{_ as m}from"./MainLayout.vue_vue_type_script_setup_true_lang-rzR0vzcF.js";import{T as e,a as s,_ as f}from"./TopicNext.vue_vue_type_script_setup_true_lang-Do3NQ57y.js";import{T as r}from"./TopicTerm-Wsy3IcMW.js";import{C as o}from"./CodeBlock-YTzl4NkG.js";import{O as i}from"./OutputBlock-BsSWLsEy.js";import{d as p,h as g,i as n,o as v,a as d,q as u,g as l}from"./index-8Z-dxxHw.js";const b={class:"max-w-4xl mx-auto"},x={class:"list-disc pl-8 mt-3 space-y-2"},y={class:"list-disc pl-8 mt-3 space-y-2"},T={class:"list-disc pl-8 mt-3 space-y-2"},S=`
+static int getNumber() {
+    return 10;
+}`,R=`
+static int getNumber() {
+    return 10;
+}
+
+public static void main(String[] args) {
+    int number = getNumber();
+
+    System.out.println(number);
+}`,O="10",A=`
+static int add(int a, int b) {
+    return a + b;
+}
+
+public static void main(String[] args) {
+    int result = add(10, 5);
+
+    System.out.println(result);
+}`,k="15",w=`
+static int add(int a, int b) {
+    return a + b;
+}
+
+public static void main(String[] args) {
+    System.out.println(add(7, 3));
+}`,F="10",j=`
+static String getMessage() {
+    return "Hello, Java!";
+}
+
+public static void main(String[] args) {
+    String message = getMessage();
+
+    System.out.println(message);
+}`,C="Hello, Java!",N=`
+static double calculateAverage(double a, double b) {
+    return (a + b) / 2;
+}
+
+public static void main(String[] args) {
+    double average = calculateAverage(80, 90);
+
+    System.out.println(average);
+}`,V="85.0",M=`
+static String getResult(int score) {
+    if (score >= 75) {
+        return "Passed";
+    }
+    return "Failed";
+}
+
+public static void main(String[] args) {
+    System.out.println(getResult(85));
+}`,B="Passed",U=p({__name:"ReturnValues",setup(I){return(P,t)=>(v(),g(m,null,{default:n(()=>[d("div",b,[t[118]||(t[118]=d("div",{class:"w-full flex justify-center mb-6"},[d("img",{src:a,alt:"Java Programming",class:"h-56 lg:h-64 w-auto object-contain"})],-1)),t[119]||(t[119]=d("div",{class:"text-center mb-4"},[d("p",{class:"text-xl md:text-2xl font-bold text-gray-400 md:mb-1"}," TOPIC 3 "),d("h2",{class:"text-2xl md:text-4xl font-bold text-gray-600"}," Return Values ")],-1)),u(e,null,{default:n(()=>[...t[0]||(t[0]=[l(" In the previous topics, we created methods that could receive values through parameters. Methods can also send a value back to the code that called them. ",-1)])]),_:1}),u(e,null,{default:n(()=>[t[2]||(t[2]=l(" The value sent back by a method is called a ",-1)),u(r,null,{default:n(()=>[...t[1]||(t[1]=[l("return value",-1)])]),_:1}),t[3]||(t[3]=l(" . ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[4]||(t[4]=[l("What is a Return Value?",-1)])]),_:1}),u(e,null,{default:n(()=>[t[6]||(t[6]=l(" A ",-1)),u(r,null,{default:n(()=>[...t[5]||(t[5]=[l("return value",-1)])]),_:1}),t[7]||(t[7]=l(" is the result produced by a method and sent back to its caller. ",-1))]),_:1}),u(e,null,{default:n(()=>[t[9]||(t[9]=l(" A method that returns a value must specify the data type of that value instead of using ",-1)),u(r,null,{default:n(()=>[...t[8]||(t[8]=[l("void",-1)])]),_:1}),t[10]||(t[10]=l(" . ",-1))]),_:1}),u(e,null,{default:n(()=>[t[11]||(t[11]=l(" For example: ",-1)),u(o,{code:S,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[15]||(t[15]=l(" This method returns an ",-1)),u(r,null,{default:n(()=>[...t[12]||(t[12]=[l("int",-1)])]),_:1}),t[16]||(t[16]=l(" value. The ",-1)),u(r,null,{default:n(()=>[...t[13]||(t[13]=[l("return",-1)])]),_:1}),t[17]||(t[17]=l(" statement sends the value ",-1)),u(r,null,{default:n(()=>[...t[14]||(t[14]=[l("10",-1)])]),_:1}),t[18]||(t[18]=l(" back to the caller. ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[19]||(t[19]=[l("The return Statement",-1)])]),_:1}),u(e,null,{default:n(()=>[t[21]||(t[21]=l(" The ",-1)),u(r,null,{default:n(()=>[...t[20]||(t[20]=[l("return",-1)])]),_:1}),t[22]||(t[22]=l(" statement is used to send a value back from a method. ",-1))]),_:1}),u(e,null,{default:n(()=>[t[23]||(t[23]=l(" For example: ",-1)),u(o,{code:R,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[24]||(t[24]=l(" Output: ",-1)),u(i,{output:O})]),_:1}),u(e,null,{default:n(()=>[t[28]||(t[28]=l(" The method ",-1)),u(r,null,{default:n(()=>[...t[25]||(t[25]=[l("getNumber()",-1)])]),_:1}),t[29]||(t[29]=l(" returns ",-1)),u(r,null,{default:n(()=>[...t[26]||(t[26]=[l("10",-1)])]),_:1}),t[30]||(t[30]=l(" . That value is stored in the ",-1)),u(r,null,{default:n(()=>[...t[27]||(t[27]=[l("number",-1)])]),_:1}),t[31]||(t[31]=l(" variable. ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[32]||(t[32]=[l("Return Type",-1)])]),_:1}),u(e,null,{default:n(()=>[...t[33]||(t[33]=[l(" The return type tells Java what kind of value the method will return. ",-1)])]),_:1}),u(e,null,{default:n(()=>[t[46]||(t[46]=l(" For example: ",-1)),d("ul",x,[d("li",null,[u(r,null,{default:n(()=>[...t[34]||(t[34]=[l("int",-1)])]),_:1}),t[35]||(t[35]=l(" → returns an integer. ",-1))]),d("li",null,[u(r,null,{default:n(()=>[...t[36]||(t[36]=[l("double",-1)])]),_:1}),t[37]||(t[37]=l(" → returns a decimal value. ",-1))]),d("li",null,[u(r,null,{default:n(()=>[...t[38]||(t[38]=[l("String",-1)])]),_:1}),t[39]||(t[39]=l(" → returns a string. ",-1))]),d("li",null,[u(r,null,{default:n(()=>[...t[40]||(t[40]=[l("boolean",-1)])]),_:1}),t[43]||(t[43]=l(" → returns ",-1)),u(r,null,{default:n(()=>[...t[41]||(t[41]=[l("true",-1)])]),_:1}),t[44]||(t[44]=l(" or ",-1)),u(r,null,{default:n(()=>[...t[42]||(t[42]=[l("false",-1)])]),_:1}),t[45]||(t[45]=l(" . ",-1))])])]),_:1}),u(s,null,{default:n(()=>[...t[47]||(t[47]=[l("Returning a Calculation",-1)])]),_:1}),u(e,null,{default:n(()=>[...t[48]||(t[48]=[l(" A method can return the result of a calculation. ",-1)])]),_:1}),u(e,null,{default:n(()=>[t[49]||(t[49]=l(" For example: ",-1)),u(o,{code:A,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[50]||(t[50]=l(" Output: ",-1)),u(i,{output:k})]),_:1}),u(e,null,{default:n(()=>[t[52]||(t[52]=l(" The expression ",-1)),u(r,null,{default:n(()=>[...t[51]||(t[51]=[l("a + b",-1)])]),_:1}),t[53]||(t[53]=l(" is calculated and its result is returned to the caller. ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[54]||(t[54]=[l("Using a Return Value Directly",-1)])]),_:1}),u(e,null,{default:n(()=>[...t[55]||(t[55]=[l(" A returned value does not always need to be stored in a variable. It can be used directly in another expression or statement. ",-1)])]),_:1}),u(e,null,{default:n(()=>[t[56]||(t[56]=l(" For example: ",-1)),u(o,{code:w,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[57]||(t[57]=l(" Output: ",-1)),u(i,{output:F})]),_:1}),u(e,null,{default:n(()=>[t[60]||(t[60]=l(" The value returned by ",-1)),u(r,null,{default:n(()=>[...t[58]||(t[58]=[l("add()",-1)])]),_:1}),t[61]||(t[61]=l(" is passed directly to ",-1)),u(r,null,{default:n(()=>[...t[59]||(t[59]=[l("System.out.println()",-1)])]),_:1}),t[62]||(t[62]=l(" . ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[63]||(t[63]=[l("Returning a String",-1)])]),_:1}),u(e,null,{default:n(()=>[t[65]||(t[65]=l(" Methods can return values other than numbers. For example, a method can return a ",-1)),u(r,null,{default:n(()=>[...t[64]||(t[64]=[l("String",-1)])]),_:1}),t[66]||(t[66]=l(" . ",-1))]),_:1}),u(e,null,{default:n(()=>[t[67]||(t[67]=l(" Example: ",-1)),u(o,{code:j,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[68]||(t[68]=l(" Output: ",-1)),u(i,{output:C})]),_:1}),u(s,null,{default:n(()=>[...t[69]||(t[69]=[l("Returning a Decimal Value",-1)])]),_:1}),u(e,null,{default:n(()=>[t[71]||(t[71]=l(" A method can also return a ",-1)),u(r,null,{default:n(()=>[...t[70]||(t[70]=[l("double",-1)])]),_:1}),t[72]||(t[72]=l(" value. ",-1))]),_:1}),u(e,null,{default:n(()=>[t[73]||(t[73]=l(" For example: ",-1)),u(o,{code:N,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[74]||(t[74]=l(" Output: ",-1)),u(i,{output:V})]),_:1}),u(e,null,{default:n(()=>[...t[75]||(t[75]=[l(" The method calculates the average and returns the resulting decimal value. ",-1)])]),_:1}),u(s,null,{default:n(()=>[...t[76]||(t[76]=[l("Returning from a Condition",-1)])]),_:1}),u(e,null,{default:n(()=>[...t[77]||(t[77]=[l(" A method can return different values depending on a condition. ",-1)])]),_:1}),u(e,null,{default:n(()=>[t[78]||(t[78]=l(" For example: ",-1)),u(o,{code:M,language:"java"})]),_:1}),u(e,null,{default:n(()=>[t[79]||(t[79]=l(" Output: ",-1)),u(i,{output:B})]),_:1}),u(e,null,{default:n(()=>[t[83]||(t[83]=l(" If the score is at least ",-1)),u(r,null,{default:n(()=>[...t[80]||(t[80]=[l("75",-1)])]),_:1}),t[84]||(t[84]=l(" , the method returns ",-1)),u(r,null,{default:n(()=>[...t[81]||(t[81]=[l('"Passed"',-1)])]),_:1}),t[85]||(t[85]=l(" . Otherwise, it returns ",-1)),u(r,null,{default:n(()=>[...t[82]||(t[82]=[l('"Failed"',-1)])]),_:1}),t[86]||(t[86]=l(" . ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[87]||(t[87]=[l("return vs void",-1)])]),_:1}),u(e,null,{default:n(()=>[t[89]||(t[89]=l(" A method declared with ",-1)),u(r,null,{default:n(()=>[...t[88]||(t[88]=[l("void",-1)])]),_:1}),t[90]||(t[90]=l(" does not return a value. A method with another return type must return a compatible value. ",-1))]),_:1}),u(e,null,{default:n(()=>[t[97]||(t[97]=l(" For example: ",-1)),d("ul",y,[d("li",null,[u(r,null,{default:n(()=>[...t[91]||(t[91]=[l("void greet()",-1)])]),_:1}),t[92]||(t[92]=l(" → performs an action without returning a value. ",-1))]),d("li",null,[u(r,null,{default:n(()=>[...t[93]||(t[93]=[l("int getNumber()",-1)])]),_:1}),t[94]||(t[94]=l(" → returns an integer. ",-1))]),d("li",null,[u(r,null,{default:n(()=>[...t[95]||(t[95]=[l("String getMessage()",-1)])]),_:1}),t[96]||(t[96]=l(" → returns a string. ",-1))])])]),_:1}),u(s,null,{default:n(()=>[...t[98]||(t[98]=[l("Returning Ends the Method",-1)])]),_:1}),u(e,null,{default:n(()=>[t[100]||(t[100]=l(" When a ",-1)),u(r,null,{default:n(()=>[...t[99]||(t[99]=[l("return",-1)])]),_:1}),t[101]||(t[101]=l(" statement is executed, the method immediately ends and control returns to the caller. ",-1))]),_:1}),u(e,null,{default:n(()=>[t[103]||(t[103]=l(" Any statements placed after an unconditional ",-1)),u(r,null,{default:n(()=>[...t[102]||(t[102]=[l("return",-1)])]),_:1}),t[104]||(t[104]=l(" in the same execution path cannot be reached. ",-1))]),_:1}),u(s,null,{default:n(()=>[...t[105]||(t[105]=[l("Summary",-1)])]),_:1}),u(e,null,{default:n(()=>[...t[106]||(t[106]=[l(" A method can return a value to the code that called it. The return type specifies the kind of value that the method produces. ",-1)])]),_:1}),u(e,null,{default:n(()=>[t[117]||(t[117]=l(" In this topic, you learned that: ",-1)),d("ul",T,[t[113]||(t[113]=d("li",null," A return value is a value sent back by a method. ",-1)),d("li",null,[t[108]||(t[108]=l(" The ",-1)),u(r,null,{default:n(()=>[...t[107]||(t[107]=[l("return",-1)])]),_:1}),t[109]||(t[109]=l(" statement sends a value back to the caller. ",-1))]),t[114]||(t[114]=d("li",null," The method's return type specifies the type of value returned. ",-1)),t[115]||(t[115]=d("li",null," A method can return numbers, strings, and other compatible values. ",-1)),t[116]||(t[116]=d("li",null," A returned value can be stored in a variable or used directly. ",-1)),d("li",null,[t[111]||(t[111]=l(" Executing ",-1)),u(r,null,{default:n(()=>[...t[110]||(t[110]=[l("return",-1)])]),_:1}),t[112]||(t[112]=l(" ends the method. ",-1))])])]),_:1}),t[120]||(t[120]=d("br",null,null,-1)),u(f,{to:"/academia/student/classes/java-method-overloading"})])]),_:1}))}});export{U as default};

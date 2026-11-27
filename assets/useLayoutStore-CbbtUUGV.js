@@ -1,1 +1,0 @@
-import{M as s,r as a}from"./index-CJKMNxF8.js";const n=s("layout-store",()=>{const e=a(!1),o=a(!1);function t(){e.value=!e.value}function r(){o.value=!o.value}return{sidebarOpen:e,isDarkMode:o,toggleSidebar:t,toggleDarkMode:r}});export{n as u};
